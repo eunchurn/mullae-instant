@@ -6,7 +6,8 @@ const port = process.env.PORT || 3000;
 module.exports = {
     mode: "development",
     output: {
-        filename: "bundle.[hash].js"
+        filename: "bundle.[hash].js",
+        publicPath: "/"
     },
     devtool: "inline-source-map",
     module: {
@@ -35,6 +36,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: "public/index.html",
             favicon: "public/favicon.ico"
@@ -44,6 +46,7 @@ module.exports = {
         host: "localhost",
         port: port,
         historyApiFallback: true,
-        open: true
+        open: true,
+        hot: true
     }
 };
