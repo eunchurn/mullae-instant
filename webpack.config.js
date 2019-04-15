@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const port = process.env.PORT || 3000;
 
 module.exports = {
+    entry: {
+        vendor: ["semantic-ui-react"],
+        app: "./src/index.js"
+    },
     mode: "development",
     output: {
         filename: "[name].[hash].js",
@@ -48,5 +52,17 @@ module.exports = {
         historyApiFallback: true,
         open: true,
         hot: true
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    chunks: "initial",
+                    test: "vendor",
+                    name: "vendor",
+                    enforce: true
+                }
+            }
+        }
     }
 };
