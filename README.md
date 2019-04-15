@@ -4,3 +4,4 @@
 - Hot Module Replacement (HMR)
 - Code Split (by Chunk)
 - Code Split (by Vendor)
+- Production build (Webpack config files)
