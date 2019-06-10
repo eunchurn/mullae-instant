@@ -5,20 +5,20 @@ import { Header, Container, Divider, Icon } from "semantic-ui-react";
 import { pullRight, h1 } from "./Layout.css";
 
 const Layout = ({children}) => {
-    return (
-        <Container>
-            <Link to="/">
-                <Header as="h1" className={h1}>
+  return (
+    <Container>
+      <Link to="/">
+        <Header as="h1" className={h1}>
                     webpack-for-react
-                </Header>
-            </Link>
-            {children}
-            <Divider />
-            <p className={pullRight}>
+        </Header>
+      </Link>
+      {children}
+      <Divider />
+      <p className={pullRight}>
                 Made with <Icon name="heart" color="red" /> by Eunchurn
-            </p>
-        </Container>
-    );
+      </p>
+    </Container>
+  );
 };
 
 export default Layout;
