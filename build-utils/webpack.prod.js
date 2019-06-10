@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = {
   mode: 'production',
   entry: {
-    app: [`${commonPaths.appEntry}/index.js`]
+    app: ['babel-polyfill', `${commonPaths.appEntry}/index.js`]
   },
   output: {
     filename: 'static/[name].[hash].js'
@@ -27,7 +27,13 @@ const config = {
               }
             },
             {
-              loader: 'postcss-loader'
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: [
+                  require('autoprefixer')
+                ]
+              }
             }
           ]
         })
