@@ -9,7 +9,7 @@
     "url": "git+ssh://git@github.com:eunchurn/webpack-react-ES6-boilerplate.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --progress --colors --env.env=dev",
+    "dev": "webpack-dev-server --progress --colors --open --hot --env.env=dev",
     "prebuild": "run-s clean lint",
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --progress --colors --env.env=prod",
@@ -22,7 +22,7 @@
     "es6",
     "babel",
     "hmr",
-    "polyfill"
+    "core-js@2"
   ],
   "license": "ISC",
   "eslintConfig": {
