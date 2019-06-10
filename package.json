@@ -4,14 +4,26 @@
   "description": "Boilerplate for React projects set up with Babel for ES6 and compiled with webpack",
   "author": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:eunchurn/webpack-react-ES6-boilerplate.git"
+  },
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --env.env=dev",
-    "prebuild": "rimraf dist",
+    "prebuild": "run-s clean lint",
+    "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --progress --colors --env.env=prod",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "webpack",
+    "es6",
+    "babel",
+    "hmr",
+    "polyfill"
+  ],
   "license": "ISC",
   "eslintConfig": {
     "env": {
@@ -133,19 +145,21 @@
     "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.1",
-    "eslint-plugin-flowtype": "^3.9.1",
+    "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
+    "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.6.0",
     "react-app-polyfill": "^1.0.1",
     "react-hot-loader": "^4.9.0",
     "rimraf": "^2.6.3",
     "style-loader": "^0.23.1",
+    "typescript": "^3.5.1",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.3",
     "webpack-dev-server": "^3.7.1",
