@@ -13,6 +13,7 @@
     "prebuild": "run-s clean lint",
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --progress --colors --env.env=prod",
+    "ghpages": "git subtree push --prefix dist origin gh-pages",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
