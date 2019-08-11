@@ -14,6 +14,8 @@
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --progress --colors --env.env=prod",
     "ghpages": "git subtree push --prefix dist deploy master",
+    "predeploy": "npm run build",
+    "deploy": "npm run ghpages",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
