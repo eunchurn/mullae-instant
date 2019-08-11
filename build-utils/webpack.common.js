@@ -1,23 +1,35 @@
-const commonPaths = require('./common-paths');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const commonPaths = require("./common-paths");
+const alias = require("./webpack-module-alias");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 
 const config = {
   entry: {
-    vendor: ['semantic-ui-react']
+    vendor: ["three"]
   },
   output: {
     path: commonPaths.outputPath,
-    publicPath: '/'
+    publicPath: "/"
   },
   module: {
     rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        loader: require.resolve("babel-loader"),
+        options: {
+          cacheDirectory: true,
+          plugins: ["react-hot-loader/babel"]
+        }
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+        loader: "url-loader",
+        options: {
+          limit: 8192
+        }
       }
     ]
   },
@@ -25,9 +37,9 @@ const config = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          chunks: 'initial',
-          test: 'vendor',
-          name: 'vendor',
+          chunks: "initial",
+          test: "vendor",
+          name: "vendor",
           enforce: true
         }
       }
@@ -35,18 +47,19 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      favicon: 'public/favicon.ico'
+      template: "public/index.html",
+      favicon: "public/favicon.ico"
     }),
-    new CopyWebpackPlugin([
-      { from : 'public/assets', to : 'assets'}
-    ]),
+    new CopyWebpackPlugin([{ from: "public/assets", to: "assets" }]),
     new ManifestPlugin()
   ],
   resolve: {
-    alias: {
-      'react-dom' : '@hot-loader/react-dom'
-    }
+    alias: alias
   }
+  // resolve: {
+  //   alias: {
+  //     'react-dom': '@hot-loader/react-dom'
+  //   }
+  // }
 };
 module.exports = config;

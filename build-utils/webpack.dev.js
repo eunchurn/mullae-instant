@@ -1,25 +1,25 @@
-const commonPaths = require('./common-paths');
-const webpack = require('webpack');
-const port = process.env.PORT || 3000;
+const commonPaths = require("./common-paths");
+const webpack = require("webpack");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const config = {
-  mode: 'development',
+  mode: "development",
   entry: {
-    app: ['babel-polyfill', `${commonPaths.appEntry}/index.js`]
+    app: ["babel-polyfill", `${commonPaths.appEntry}/index.js`]
   },
   output: {
-    filename: '[name].[hash].js'
+    filename: "[name].[hash].js"
   },
-  devtool: 'inline-source-map',
+  devtool: false,
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: "style-loader"
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               modules: true,
               camelCase: true,
@@ -31,11 +31,17 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.SourceMapDevToolPlugin({}),
+    new BrowserSyncPlugin({
+      host: "localhost",
+      port: 3100,
+      proxy: "http://localhost:3000"
+    })
   ],
   devServer: {
-    host: 'localhost',
-    port: port,
+    host: "0.0.0.0",
+    port: 3000,
     historyApiFallback: true,
     hot: true,
     open: false
