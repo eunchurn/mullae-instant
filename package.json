@@ -12,7 +12,7 @@
     "dev": "gulp dev",
     "build": "gulp build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d diso -o deploy -b master",
+    "deploy": "gh-pages -d dist -o deploy -b master",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
