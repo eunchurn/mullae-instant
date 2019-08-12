@@ -9,11 +9,8 @@
     "url": "git+ssh://git@github.com:eunchurn/webpack-react-ES6-boilerplate.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --progress --colors --hot --env.env=dev",
-    "prebuild": "run-s clean lint",
-    "clean": "rimraf dist",
-    "build": "cross-env NODE_ENV=production webpack -p --progress --colors --env.env=prod",
-    "ghpages": "git subtree push --prefix dist deploy master",
+    "dev": "gulp dev",
+    "build": "gulp build",
     "predeploy": "npm run build",
     "deploy": "babel-node ./scripts/deploy.js",
     "lint": "eslint ./src",
@@ -27,79 +24,7 @@
     "hmr",
     "core-js@2"
   ],
-  "license": "ISC",
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "browser": true
-    },
-    "plugins": [
-      "eslint-plugin-react",
-      "eslint-plugin-react-hooks"
-    ],
-    "extends": "react-app",
-    "rules": {
-      "no-cond-assign": 1,
-      "no-console": 0,
-      "no-constant-condition": 1,
-      "no-control-regex": 1,
-      "no-debugger": 1,
-      "no-dupe-args": 1,
-      "no-dupe-keys": 1,
-      "no-duplicate-case": 1,
-      "no-empty-character-class": 1,
-      "no-empty": 1,
-      "no-ex-assign": 1,
-      "no-extra-boolean-cast": 1,
-      "no-extra-semi": 1,
-      "no-func-assign": 1,
-      "no-inner-declarations": 1,
-      "no-invalid-regexp": 1,
-      "no-irregular-whitespace": 1,
-      "no-negated-in-lhs": 1,
-      "no-obj-calls": 1,
-      "no-regex-spaces": 1,
-      "no-sparse-arrays": 1,
-      "no-unreachable": 1,
-      "use-isnan": 1,
-      "valid-typeof": 1,
-      "no-alert": 1,
-      "no-else-return": 1,
-      "no-eval": 1,
-      "no-extra-bind": 1,
-      "no-fallthrough": 1,
-      "no-octal": 1,
-      "no-proto": 1,
-      "no-redeclare": [
-        1,
-        {
-          "builtinGlobals": true
-        }
-      ],
-      "no-useless-call": 1,
-      "no-delete-var": 1,
-      "no-undef-init": 1,
-      "no-undef": 1,
-      "no-unused-vars": 1,
-      "camelcase": 0,
-      "eol-last": 1,
-      "indent": [
-        1,
-        2,
-        {
-          "SwitchCase": 1
-        }
-      ],
-      "no-array-constructor": 1,
-      "no-continue": 0,
-      "no-lonely-if": 1,
-      "no-mixed-spaces-and-tabs": 1,
-      "no-new-object": 1,
-      "no-const-assign": 1,
-      "prefer-const": 1,
-      "prefer-spread": 1
-    }
-  },
+  "license": "MIT",
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -114,24 +39,33 @@
     "plugins": [
       "react-hot-loader/babel",
       "@babel/plugin-syntax-dynamic-import",
-      "@babel/plugin-proposal-class-properties"
+      "@babel/plugin-proposal-class-properties",
+      "styled-components"
     ]
   },
   "dependencies": {
+    "@ap.cx/react-fullpage": "^0.1.10-alpha",
+    "@material-ui/core": "^4.3.2",
+    "@material-ui/icons": "^4.2.1",
+    "lodash.samplesize": "^4.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-delay-render": "^0.1.2",
+    "react-desktop": "^0.3.9",
+    "react-div-100vh": "^0.3.4",
     "react-dom": "^16.9.0",
     "react-draggable": "^3.3.0",
+    "react-ga": "^2.6.0",
     "react-imported-component": "^5.5.3",
-    "react-live-clock": "^3.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-spring": "^8.0.27",
-    "react-three-fiber": "2.2.15",
-    "react-transition-group": "^4.2.2",
+    "react-three-fiber": "2.2.17",
+    "react-use": "^10.5.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^4.3.2",
-    "three": "0.107.0"
+    "three": "0.107.0",
+    "webamp": "^1.4.1-beta01"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -142,11 +76,11 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@hot-loader/react-dom": "^16.8.6",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
+    "@svgr/webpack": "^4.3.2",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
     "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
@@ -158,7 +92,9 @@
     "cssnano": "^4.1.10",
     "dotenv": "^8.0.0",
     "eslint": "^6.1.0",
-    "eslint-config-react-app": "^5.0.0",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-flowtype": "^4.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -166,6 +102,8 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "html-webpack-plugin": "^3.2.0",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
@@ -179,7 +117,9 @@
     "url-loader": "^2.1.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
+    "webpack-dev-middleware": "^3.7.0",
     "webpack-dev-server": "^3.8.0",
+    "webpack-hot-middleware": "^2.25.0",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.2.1"
   }

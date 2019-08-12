@@ -1,9 +1,9 @@
 /*
  * required polyfills
  */
-import "core-js";
-import "core-js/features/set/map";
-import "core-js/es/symbol";
+import 'core-js';
+import 'core-js/features/set/map';
+import 'core-js/es/symbol';
 /** IE9, IE10 and IE11 requires all of the following polyfills. * */
 // import 'core-js/es6/symbol'
 // import 'core-js/es6/object'
@@ -30,16 +30,16 @@ import "core-js/es/symbol";
 
 // CustomEvent() constructor functionality in IE9, IE10, IE11
 (function() {
-  if (typeof window.CustomEvent === "function") return false;
+  if (typeof window.CustomEvent === 'function') return false;
 
   function CustomEvent(event, params) {
     params = params || { bubbles: false, cancelable: false, detail: undefined };
-    const evt = document.createEvent("CustomEvent");
+    const evt = document.createEvent('CustomEvent');
     evt.initCustomEvent(
       event,
       params.bubbles,
       params.cancelable,
-      params.detail
+      params.detail,
     );
     return evt;
   }
