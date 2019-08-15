@@ -42,7 +42,7 @@ function FooterMenu({ className, onClick }) {
     <div className={className}>
       <header>
         <img className="header__img" src={user} alt="avatar" />
-        <span className="header__text">User</span>
+        <span className="header__text">underscore</span>
       </header>
       <section className="menu" onMouseOver={onMouseOver}>
         <hr className="orange-hr" />
@@ -77,17 +77,17 @@ function FooterMenu({ className, onClick }) {
                 : {}
             }
             text={(
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 All Programs
-  <img
-                  src={allProgramsIcon}
-                  alt=""
-                  style={{
+                <img
+    src={allProgramsIcon}
+    alt=""
+    style={{
                     marginLeft: '5px',
                     height: '18px',
                   }}
-                />
-</div>
+  />
+                                                                      </div>
             )}
             icon={empty}
           >

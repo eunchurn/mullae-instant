@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import smile from './smile.svg';
+// import avatar from '@images/udscr.png';
+import avatar from './artist.png';
+
 
 function Main({ onSearch, className }) {
   const [value, setValue] = useState('');
@@ -19,7 +21,7 @@ function Main({ onSearch, className }) {
       <header>
         <div className="text">Gmail</div>
         <div className="text">Images</div>
-        <img src={smile} alt="avatar" />
+        <img src={avatar} alt='avatar' />
       </header>
       <section className="content">
         <img
@@ -53,7 +55,7 @@ function Main({ onSearch, className }) {
       <footer>
         <section className="upper">
           <div className="items left">
-            <div className="item">Taiwan</div>
+            <div className="item">Mullae, Korea</div>
           </div>
         </section>
         <section className="lower">
@@ -61,6 +63,7 @@ function Main({ onSearch, className }) {
             <div className="item">Advertising</div>
             <div className="item">Business</div>
             <div className="item">About</div>
+            <div className="item">How Search works</div>
           </div>
           <div className="items right">
             <div className="item">Privacy</div>

@@ -27,7 +27,7 @@ const dev = () => {
 
   browser.init(serverConfig);
 
-  gulp.watch('src/**/*.js').on('change', () => browser.reload());
+  gulp.watch(['src/**/*.js','build-utils/**.*.js', 'webpack.config.babel.js']).on('change', () => browser.reload());
 };
 
 export default dev;

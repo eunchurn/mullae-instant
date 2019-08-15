@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import find from './find.svg';
-import smile from './smile.svg';
+import smile from '@images/udscr.png';
+import avatar from './artist.png';
+import find from './find.png';
 
 function Search({ className, goMain, onSearch, query }) {
   const [value, setValue] = useState(query);
@@ -60,9 +61,11 @@ function Search({ className, goMain, onSearch, query }) {
             </div>
           </div>
           <div className="bar-items right">
-            <div className="functions">
-              <img src={smile} alt="smile" />
-            </div>
+            <header>
+              <div className="text">Gmail</div>
+              <div className="text">Images</div>
+              <img src={avatar} alt='avatar' />
+            </header>
           </div>
         </div>
         <div className="app-bar">
@@ -76,7 +79,7 @@ function Search({ className, goMain, onSearch, query }) {
       <section className="content">
         <p>
           Your search - <span id="search-in-content">{query}</span> - did not
-          match any documents.
+          match any documents. 바보 똥개 같으니...
         </p>
         <p>Suggestions</p>
         <ul>
@@ -88,7 +91,7 @@ function Search({ className, goMain, onSearch, query }) {
       <footer>
         <section className="upper">
           <div className="footer-items left">
-            <div className="item">Taiwan</div>
+            <div className="item">Mullae, Seoul, Korea</div>
           </div>
         </section>
         <section className="lower">
@@ -171,16 +174,26 @@ export default styled(Search)`
       color: rgb(66, 133, 244);
     }
   }
-  .functions {
+  header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    height: 100%;
-    padding-right: 14px;
-    img {
-      margin: 8px;
-      width: 24px;
+    font-size: 13px;
+    color: rgb(80, 80, 80);
+    * {
+      padding-right: 15px;
       cursor: pointer;
-      height: 24px;
+    }
+    .text:hover {
+      text-decoration: underline;
+    }
+    img {
+      width: 48px;
     }
   }
   .tags {

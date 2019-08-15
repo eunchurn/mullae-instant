@@ -24,6 +24,7 @@ import pullup from '@winxp/src/assets/windowsIcons/pullup.png';
 import logo from '@winxp/src/assets/github-logo.png';
 import mine from '@winxp/src/assets/minesweeper/mine-icon.png';
 import windows from '@winxp/src/assets/windowsIcons/windows.png';
+import instagram from '@images/instagram.png';
 
 import { WindowDropDowns } from '@winxp/src/components';
 import udscr from '@images/udscr.png';
@@ -213,7 +214,7 @@ function MyComputer({ onClose }) {
             <div className="com__content__left__card">
               <div className="com__content__left__card__header">
                 <div className="com__content__left__card__header__text">
-                  Details
+                  Favorites
                 </div>
                 <img
                   src={pullup}
@@ -222,9 +223,6 @@ function MyComputer({ onClose }) {
                 />
               </div>
               <div className="com__content__left__card__content">
-                <div className="com__content__left__card__row">
-                  <p>UNDERSCORE</p>
-                </div>
                 <div className="com__content__left__card__row">
                   <img
                     className="com__content__left__card__img"
@@ -237,10 +235,39 @@ function MyComputer({ onClose }) {
                     className="com__content__left__card__text link"
                     target="_blank"
                   >
-                    Homepage
+                    studio-underscore
                   </ga.OutboundLink>
                 </div>
-                
+                <div className="com__content__left__card__row">
+                  <img
+                    className="com__content__left__card__img"
+                    src={instagram}
+                    alt="control"
+                  />
+                  <ga.OutboundLink
+                    eventLabel="https://instagram.com/mullaeinstant"
+                    to="https://instagram.com/mullaeinstant"
+                    className="com__content__left__card__text link"
+                    target="_blank"
+                  >
+                    @mullaeinstant
+                  </ga.OutboundLink>
+                </div>
+                <div className="com__content__left__card__row">
+                  <img
+                    className="com__content__left__card__img"
+                    src={instagram}
+                    alt="control"
+                  />
+                  <ga.OutboundLink
+                    eventLabel="https://instagram.com/____________underscore"
+                    to="https://instagram.com/____________underscore"
+                    className="com__content__left__card__text link"
+                    target="_blank"
+                  >
+                    _underscore
+                  </ga.OutboundLink>
+                </div>
               </div>
             </div>
           </div>
@@ -315,9 +342,7 @@ function MyComputer({ onClose }) {
               </div>
             </div>
             <div className="com__content__right__card com__content__right__card--me">
-              <div className="com__content__right__card__header">
-                About UNDERSCORE
-              </div>
+              <div className="com__content__right__card__header">Favorites</div>
               <div className="com__content__right__card__content">
                 <ga.OutboundLink
                   eventLabel="https://studio-underscore.com"
@@ -330,9 +355,25 @@ function MyComputer({ onClose }) {
                     src={udscr}
                     alt="control"
                   />
-                  <div className="com__content__right__card__text">underscore</div>
+                  <div className="com__content__right__card__text">
+                    underscore
+                  </div>
                 </ga.OutboundLink>
-                
+                <ga.OutboundLink
+                  eventLabel="https://instagram.com/mullaeinstant"
+                  to="https://instagram.com/mullaeinstant"
+                  className="com__content__right__card__item--me"
+                  target="_blank"
+                >
+                  <img
+                    className="com__content__right__card__img"
+                    src={instagram}
+                    alt="control"
+                  />
+                  <div className="com__content__right__card__text">
+                    @mullaeinstant
+                  </div>
+                </ga.OutboundLink>
               </div>
             </div>
           </div>

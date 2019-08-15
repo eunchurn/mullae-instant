@@ -32,11 +32,15 @@ const config = {
       },
       {
         test: /\.svg$/,
-        use: '@svgr/webpack',
+        use: ['@svgr/webpack'],
       },
       {
-        test: /\.(wav|ico)$/,
+        test: /\.(wav|ico|mp3|woff|woff2|eot)$/,
         loader: 'file-loader',
+      },
+      {
+        test: /\.(txt|md)$/i,
+        use: 'raw-loader',
       },
     ],
   },

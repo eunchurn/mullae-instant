@@ -286,7 +286,7 @@ const Intro = props => {
       position: 'absolute',
       width: '100%',
       height: '100vh',
-      transform: 'matrix(0, 90, 90, 0, 0, 0)',
+      transform: 'matrix(0, 0, 0, 0, 0, 0)',
       opacity: 0,
     },
     enter: {
@@ -294,7 +294,7 @@ const Intro = props => {
       opacity: 1,
     },
     leave: { opacity: 0 },
-    config: { duration: 3000 },
+    config: { duration: 0 },
   });
   // This tiny spring right here controlls all(!) the animations, one for scroll, the other for mouse movement ...
 

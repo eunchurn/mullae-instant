@@ -1,8 +1,3 @@
-import ErrorBox from './ErrorBox';
-import MyComputer from './MyComputer';
-import Notepad from './Notepad';
-import Winamp from './Winamp';
-import Paint from './Paint';
 import iePaper from '@winxp/src/assets/windowsIcons/ie-paper.png';
 import ie from '@winxp/src/assets/windowsIcons/ie.png';
 import mine from '@winxp/src/assets/minesweeper/mine-icon.png';
@@ -14,6 +9,14 @@ import notepadLarge from '@winxp/src/assets/windowsIcons/327(32x32).png';
 import winamp from '@winxp/src/assets/windowsIcons/winamp.png';
 import paintLarge from '@winxp/src/assets/windowsIcons/680(32x32).png';
 import paint from '@winxp/src/assets/windowsIcons/680(16x16).png';
+import recycle from '@winxp/src/assets/windowsIcons/recycle-full.png';
+import Paint from './Paint';
+import Winamp from './Winamp';
+import Readme from './Readme';
+import Notepad from './Notepad';
+import MyComputer from './MyComputer';
+import Recycle from './Recycle';
+import ErrorBox from './ErrorBox';
 import Minesweeper from './Minesweeper';
 import InternetExplorer from './InternetExplorer';
 
@@ -79,12 +82,33 @@ export const defaultAppState = [
       height: 0,
     },
     defaultOffset: {
-      x: 0,
-      y: 0,
+      x: 500,
+      y: 50,
     },
     resizable: false,
     minimized: false,
     maximized: false,
+    id: genId(),
+    zIndex: genIndex(),
+  },
+  {
+    component: Readme,
+    header: {
+      title: 'README.txt - Notepad',
+      icon: notepad,
+      invisible: false,
+    },
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 300,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
     id: genId(),
     zIndex: genIndex(),
   },
@@ -134,23 +158,37 @@ export const defaultIconState = [
   },
   {
     id: 3,
-    icon: notepadLarge,
-    title: 'Notepad',
-    component: Notepad,
-    isFocus: false,
-  },
-  {
-    id: 4,
     icon: winamp,
     title: 'Winamp',
     component: Winamp,
     isFocus: false,
   },
   {
-    id: 5,
+    id: 4,
     icon: paintLarge,
     title: 'Paint',
     component: Paint,
+    isFocus: false,
+  },
+  {
+    id: 5,
+    icon: notepadLarge,
+    title: 'Notepad',
+    component: Notepad,
+    isFocus: false,
+  },
+  {
+    id: 6,
+    icon: notepadLarge,
+    title: 'README.txt',
+    component: Readme,
+    isFocus: false,
+  },
+  {
+    id: 7,
+    icon: recycle,
+    title: 'Recycle Bin',
+    component: Recycle,
     isFocus: false,
   },
 ];
@@ -197,7 +235,7 @@ export const appSettings = {
   Error: {
     header: {
       icon: error,
-      title: 'C:\\',
+      title: 'Warning',
       buttons: ['close'],
       noFooterWindow: true,
     },
@@ -253,6 +291,25 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
+  Readme: {
+    header: {
+      icon: notepad,
+      title: 'README.txt - Notepad',
+    },
+    component: Readme,
+    defaultSize: {
+      width: 660,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 280,
+      y: 70,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
   Winamp: {
     header: {
       icon: winamp,
@@ -292,6 +349,25 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
+  'Recycle Bin': {
+    header: {
+      icon: recycle,
+      title: 'Recycle Bin',
+    },
+    component: Recycle,
+    defaultSize: {
+      width: 660,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 260,
+      y: 50,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: false,
+  },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Winamp };
+export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Readme, Recycle, Winamp };
