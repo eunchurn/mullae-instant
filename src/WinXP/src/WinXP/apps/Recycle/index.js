@@ -25,7 +25,7 @@ import logo from '@winxp/src/assets/github-logo.png';
 import mine from '@winxp/src/assets/minesweeper/mine-icon.png';
 import windows from '@winxp/src/assets/windowsIcons/windows.png';
 import recycle from '@winxp/src/assets/windowsIcons/recycle.png';
-
+import instagram from '@images/instagram.png';
 import { WindowDropDowns } from '@winxp/src/components';
 import udscr from '@images/udscr.png';
 import dropDownData from './dropDownData';
