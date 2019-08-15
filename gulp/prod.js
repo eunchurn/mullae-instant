@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import config from '../webpack.config.babel';
 
-const configProd = config({ env: 'dev' });
+const configProd = config({ env: 'prod' });
 
 const prod = () => {
   return new Promise(resolve =>

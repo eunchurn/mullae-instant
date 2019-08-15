@@ -79,7 +79,7 @@ function Search({ className, goMain, onSearch, query }) {
       <section className="content">
         <p>
           Your search - <span id="search-in-content">{query}</span> - did not
-          match any documents. 바보 똥개 같으니...
+          match any documents.
         </p>
         <p>Suggestions</p>
         <ul>
