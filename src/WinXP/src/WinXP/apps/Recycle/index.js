@@ -223,10 +223,7 @@ function Recycle({ onClose }) {
                 />
               </div>
               <div className="com__content__left__card__content">
-                <div className="com__content__left__card__row">
-                  <p>UNDERSCORE</p>
-                </div>
-                <div className="com__content__left__card__row">
+              <div className="com__content__left__card__row">
                   <img
                     className="com__content__left__card__img"
                     src={udscr}
@@ -238,7 +235,22 @@ function Recycle({ onClose }) {
                     className="com__content__left__card__text link"
                     target="_blank"
                   >
-                    Homepage
+                    studio-underscore
+                  </ga.OutboundLink>
+                </div>
+                <div className="com__content__left__card__row">
+                  <img
+                    className="com__content__left__card__img"
+                    src={instagram}
+                    alt="control"
+                  />
+                  <ga.OutboundLink
+                    eventLabel="https://instagram.com/mullaeinstant"
+                    to="https://instagram.com/mullaeinstant"
+                    className="com__content__left__card__text link"
+                    target="_blank"
+                  >
+                    @mullaeinstant
                   </ga.OutboundLink>
                 </div>
                 
@@ -259,7 +271,7 @@ function Recycle({ onClose }) {
                   />
                   <div className="com__content__right__card__img-container">
                     <div className="com__content__right__card__text">
-                      마이크 드랍
+                      지우지 말것
                     </div>
                   </div>
                 </div>
@@ -271,7 +283,7 @@ function Recycle({ onClose }) {
                   />
                   <div className="com__content__right__card__img-container">
                     <div className="com__content__right__card__text">
-                      박은천 그지 똥개
+                      진짜 쓰레기
                     </div>
                   </div>
                 </div>

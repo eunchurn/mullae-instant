@@ -10,7 +10,7 @@ export const initState = {
 export const progressReducer = (state = initState, action = {}) => {
   switch (action.type) {
     case 'NEXT':
-      const nextValue = state.value + 10;
+      const nextValue = state.value + 1;
       return {
         value: nextValue,
         hint: getText(nextValue),
@@ -32,7 +32,7 @@ const MacOS = ({ className, initState }) => {
   useEffect(() => {
     let timer;
     if (progress.value <= 100) {
-      timer = setTimeout(next, 10);
+      timer = setTimeout(next, 30);
     } else {
       setClockDown(true);
       clearTimeout(timer);
