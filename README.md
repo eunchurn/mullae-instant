@@ -1,76 +1,64 @@
-# React Webpack ES6 Boilerplate
-## [Esau Silva](https://medium.freecodecamp.org/learn-webpack-for-react-a36d4cac5060) 튜토리얼 ([번역](https://sujinlee.me/webpack-react-tutorial/)) 기반 Features
-- Hot Module Replacement (HMR)
-- Code Split (by Chunk)
-- Code Split (by Vendor)
-- Production build (Webpack config files)
-- Webpack Composition
+# Mullaeinstant Web Project
 
-## Additional features
-- `core-js@2` Polyfill Applied
+## Description
 
-`index.js`
-```
-import 'react-app-polyfill/ie9'; // For IE 9-11 support
-import 'react-app-polyfill/ie11'; // For IE 11 support
-import './polyfill'
-```
-
-`polyfill.js`
-
-IE9, IE10 and IE11 requires all of the following polyfills.
-```
-import 'core-js/es6/symbol'
-import 'core-js/es6/object'
-import 'core-js/es6/function'
-import 'core-js/es6/parse-int'
-import 'core-js/es6/parse-float'
-import 'core-js/es6/number'
-import 'core-js/es6/math'
-import 'core-js/es6/string'
-import 'core-js/es6/date'
-import 'core-js-pure/es/array'
-import 'core-js/es6/regexp'
-import 'core-js-pure/es/map'
-import 'core-js/es6/weak-map'
-import 'core-js-pure/es/set'
-import 'core-js-pure/es/object'
-```
-IE10 and IE11 requires the following for the Reflect API.
-```
-import 'core-js/es6/reflect'
-```
-Evergreen browsers require these. Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-```
-import 'core-js/es7/reflect'
-```
-- Manifesto generation and Assets (`public/assets` copy to `dist` for production build)
-```
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-...
-  plugins: [
-...
-    new CopyWebpackPlugin([
-      { from : 'public/assets', to : 'assets'}
-    ]),
-    new ManifestPlugin()
-  ],
-```
+\#mullaeinstant\_ explores the modus operandi of an art “work”. It traces how the various activities of creation taking place in Mullae, a space of the real, come to be saved, circulated, reproduced and dispersed through the cyber space, a visual field to be manipulated as well as an apparatus that mediates them all. #mullaeinstant_ is thus an experiment on the physical/conceptual elasticity of the stage. It has been selected as part of “2019 MEET” organized by Seoul Foundation of Arts and Culture and Seoul Art Space Mullae, and sponsored by GS SHOP.
 
 ## Getting started
-Install dependencies
+
+- Clone repo
+
+```bash
+git clone https://github.com/eunchurn/mullae-instant
 ```
+
+- Install dependencies
+
+```bash
 npm i
 ```
-Then run dev script
-```
+
+- Then run dev script
+
+```bash
 npm run dev
 ```
-Open `localhost:3000`
+
+- Open `localhost:3100`, Browser sync UI `localhost:3101`
+
 ## Build
-```
+
+```bash
 npm run build
 ```
-Cleans existing `dist` folder while linting `src` folder. Then sets environment to production and compiles into `dist`.
 
+## Deployment
+
+- Modify remote repository and branch in `./gulp/deploy.js`
+
+```bash
+npm run deploy
+```
+
+## Demo
+
+[mullaeinstant.com](https://mullaeinstant.com/)
+
+## Motivation & Licenses
+
+### Motivation
+
+The following open source projects have helped to bring together applications that can use React.js and Three.js and a desktop on the web.
+
+### Three.js glitch background effect
+
+- Original code: example code of https://github.com/drcmda/react-three-fiber
+- Copyright (c) 2019 Paul Henschel and other contributors. Released under the MIT license.
+- modified by Eunchurn Park
+
+### Screen loading and WinXP desktop
+
+- Original code: https://github.com/ShizukuIchi/winXP and https://github.com/ShizukuIchi/fake-screen
+- Copyright (c) 2019 Shizuku Yang and other contributors. Released under the MIT license.
+- The Windows XP name, artwork, trademark are surely property of Microsoft. This project is provided for educational purposes only. It is not affiliated with and has not been approved by Microsoft.
+- modified by Eunchurn Park

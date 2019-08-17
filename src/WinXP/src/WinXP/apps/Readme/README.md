@@ -1,5 +1,7 @@
 # #mullae_instant
 
+**본 사이트는 Chome, Firefox, Edge등의 모던 웹브라우저와 데스크탑에 최적화 되어있습니다.**
+
 ```bash
                    |ZZzzz
                    |

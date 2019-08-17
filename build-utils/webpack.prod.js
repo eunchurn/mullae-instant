@@ -4,9 +4,9 @@ const commonPaths = require('./common-paths');
 
 const config = {
   mode: 'production',
-  entry: {
-    app: ['babel-polyfill', `${commonPaths.appEntry}/index.js`],
-  },
+  // entry: {
+  //   app: ['babel-polyfill', `${commonPaths.appEntry}/index.js`],
+  // },
   output: {
     filename: 'static/[name].[hash].js',
   },

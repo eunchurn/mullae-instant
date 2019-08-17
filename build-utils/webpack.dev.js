@@ -3,9 +3,9 @@ const webpack = require('webpack');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const config = {
   mode: 'development',
-  entry: {
-    app: ['babel-polyfill', `${commonPaths.appEntry}/index.js`],
-  },
+  // entry: {
+  //   app: ['babel-polyfill', `${commonPaths.appEntry}/index.js`],
+  // },
   output: {
     filename: '[name].[hash].js',
   },

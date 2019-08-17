@@ -1,3 +1,12 @@
+/**
+ * Original code
+ * example code of https://github.com/drcmda/react-three-fiber
+ * 
+ * Copyright (c) 2019 Paul Henschel and other contributors
+ * Released under the MIT license.
+ * 
+ * modified by Eunchurn Park
+ */
 import * as THREE from 'three/src/Three';
 import React, {
   useState,

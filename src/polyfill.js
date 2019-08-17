@@ -1,9 +1,14 @@
+// import '@babel/polyfill';
+import 'core-js';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+
 /*
  * required polyfills
  */
-import 'core-js';
-import 'core-js/features/set/map';
-import 'core-js/es/symbol';
+// import 'core-js';
+// import 'core-js/features/set/map';
+// import 'core-js/es/symbol';
 /** IE9, IE10 and IE11 requires all of the following polyfills. * */
 // import 'core-js/es6/symbol'
 // import 'core-js/es6/object'

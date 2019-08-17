@@ -6,7 +6,7 @@ const commonPaths = require('./common-paths');
 
 const config = {
   entry: {
-    vendor: ['three'],
+    app: [`${commonPaths.appEntry}/index.js`],
   },
   output: {
     path: commonPaths.outputPath,
