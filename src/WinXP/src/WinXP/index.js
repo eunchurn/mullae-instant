@@ -2,7 +2,7 @@ import React, { useReducer, useRef, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import useMouse from 'react-use/lib/useMouse';
 import ga from 'react-ga';
-
+import bg from '../assets/winxp.mp4';
 import { DashedBox } from '@winxp/src/components';
 import {
   ADD_APP,
@@ -79,8 +79,8 @@ const reducer = (state, action = { type: '' }) => {
           state.apps.length > 1
             ? FOCUSING.WINDOW
             : state.icons.find(icon => icon.isFocus)
-              ? FOCUSING.ICON
-              : FOCUSING.DESKTOP,
+            ? FOCUSING.ICON
+            : FOCUSING.DESKTOP,
       };
     case FOCUS_APP: {
       const apps = state.apps.map(app =>
@@ -187,12 +187,9 @@ function WinXP() {
   const ref = useRef(null);
   const mouse = useMouse(ref);
   const focusedAppId = getFocusedAppId();
-  const onFocusApp = useCallback(
-    id => {
-      dispatch({ type: FOCUS_APP, payload: id });
-    },
-    [],
-  );
+  const onFocusApp = useCallback(id => {
+    dispatch({ type: FOCUS_APP, payload: id });
+  }, []);
   const onMaximizeWindow = useCallback(
     id => {
       if (focusedAppId === id && state.focusing === FOCUSING.WINDOW) {
@@ -298,6 +295,11 @@ function WinXP() {
       onMouseDown={onMouseDownDesktop}
       state={state.powerState}
     >
+      <VideoWrapper>
+        <video autoPlay loop muted playsInline>
+          <source src={bg} type="video/mp4" />
+        </video>
+      </VideoWrapper>
       <Icons
         icons={state.icons}
         onMouseDown={onMouseDownIcon}
@@ -359,11 +361,52 @@ const Container = styled.div`
   overflow: hidden;
   position: relative;
   padding: 0;
-  background: url(https://i.imgur.com/Zk6TR5k.jpg) no-repeat center center fixed;
-  background-size: cover;
+  // background: url(https://i.imgur.com/Zk6TR5k.jpg) no-repeat center center fixed;
+  // background-size: cover;
   animation: ${({ state }) => animation[state]} 5s forwards;
   *:not(input):not(textarea) {
     user-select: none;
+  }
+`;
+
+const VideoWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // z-index: -3;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  iframe {
+    // width: 100vw;
+    // height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    // min-height: 100vh;
+    // min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  video {
+    /* Make video to at least 100% wide and tall */
+    min-width: 100%; 
+    min-height: 100%; 
+  
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+  
+    /* Center the video */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
 `;
 

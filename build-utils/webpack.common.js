@@ -39,6 +39,10 @@ const config = {
         loader: 'file-loader',
       },
       {
+        test: /\.mp4$/,
+        loader: 'url?limit=10000&mimetype=video/mp4',
+      },
+      {
         test: /\.(txt|md)$/i,
         use: 'raw-loader',
       },
