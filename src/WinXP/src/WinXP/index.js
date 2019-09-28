@@ -1,9 +1,9 @@
-import React, { useReducer, useRef, useCallback } from 'react';
+import React, { useReducer, useEffect, useRef, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import useMouse from 'react-use/lib/useMouse';
 import ga from 'react-ga';
-import bg from '../assets/winxp.mp4';
 import { DashedBox } from '@winxp/src/components';
+import bg from '../assets/winxp.mp4';
 import {
   ADD_APP,
   DEL_APP,
@@ -182,10 +182,18 @@ const reducer = (state, action = { type: '' }) => {
       return state;
   }
 };
-function WinXP() {
+
+const WinXP = () => {
   const [state, dispatch] = useReducer(reducer, initState);
   const ref = useRef(null);
+  const videoRef = useRef();
   const mouse = useMouse(ref);
+  const getFocusedAppId = () => {
+    const focusedApp = [...state.apps]
+      .sort((a, b) => b.zIndex - a.zIndex)
+      .find(app => !app.minimized);
+    return focusedApp ? focusedApp.id : -1;
+  };
   const focusedAppId = getFocusedAppId();
   const onFocusApp = useCallback(id => {
     dispatch({ type: FOCUS_APP, payload: id });
@@ -214,32 +222,25 @@ function WinXP() {
     },
     [focusedAppId, state.focusing],
   );
-  function onMouseDownFooterApp(id) {
+  const onMouseDownFooterApp = id => {
     if (focusedAppId === id) {
       dispatch({ type: MINIMIZE_APP, payload: id });
     } else {
       dispatch({ type: FOCUS_APP, payload: id });
     }
-  }
-  function onMouseDownIcon(id) {
+  };
+  const onMouseDownIcon = id => {
     dispatch({ type: FOCUS_ICON, payload: id });
-  }
-  function onDoubleClickIcon(component) {
+  };
+  const onDoubleClickIcon = component => {
     const appSetting = Object.values(appSettings).find(
       setting => setting.component === component,
     );
     dispatch({ type: ADD_APP, payload: appSetting });
-  }
-  function getFocusedAppId() {
-    const focusedApp = [...state.apps]
-      .sort((a, b) => b.zIndex - a.zIndex)
-      .find(app => !app.minimized);
-    return focusedApp ? focusedApp.id : -1;
-  }
-  function onMouseDownFooter() {
-    dispatch({ type: FOCUS_DESKTOP });
-  }
-  function onClickMenuItem(o) {
+  };
+  const onMouseDownFooter = () => dispatch({ type: FOCUS_DESKTOP });
+
+  const onClickMenuItem = o => {
     if (o === 'Internet')
       dispatch({ type: ADD_APP, payload: appSettings['Internet Explorer'] });
     else if (o === 'Minesweeper')
@@ -264,30 +265,31 @@ function WinXP() {
           injectProps: { message: 'C:\\\nApplication not found' },
         },
       });
-  }
-  function onMouseDownDesktop(e) {
+  };
+  const onMouseDownDesktop = e => {
     if (e.target === e.currentTarget)
       dispatch({
         type: START_SELECT,
         payload: { x: mouse.docX, y: mouse.docY },
       });
-  }
-  function onMouseUpDesktop(e) {
-    dispatch({ type: END_SELECT });
-  }
-  function onIconsSelected(iconIds) {
+  };
+  const onMouseUpDesktop = e => dispatch({ type: END_SELECT });
+
+  const onIconsSelected = iconIds =>
     dispatch({ type: SELECT_ICONS, payload: iconIds });
-  }
-  function onClickModalButton(text) {
+
+  const onClickModalButton = text => {
     dispatch({ type: CANCEL_POWER_OFF });
     dispatch({
       type: ADD_APP,
       payload: appSettings.Error,
     });
-  }
-  function onModalClose() {
-    dispatch({ type: CANCEL_POWER_OFF });
-  }
+  };
+  const onModalClose = () => dispatch({ type: CANCEL_POWER_OFF });
+  useEffect(()=> {
+    const video = document.querySelector("video");
+    video.playbackRate = 1;
+  },[]);
   return (
     <Container
       ref={ref}
@@ -335,7 +337,7 @@ function WinXP() {
       )}
     </Container>
   );
-}
+};
 
 const powerOffAnimation = keyframes`
   0% {
@@ -395,18 +397,18 @@ const VideoWrapper = styled.div`
   }
   video {
     /* Make video to at least 100% wide and tall */
-    min-width: 100%; 
-    min-height: 100%; 
-  
+    min-width: 100%;
+    min-height: 100%;
+
     /* Setting width & height to auto prevents the browser from stretching or squishing the video */
     width: auto;
     height: auto;
-  
+
     /* Center the video */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 `;
 
