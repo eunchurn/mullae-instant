@@ -139,7 +139,7 @@ function MineSweeperView({
       default:
         openingCeil(-1);
     }
-  }, [openBehavior.index, openBehavior.behavior, openBehavior, openingCeil, openingCeils]);
+  }, []); // [openBehavior.index, openBehavior.behavior, openBehavior, openingCeil, openingCeils]
   function onMouseDownCeils(e) {
     const index = Array.prototype.indexOf.call(
       e.currentTarget.children,
