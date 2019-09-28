@@ -24,7 +24,7 @@ const config = {
         },
       },
       {
-        test: /\.(jpg|jpeg|png|gif|woff|woff2|eot|ttf)(\?[a-z0-9=.]+)?$/,
+        test: /\.(jpg|jpeg|png|gif|woff|woff2|eot|ttf|mp4)(\?[a-z0-9=.]+)?$/,
         loader: 'url-loader',
         options: {
           limit: 8192,
@@ -37,10 +37,6 @@ const config = {
       {
         test: /\.(wav|ico|mp3|woff|woff2|eot)$/,
         loader: 'file-loader',
-      },
-      {
-        test: /\.mp4$/,
-        loader: 'url?limit=10000&mimetype=video/mp4',
       },
       {
         test: /\.(txt|md)$/i,
