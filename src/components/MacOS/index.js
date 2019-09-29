@@ -32,7 +32,7 @@ const MacOS = ({ className, initState }) => {
   useEffect(() => {
     let timer;
     if (progress.value <= 100) {
-      timer = setTimeout(next, 30);
+      timer = setTimeout(next, 5);
     } else {
       setClockDown(true);
       clearTimeout(timer);

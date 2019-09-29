@@ -3,25 +3,24 @@ import styled from 'styled-components';
 // import avatar from '@images/udscr.png';
 import avatar from './artist.png';
 
-
-function Main({ onSearch, className }) {
+const Main = ({ onSearch, className }) => {
   const [value, setValue] = useState('');
-  function onChange(e) {
+  const onChange = e => {
     setValue(e.target.value);
-  }
-  function onClick() {
+  };
+  const onClick = () => {
     onSearch(value);
-  }
-  function onKeyDown(e) {
+  };
+  const onKeyDown = e => {
     if (e.key !== 'Enter') return;
     onSearch(value);
-  }
+  };
   return (
     <div className={className}>
       <header>
         <div className="text">Gmail</div>
         <div className="text">Images</div>
-        <img src={avatar} alt='avatar' />
+        <img src={avatar} alt="avatar" />
       </header>
       <section className="content">
         <img
@@ -32,8 +31,9 @@ function Main({ onSearch, className }) {
         <div className="search-bar">
           <input
             id="search"
-            type="text"
+            type="search"
             name="search"
+            results={5}
             onChange={onChange}
             value={value}
             onKeyDown={onKeyDown}
@@ -46,10 +46,10 @@ function Main({ onSearch, className }) {
           </div>
         </div>
         <div className="buttons">
-          <button onClick={onClick} id="enter">
+          <button onClick={onClick} id="enter" type="button">
             Google Search
           </button>
-          <button>I'm Feeling Lucky</button>
+          <button type="button">I&lsquo;m Feeling Lucky</button>
         </div>
       </section>
       <footer>
@@ -74,7 +74,7 @@ function Main({ onSearch, className }) {
       </footer>
     </div>
   );
-}
+};
 
 export default styled(Main)`
   height: 100%;
@@ -118,7 +118,7 @@ export default styled(Main)`
       height: 46px;
       border: 1px solid rgba(0, 0, 0, 0.1);
       box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2);
-      border-radius: 2px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       padding: 0 8px 0 16px;

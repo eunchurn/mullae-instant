@@ -19,7 +19,8 @@ import stop from '@winxp/src/assets/windowsIcons/stop.png';
 import windows from '@winxp/src/assets/windowsIcons/windows.png';
 import dropdown from '@winxp/src/assets/windowsIcons/dropdown.png';
 
-import { WindowDropDowns, Google } from '@winxp/src/components';
+// import { WindowDropDowns, Google } from '@winxp/src/components';
+import { WindowDropDowns, Wiki } from '@winxp/src/components';
 import dropDownData from './dropDownData';
 
 function InternetExplorer({ onClose }) {
@@ -137,7 +138,7 @@ function InternetExplorer({ onClose }) {
         <div className="ie__address_bar__content">
           <img src={ie} alt="ie" className="ie__address_bar__content__img" />
           <div className="ie__address_bar__content__text">
-            {`https://goog1e.com${
+            {`https:/wiki.mullaeinstant.com${
               state.route === 'search'
                 ? `/search?q=${encodeURIComponent(state.query)}`
                 : ''
@@ -165,7 +166,7 @@ function InternetExplorer({ onClose }) {
       </section>
       <div className="ie__content">
         <div className="ie__content__inner">
-          <Google
+          <Wiki
             route={state.route}
             query={state.query}
             onSearch={onSearch}
@@ -400,8 +401,8 @@ const Div = styled.div`
   }
   .ie__content__inner {
     position: relative;
-    min-height: 800px;
-    min-width: 800px;
+    // min-height: 800px;
+    // min-width: 800px;
     width: 100%;
     height: 100%;
   }
