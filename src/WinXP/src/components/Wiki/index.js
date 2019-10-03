@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-// import ReactMarkdown from 'react-markdown';
+import description from "./description.md";
+import ReactMarkdown from 'react-markdown';
 
 const Container = styled.div`
   // position: relative;
@@ -81,7 +82,8 @@ const Main = ({ className }) => {
       <Container>
         <Recto>
           <ContentCover>
-            <h2>DESCRIPTION</h2>
+            <ReactMarkdown source={description} />
+            {/* <h2>DESCRIPTION</h2>
             <h3>
               문래 인스턴트는 ‘작업실’을 테마로, 작업의 작동방식(modus
               operandi)를 탐구하는 프로젝트이다. 언더스코어는 ‘문래창작촌’이라는
@@ -120,7 +122,7 @@ const Main = ({ className }) => {
                 *This project has been selected as part of the 2019 MEET
                 program* 
               </li>
-            </h3>
+            </h3> */}
           </ContentCover>
         </Recto>
         <Verso>
