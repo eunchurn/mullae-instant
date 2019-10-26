@@ -2,27 +2,28 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import antiheroic from './anti-heroic.md';
-import artwork from "./artwork.md";
-import beingmoved from "./being-moved.md";
-import camp from "./camp.md";
-import choreography from "./choreography.md";
-import defacto from "./defacto.md";
-import digital from "./digital.md";
-import glamour from "./glamour.md";
-import makebelieve from "./makebelieve.md";
-import manifesto from "./manifesto.md";
-import modusoperandi from "./modusoperandi.md";
-import moving from "./moving.md";
-import spectacle from "./spectacle.md";
-import spectator from "./spectator.md";
-import stage from "./stage.md";
-import starimage from "./starimage.md";
-import style from "./style.md";
-import supplement from "./supplement.md";
-import transcendency from "./transcendency.md";
-import transformation from "./transformation.md";
-import virtuosity from "./virtuosity.md";
-import wiles from "./wiles.md";
+import artwork from './artwork.md';
+import beingmoved from './being-moved.md';
+import camp from './camp.md';
+import choreography from './choreography.md';
+import defacto from './defacto.md';
+import digital from './digital.md';
+import glamour from './glamour.md';
+import makebelieve from './makebelieve.md';
+import manifesto from './manifesto.md';
+import modusoperandi from './modusoperandi.md';
+import moving from './moving.md';
+import spectacle from './spectacle.md';
+import spectator from './spectator.md';
+import stage from './stage.md';
+import starimage from './starimage.md';
+import style from './style.md';
+import supplement from './supplement.md';
+import transcendency from './transcendency.md';
+import transformation from './transformation.md';
+import virtuosity from './virtuosity.md';
+import wiles from './wiles.md';
+import mullaeinstant from './mullaeinstant-dic.md';
 
 const Container = styled.div`
   // position: relative;
@@ -98,41 +99,67 @@ const Verso = styled.div`
   }
 `;
 
+const ContentTitle = styled.div`
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 24px;
+`;
+const TagContainer = styled.div`
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+`;
+
+const Tag = styled.span`
+  margin-top: 20px;
+  padding-left: 10px;
+  display: inline-block;
+  cursor: help;
+`;
+
 const Main = ({ className }) => {
-  const [state, setState] = useState(antiheroic);
+  const [state, setState] = useState(mullaeinstant);
   return (
     <div className={className}>
       <Container>
         <Recto>
           <ContentCover>
-            <ReactMarkdown source={state} />
+            <ReactMarkdown source={state} escapeHtml={false} />
           </ContentCover>
         </Recto>
         <Verso>
           <ContentCover>
-            <h1>#mullae_instant Wiki</h1>
-            <div onClick={() => setState(antiheroic)}><h3>#anti-heroic</h3></div>
-            <div onClick={() => setState(artwork)}><h3>#artwork</h3></div>
-            <div onClick={() => setState(beingmoved)}><h3>#being-moved</h3></div>
-            <div onClick={() => setState(camp)}><h3>#camp</h3></div>
-            <div onClick={() => setState(choreography)}><h3>#choreography</h3></div>
-            <div onClick={() => setState(defacto)}><h3>#De_facto</h3></div>
-            <div onClick={() => setState(digital)}><h3>#digital</h3></div>
-            <div onClick={() => setState(glamour)}><h3>#glamour</h3></div>
-            <div onClick={() => setState(makebelieve)}><h3>#make-believe</h3></div>
-            <div onClick={() => setState(manifesto)}><h3>#manifesto</h3></div>
-            <div onClick={() => setState(modusoperandi)}><h3>#modus_operandi</h3></div>
-            <div onClick={() => setState(moving)}><h3>#moving</h3></div>
-            <div onClick={() => setState(spectacle)}><h3>#spectacle</h3></div>
-            <div onClick={() => setState(spectator)}><h3>#spectator</h3></div>
-            <div onClick={() => setState(stage)}><h3>#stage</h3></div>
-            <div onClick={() => setState(starimage)}><h3>#star_image</h3></div>
-            <div onClick={() => setState(style)}><h3>#style</h3></div>
-            <div onClick={() => setState(supplement)}><h3>#supplement</h3></div>
-            <div onClick={() => setState(transcendency)}><h3>#transcendency</h3></div>
-            <div onClick={() => setState(transformation)}><h3>#transformation</h3></div>
-            <div onClick={() => setState(virtuosity)}><h3>#virtuosity</h3></div>
-            <div onClick={() => setState(wiles)}><h3>#wiles</h3></div>
+            <ContentTitle onClick={() => setState(mullaeinstant)}>
+              <span role="img" aria-label="book">
+                underscore dictionary 📒
+              </span>
+            </ContentTitle>
+            <TagContainer>
+              <Tag onClick={() => setState(antiheroic)}>#anti-heroic</Tag>
+              <Tag onClick={() => setState(artwork)}>#artwork</Tag>
+              <Tag onClick={() => setState(beingmoved)}>#being-moved</Tag>
+              <Tag onClick={() => setState(camp)}>#camp</Tag>
+              <Tag onClick={() => setState(choreography)}>#choreography</Tag>
+              <Tag onClick={() => setState(defacto)}>#De_facto</Tag>
+              <Tag onClick={() => setState(digital)}>#digital</Tag>
+              <Tag onClick={() => setState(glamour)}>#glamour</Tag>
+              <Tag onClick={() => setState(makebelieve)}>#make-believe</Tag>
+              <Tag onClick={() => setState(manifesto)}>#manifesto</Tag>
+              <Tag onClick={() => setState(modusoperandi)}>#modus_operandi</Tag>
+              <Tag onClick={() => setState(moving)}>#moving</Tag>
+              <Tag onClick={() => setState(spectacle)}>#spectacle</Tag>
+              <Tag onClick={() => setState(spectator)}>#spectator</Tag>
+              <Tag onClick={() => setState(stage)}>#stage</Tag>
+              <Tag onClick={() => setState(starimage)}>#star_image</Tag>
+              <Tag onClick={() => setState(style)}>#style</Tag>
+              <Tag onClick={() => setState(supplement)}>#supplement</Tag>
+              <Tag onClick={() => setState(transcendency)}>#transcendency</Tag>
+              <Tag onClick={() => setState(transformation)}>
+                #transformation
+              </Tag>
+              <Tag onClick={() => setState(virtuosity)}>#virtuosity</Tag>
+              <Tag onClick={() => setState(wiles)}>#wiles</Tag>
+            </TagContainer>
           </ContentCover>
         </Verso>
       </Container>

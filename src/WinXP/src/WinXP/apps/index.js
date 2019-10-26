@@ -19,6 +19,7 @@ import Recycle from './Recycle';
 import ErrorBox from './ErrorBox';
 import Minesweeper from './Minesweeper';
 import InternetExplorer from './InternetExplorer';
+import Post from './Postit';
 
 const gen = () => {
   let id = -1;
@@ -37,7 +38,7 @@ export const defaultAppState = [
       icon: iePaper,
     },
     defaultSize: {
-      width: 700,
+      width: 900,
       height: 500,
     },
     defaultOffset: {
@@ -112,6 +113,27 @@ export const defaultAppState = [
     id: genId(),
     zIndex: genIndex(),
   },
+  // {
+  //   component: Post,
+  //   header: {
+  //     title: 'Postit',
+  //     icon: notepad,
+  //     invisible: true,
+  //   },
+  //   defaultSize: {
+  //     width: 0,
+  //     height: 0,
+  //   },
+  //   defaultOffset: {
+  //     x: 300,
+  //     y: 30,
+  //   },
+  //   resizable: false,
+  //   minimized: false,
+  //   maximized: false,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
   {
     component: MyComputer,
     header: {
@@ -253,6 +275,26 @@ export const appSettings = {
     maximized: false,
     multiInstance: true,
   },
+  Postit: {
+    header: {
+      icon: paint,
+      title: 'Post-it',
+      invisible: true,
+    },
+    component: Post,
+    defaultSize: {
+      width: 0,
+      height: 0,
+    },
+    defaultOffset: {
+      x: 280,
+      y: 70,
+    },
+    resizable: false,
+    minimized: false,
+    maximized: false,
+    multiInstance: true,
+  },
   'My Computer': {
     header: {
       icon: computer,
@@ -370,4 +412,14 @@ export const appSettings = {
   },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Readme, Recycle, Winamp };
+export {
+  InternetExplorer,
+  Minesweeper,
+  ErrorBox,
+  MyComputer,
+  Notepad,
+  Readme,
+  Recycle,
+  Winamp,
+  Post,
+};

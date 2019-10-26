@@ -138,7 +138,7 @@ function InternetExplorer({ onClose }) {
         <div className="ie__address_bar__content">
           <img src={ie} alt="ie" className="ie__address_bar__content__img" />
           <div className="ie__address_bar__content__text">
-            {`https://wiki.mullaeinstant.com${
+            {`https://dic.mullaeinstant.com${
               state.route === 'search'
                 ? `/search?q=${encodeURIComponent(state.query)}`
                 : ''
