@@ -1,6 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CnameWebpackPlugin = require('cname-webpack-plugin');
-const commonPaths = require('./common-paths');
+const TerserPlugin = require('terser-webpack-plugin');
+// const commonPaths = require('./common-paths');
 
 const config = {
   mode: 'production',
@@ -48,5 +49,20 @@ const config = {
       domain: 'mullaeinstant.com',
     }),
   ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        sourceMap: true,
+        terserOptions: {
+          compress: {
+            drop_console: true
+          },
+          keep_classnames: undefined,
+          keep_fnames: false,
+          warnings: false,
+        }
+      })
+    ]
+  }
 };
 module.exports = config;

@@ -46,8 +46,7 @@
     "plugins": [
       "react-hot-loader/babel",
       "@babel/plugin-syntax-dynamic-import",
-      "@babel/plugin-proposal-class-properties",
-      "styled-components"
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "dependencies": {
@@ -131,6 +130,7 @@
     "rimraf": "^2.6.3",
     "shelljs": "^0.8.3",
     "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.2.1",
     "typescript": "^3.5.3",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.1",
