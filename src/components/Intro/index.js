@@ -20,7 +20,7 @@ import {
 import { apply as applySpring, useSpring, a } from 'react-spring/three';
 import { useTransition, animated } from 'react-spring';
 import styled from 'styled-components';
-import MacOS from '@components/MacOS';
+import Loader from '@components/Loader';
 
 // Import and register postprocessing classes as three-native-elements for both react-three-fiber & react-spring
 // They'll be available as native elements <effectComposer /> from then on ...
@@ -189,7 +189,7 @@ const Intro = props => {
                 <StyledCanvas>
                   <Scene top={top} mouse={mouse} />
                 </StyledCanvas>
-                <MacOS />
+                <Loader />
               </animated.div>
             ),
         )}

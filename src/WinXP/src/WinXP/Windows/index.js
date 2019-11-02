@@ -5,50 +5,71 @@ import styled from 'styled-components';
 
 import HeaderButtons from './HeaderButtons';
 
-function Windows({
+const Windows = ({
   apps,
   onMouseDown,
   onClose,
   onMinimize,
   onMaximize,
   focusedAppId,
-}) {
+}) => {
   return (
     <div style={{ position: 'relative', zIndex: 0 }}>
-      {apps.map(app => (
-        <StyledWindow
-          show={!app.minimized}
-          key={app.id}
-          id={app.id}
-          onMouseDown={onMouseDown}
-          onMouseUpClose={onClose}
-          onMouseUpMinimize={onMinimize}
-          onMouseUpMaximize={onMaximize}
-          isFocus={focusedAppId === app.id} // for styledWindow
-          {...app}
-        />
-      ))}
+      {apps.map(app => {
+        // console.log(app);
+        const {
+          id,
+          minimized,
+          header,
+          defaultSize,
+          defaultOffset,
+          resizable,
+          maximized,
+          component,
+          zIndex,
+        } = app;
+        return (
+          <StyledWindow
+            show={!minimized}
+            key={id}
+            id={id}
+            onMouseDown={onMouseDown}
+            onMouseUpClose={onClose}
+            onMouseUpMinimize={onMinimize}
+            onMouseUpMaximize={onMaximize}
+            isFocus={focusedAppId === id} // for styledWindow
+            header={header}
+            defaultSize={defaultSize}
+            defaultOffset={defaultOffset}
+            resizable={resizable}
+            maximized={maximized}
+            component={component}
+            zIndex={zIndex}
+          />
+        );
+      })}
     </div>
   );
-}
+};
 
-const Window = memo(function({
-  injectProps,
-  id,
-  onMouseDown,
-  onMouseUpClose,
-  onMouseUpMinimize,
-  onMouseUpMaximize,
-  header,
-  defaultSize,
-  defaultOffset,
-  resizable,
-  maximized,
-  component,
-  zIndex,
-  isFocus,
-  className,
-}) {
+const Window = memo(props => {
+  const {
+    // injectProps,
+    id,
+    onMouseDown,
+    onMouseUpClose,
+    onMouseUpMinimize,
+    onMouseUpMaximize,
+    header,
+    defaultSize,
+    defaultOffset,
+    resizable,
+    maximized,
+    component,
+    zIndex,
+    isFocus,
+    className,
+  } = props;
   function _onMouseDown() {
     onMouseDown(id);
   }
@@ -77,7 +98,10 @@ const Window = memo(function({
     resizable,
     resizeThreshold: 10,
   });
-  let width; let height; let x; let y;
+  let width;
+  let height;
+  let x;
+  let y;
   if (maximized) {
     width = windowWidth + 6;
     height = windowHeight - 24;
@@ -100,6 +124,8 @@ const Window = memo(function({
         height: height ? `${height}px` : 'auto',
         zIndex,
       }}
+      // role="button"
+      // tabIndex={-1}
     >
       <div className="header__bg" />
       <header className="app__header" ref={dragRef}>
@@ -124,7 +150,7 @@ const Window = memo(function({
           onClose: _onMouseUpClose,
           onMinimize: _onMouseUpMinimize,
           isFocus,
-          ...injectProps,
+          // ...injectProps,
         })}
       </div>
     </div>
@@ -142,9 +168,9 @@ const StyledWindow = styled(Window)`
   border-top-right-radius: 8px;
   .header__bg {
     background: ${({ isFocus }) =>
-    isFocus
-      ? 'linear-gradient(to bottom,#0058ee 0%,#3593ff 4%,#288eff 6%,#127dff 8%,#036ffc 10%,#0262ee 14%,#0057e5 20%,#0054e3 24%,#0055eb 56%,#005bf5 66%,#026afe 76%,#0062ef 86%,#0052d6 92%,#0040ab 94%,#003092 100%)'
-      : 'linear-gradient(to bottom, #7697e7 0%,#7e9ee3 3%,#94afe8 6%,#97b4e9 8%,#82a5e4 14%,#7c9fe2 17%,#7996de 25%,#7b99e1 56%,#82a9e9 81%,#80a5e7 89%,#7b96e1 94%,#7a93df 97%,#abbae3 100%)'};
+      isFocus
+        ? 'linear-gradient(to bottom,#0058ee 0%,#3593ff 4%,#288eff 6%,#127dff 8%,#036ffc 10%,#0262ee 14%,#0057e5 20%,#0054e3 24%,#0055eb 56%,#005bf5 66%,#026afe 76%,#0062ef 86%,#0052d6 92%,#0040ab 94%,#003092 100%)'
+        : 'linear-gradient(to bottom, #7697e7 0%,#7e9ee3 3%,#94afe8 6%,#97b4e9 8%,#82a5e4 14%,#7c9fe2 17%,#7996de 25%,#7b99e1 56%,#82a9e9 81%,#80a5e7 89%,#7b96e1 94%,#7a93df 97%,#abbae3 100%)'};
     position: absolute;
     left: 0;
     top: 0;

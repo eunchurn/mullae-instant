@@ -3,32 +3,54 @@ import styled from 'styled-components';
 import { AppContext } from '@components/Context';
 import Apple from './apple.svg';
 
-export const initState = {
+export function getText(value) {
+  switch (true) {
+    case value < 3: {
+      return 'About an hour remaining';
+    }
+    case value <= 5.2: {
+      return 'Installation is in progress. Calculating time remaining...';
+    }
+    case value <= 6: {
+      return 'About an hour remaining';
+    }
+    default: {
+      const remainMin = Math.ceil(((100 - value) * 2.5 * 2.4) / 60);
+      return `About ${remainMin} minutes remaining`;
+    }
+  }
+}
+
+export const initialState = {
   value: 0,
   hint: 'About an hour remaining',
 };
-export const progressReducer = (state = initState, action = {}) => {
+export const progressReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'NEXT':
+    case 'NEXT': {
       const nextValue = state.value + 1;
       return {
         value: nextValue,
         hint: getText(nextValue),
       };
-    case 'CLEAR':
-      return initState;
-    default:
+    }
+    case 'CLEAR': {
+      return initialState;
+    }
+    default: {
       return state;
+    }
   }
 };
 
-const MacOS = ({ className, initState }) => {
+const Loader = ({ className, initState }) => {
   const [progress, dispatch] = useReducer(progressReducer, initState);
   function next() {
     dispatch({ type: 'NEXT' });
   }
-  const { clickDown: [clickDown, setClockDown] } = useContext(AppContext)
-  const clear = () => dispatch({ type: 'CLEAR' });
+  const {
+    clickDown: [, setClockDown],
+  } = useContext(AppContext);
   useEffect(() => {
     let timer;
     if (progress.value <= 100) {
@@ -36,7 +58,6 @@ const MacOS = ({ className, initState }) => {
     } else {
       setClockDown(true);
       clearTimeout(timer);
-      // timer = setTimeout(clear, 100);
     }
     return () => {
       clearTimeout(timer);
@@ -45,7 +66,9 @@ const MacOS = ({ className, initState }) => {
   return (
     <div className={className}>
       <div className="content">
-        <div className="logo"><Apple width={0} height={0} /></div>
+        <div className="logo">
+          <Apple width={0} height={0} />
+        </div>
         <div className="progress">
           <div className="bar" style={{ width: `${progress.value}%` }} />
         </div>
@@ -55,25 +78,11 @@ const MacOS = ({ className, initState }) => {
   );
 };
 
-export function getText(value) {
-  switch (true) {
-    case value < 3:
-      return 'About an hour remaining';
-    case value <= 5.2:
-      return 'Installation is in progress. Calculating time remaining...';
-    case value <= 6:
-      return 'About an hour remaining';
-    default:
-      const remainMin = Math.ceil(((100 - value) * 2.5 * 2.4) / 60);
-      return `About ${remainMin} minutes remaining`;
-  }
-}
-
-MacOS.defaultProps = {
-  initState,
+Loader.defaultProps = {
+  initState: initialState,
 };
 
-export default styled(MacOS)`
+export default styled(Loader)`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300');
   himport { AppContext } from '@components/Context';
 eight: 100%;

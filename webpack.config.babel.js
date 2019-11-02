@@ -21,7 +21,7 @@ module.exports = env => {
     mergedConfig = webpackMerge(commonConfig, devConfig);
   }
   
-  console.log(mergedConfig)
+  // console.log(mergedConfig)
   // 웹팩 최종 구성을 반환한다.
   return mergedConfig;
 };
