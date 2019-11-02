@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Balloon from '@winxp/src/components/Balloon';
+import Noti from '@winxp/src/components/Noti';
 
 import startButton from '@winxp/src/assets/windowsIcons/start.png';
 import sound from '@winxp/src/assets/windowsIcons/690(16x16).png';
@@ -94,6 +95,9 @@ function Footer({
       <div className="footer__items right">
         <img className="footer__icon" src={sound} alt="" />
         <img className="footer__icon" src={usb} alt="" />
+        <div style={{ position: 'relative', width: 0, height: 0 }}>
+          <Noti />
+        </div>
         <img className="footer__icon" src={risk} alt="" />
         <div style={{ position: 'relative', width: 0, height: 0 }}>
           <Balloon />

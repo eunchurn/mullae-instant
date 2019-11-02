@@ -50,7 +50,6 @@
     ]
   },
   "dependencies": {
-    "@ap.cx/react-fullpage": "^0.1.10-alpha",
     "@material-ui/core": "^4.3.2",
     "@material-ui/icons": "^4.2.1",
     "lodash.samplesize": "^4.2.0",
@@ -68,8 +67,10 @@
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
+    "react-simple-chatbot": "^0.6.1",
     "react-spring": "^8.0.27",
     "react-three-fiber": "2.2.17",
+    "react-toastify": "^5.4.0",
     "react-use": "^10.5.0",
     "redux": "^4.0.4",
     "regenerator-runtime": "^0.13.3",

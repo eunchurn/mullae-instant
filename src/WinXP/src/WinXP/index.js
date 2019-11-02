@@ -286,10 +286,10 @@ const WinXP = () => {
     });
   };
   const onModalClose = () => dispatch({ type: CANCEL_POWER_OFF });
-  useEffect(()=> {
-    const video = document.querySelector("video");
+  useEffect(() => {
+    const video = document.querySelector('video');
     video.playbackRate = 1;
-  },[]);
+  }, []);
   return (
     <Container
       ref={ref}

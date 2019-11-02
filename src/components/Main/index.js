@@ -3,14 +3,37 @@ import Warning from '@components/Warning';
 import { AppContext } from '@components/Context';
 import styled, { createGlobalStyle } from 'styled-components';
 import Intro from '@components/Intro';
-import Fullpage, {
-  FullPageSections,
-  FullpageSection,
-} from '@ap.cx/react-fullpage';
 import Div100vh from 'react-div-100vh';
-import Home from '@components/Desktop/Home';
 import WinXPComponent from '@winxp/src';
-import MacOS from '@components/MacOS';
+
+const Main = () => {
+  const {
+    clickWarning: [click],
+    clickDown: [clickDown],
+  } = useContext(AppContext);
+
+  return (
+    <>
+      <GlobalStyle />
+      {clickDown && (
+        <WinXPWrapper>
+          <WinXPComponent />
+        </WinXPWrapper>
+      )}
+      {!clickDown && (
+        <Div100vh>
+          {!clickDown && (
+            <>
+              <Intro showScene={click} />
+            </>
+          )}
+          {!click && <Warning />}
+        </Div100vh>
+      )}
+    </>
+  );
+};
+
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -61,63 +84,5 @@ const WinXPWrapper = styled.div`
   margin: 0;
   overflow: hidden;
 `;
-
-const FPComponent = () => {
-  return (
-    <Fullpage>
-      <FullPageSections>
-        <FullpageSection
-          style={{
-            height: '100vh',
-          }}
-        >
-          <Home />
-        </FullpageSection>
-        <FullpageSection
-          style={{
-            backgroundColor: 'coral',
-          }}
-        >
-          <Home />
-        </FullpageSection>
-        <FullpageSection
-          style={{
-            backgroundColor: 'firebrick',
-          }}
-        >
-          <Home />
-        </FullpageSection>
-      </FullPageSections>
-    </Fullpage>
-  );
-};
-
-const Main = () => {
-  const {
-    clickWarning: [click, setClick],
-    clickDown: [clickDown, setClockDown],
-  } = useContext(AppContext);
-
-  return (
-    <>
-      <GlobalStyle />
-      {clickDown && (
-        <WinXPWrapper>
-          <WinXPComponent />
-        </WinXPWrapper>
-      )}
-      {!clickDown && (
-        <Div100vh>
-          {!clickDown && (
-            <>
-              <Intro showScene={click} />
-            </>
-          )}
-          {!click && <Warning />}
-        </Div100vh>
-      )}
-    </>
-  );
-};
 
 export default Main;

@@ -10,6 +10,7 @@ import winamp from '@winxp/src/assets/windowsIcons/winamp.png';
 import paintLarge from '@winxp/src/assets/windowsIcons/680(32x32).png';
 import paint from '@winxp/src/assets/windowsIcons/680(16x16).png';
 import recycle from '@winxp/src/assets/windowsIcons/recycle-full.png';
+// import chatbot from '@winxp/src/assets/windowsIcons/unicorn-face_1f984.png';
 import Paint from './Paint';
 import Winamp from './Winamp';
 import Readme from './Readme';
@@ -20,6 +21,7 @@ import ErrorBox from './ErrorBox';
 import Minesweeper from './Minesweeper';
 import InternetExplorer from './InternetExplorer';
 import Post from './Postit';
+import Noti from '../../components/Noti';
 
 const gen = () => {
   let id = -1;
@@ -113,27 +115,6 @@ export const defaultAppState = [
     id: genId(),
     zIndex: genIndex(),
   },
-  // {
-  //   component: Post,
-  //   header: {
-  //     title: 'Postit',
-  //     icon: notepad,
-  //     invisible: true,
-  //   },
-  //   defaultSize: {
-  //     width: 0,
-  //     height: 0,
-  //   },
-  //   defaultOffset: {
-  //     x: 300,
-  //     y: 30,
-  //   },
-  //   resizable: false,
-  //   minimized: false,
-  //   maximized: false,
-  //   id: genId(),
-  //   zIndex: genIndex(),
-  // },
   {
     component: MyComputer,
     header: {
@@ -275,20 +256,21 @@ export const appSettings = {
     maximized: false,
     multiInstance: true,
   },
-  Postit: {
+  Notification: {
     header: {
-      icon: paint,
-      title: 'Post-it',
-      invisible: true,
+      icon: error,
+      title: 'Warning',
+      buttons: ['close'],
+      noFooterWindow: true,
     },
-    component: Post,
+    component: Noti,
     defaultSize: {
-      width: 0,
+      width: 380,
       height: 0,
     },
     defaultOffset: {
-      x: 280,
-      y: 70,
+      x: window.innerWidth / 2 - 190,
+      y: window.innerHeight / 2 - 60,
     },
     resizable: false,
     minimized: false,
@@ -422,4 +404,5 @@ export {
   Recycle,
   Winamp,
   Post,
+  Noti,
 };
