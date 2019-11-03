@@ -9,9 +9,9 @@
     "url": "git+ssh://git@github.com:eunchurn/mullaeinstant.git"
   },
   "scripts": {
-    "dev": "NODE_ENV='development' gulp dev",
-    "build": "NODE_ENV='production' gulp build",
-    "deploy": "NODE_ENV='production' gulp deploy",
+    "dev": "cross-env NODE_ENV='development' gulp dev",
+    "build": "cross-env NODE_ENV='production' gulp build",
+    "deploy": "cross-env NODE_ENV='production' gulp deploy",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
