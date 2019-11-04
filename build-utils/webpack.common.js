@@ -24,20 +24,21 @@ const config = {
         },
       },
       {
-        test: /\.(jpg|JPG|jpeg|png|gif|woff|woff2|eot|ttf|mp4)(\?[a-z0-9=.]+)?$/,
+        test: /\.(wav|ico|mp3|jpg|JPG|jpeg|png|gif|woff|woff2|eot|ttf|mp4)(\?[a-z0-9=.]+)?$/,
         loader: 'url-loader',
         options: {
           limit: 8192,
+          name: 'assets/[contenthash].[ext]'
         },
       },
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
-      {
-        test: /\.(wav|ico|mp3|woff|woff2|eot)$/,
-        loader: 'file-loader',
-      },
+      // {
+      //   test: /\.(wav|ico|mp3|woff|woff2|eot)$/,
+      //   loader: 'file-loader',
+      // },
       {
         test: /\.(txt|md)$/i,
         use: 'raw-loader',

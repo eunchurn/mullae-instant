@@ -1,20 +1,54 @@
-import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
+import React from 'react';
+import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
+import { WindowDropDowns } from '@winxp/src/components';
+import instruction from './instruction.md';
+import dropDownData from './dropDownData';
 
-const Instruction = () => {
-  const [state, setState] = useState({ numPage: null, pageNumber: 1 });
+const Container = styled.div`
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  min-width: 500px;
+`;
 
-  const onDocumentLoadSuccess = ({numPages}) => {
-    setState({...state, numPages});
+const Instruction = ({ onClose }) => {
+  function onClickOptionItem(item) {
+    switch (item) {
+      case 'Exit':
+        onClose();
+        break;
+      default:
+    }
   }
-  const { pageNumber} = state;
   return (
-    <div>
-      <Document file="/assets/instruction.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
-      </Document>
-    </div>
-  )
+    <Div>
+      <section className="np__toolbar">
+        <WindowDropDowns items={dropDownData} onClickItem={onClickOptionItem} />
+      </section>
+      <Container>
+        <ReactMarkdown source={instruction} escapeHtml={false} />
+      </Container>
+    </Div>
+  );
 };
+
+const Div = styled.div`
+  height: 100%;
+  background: linear-gradient(to right, #edede5 0%, #ede8cd 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  .np__toolbar {
+    position: relative;
+    height: 21px;
+    flex-shrink: 0;
+    border-bottom: 1px solid white;
+  }
+`;
 
 export default Instruction;

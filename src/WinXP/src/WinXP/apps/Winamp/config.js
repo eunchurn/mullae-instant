@@ -5,8 +5,8 @@ const album = 'underscore playlist';
 
 export const initialTracks = [
   {
-    url: '/assets/audio_guide.mp3',
-    duration: 598.35,
+    url: '/assets/audio_guide_v2.mp3',
+    duration: 567.35,
     metaData: {
       title: 'audio guide',
       artist: 'mullaeinstant',

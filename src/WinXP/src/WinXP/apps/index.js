@@ -100,13 +100,13 @@ export const defaultAppState = [
   {
     component: Instruction,
     header: {
-      title: '오디오 가이드 안내문',
+      title: '오디오 가이드 메뉴얼',
       icon: pdf,
       invisible: false,
     },
     defaultSize: {
-      width: 0,
-      height: 0,
+      width: 700,
+      height: 850,
     },
     defaultOffset: {
       x: 400,
@@ -311,7 +311,7 @@ export const appSettings = {
   Instruction: {
     header: {
       icon: pdf,
-      title: '오디오 가이드 안내문',
+      title: '오디오 가이드 메뉴얼',
       buttons: ['close'],
       noFooterWindow: true,
     },
