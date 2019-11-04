@@ -11,13 +11,13 @@ import * as THREE from 'three/src/Three';
 import React, { useRef, useEffect, useMemo } from 'react';
 // A THREE.js React renderer, see: https://github.com/drcmda/react-three-fiber
 import {
-  apply as applyThree,
+  extend,
   Canvas,
   useRender,
   useThree,
 } from 'react-three-fiber';
 // A React animation lib, see: https://github.com/react-spring/react-spring
-import { apply as applySpring, useSpring, a } from 'react-spring/three';
+import { apply, useSpring, a } from 'react-spring/three';
 import { useTransition, animated } from 'react-spring';
 import styled from 'styled-components';
 import Loader from '@components/Loader';
@@ -28,8 +28,8 @@ import { GlitchPass } from './postprocessing/GlitchPass';
 import { EffectComposer } from './postprocessing/EffectComposer';
 import { RenderPass } from './postprocessing/RenderPass';
 
-applySpring({ EffectComposer, RenderPass, GlitchPass });
-applyThree({ EffectComposer, RenderPass, GlitchPass });
+apply({ EffectComposer, RenderPass, GlitchPass });
+extend({ EffectComposer, RenderPass, GlitchPass });
 
 const useEffectAsync = (effect, inputs) => {
   useEffect(() => {
