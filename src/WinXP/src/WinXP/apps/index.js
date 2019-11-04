@@ -10,6 +10,7 @@ import winamp from '@winxp/src/assets/windowsIcons/winamp.png';
 import paintLarge from '@winxp/src/assets/windowsIcons/680(32x32).png';
 import paint from '@winxp/src/assets/windowsIcons/680(16x16).png';
 import recycle from '@winxp/src/assets/windowsIcons/recycle-full.png';
+import pdf from '@winxp/src/assets/windowsIcons/pdf.png';
 // import chatbot from '@winxp/src/assets/windowsIcons/unicorn-face_1f984.png';
 import Paint from './Paint';
 import Winamp from './Winamp';
@@ -22,6 +23,7 @@ import Minesweeper from './Minesweeper';
 import InternetExplorer from './InternetExplorer';
 import Post from './Postit';
 import Noti from '../../components/Noti';
+import Instruction from './Instruction';
 
 const gen = () => {
   let id = -1;
@@ -33,46 +35,46 @@ const gen = () => {
 const genId = gen();
 const genIndex = gen();
 export const defaultAppState = [
-  {
-    component: InternetExplorer,
-    header: {
-      title: 'Internet Explorer',
-      icon: iePaper,
-    },
-    defaultSize: {
-      width: 900,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 130,
-      y: 20,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: Minesweeper,
-    header: {
-      title: 'Minesweeper',
-      icon: mine,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 180,
-      y: 170,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
+  // {
+  //   component: InternetExplorer,
+  //   header: {
+  //     title: 'Internet Explorer',
+  //     icon: iePaper,
+  //   },
+  //   defaultSize: {
+  //     width: 900,
+  //     height: 500,
+  //   },
+  //   defaultOffset: {
+  //     x: 130,
+  //     y: 20,
+  //   },
+  //   resizable: true,
+  //   minimized: false,
+  //   maximized: window.innerWidth < 800,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
+  // {
+  //   component: Minesweeper,
+  //   header: {
+  //     title: 'Minesweeper',
+  //     icon: mine,
+  //   },
+  //   defaultSize: {
+  //     width: 0,
+  //     height: 0,
+  //   },
+  //   defaultOffset: {
+  //     x: 180,
+  //     y: 170,
+  //   },
+  //   resizable: false,
+  //   minimized: false,
+  //   maximized: false,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
   {
     component: Winamp,
     header: {
@@ -85,8 +87,8 @@ export const defaultAppState = [
       height: 0,
     },
     defaultOffset: {
-      x: 0,
-      y: 0,
+      x: 700,
+      y: 100,
     },
     resizable: false,
     minimized: false,
@@ -95,19 +97,19 @@ export const defaultAppState = [
     zIndex: genIndex(),
   },
   {
-    component: Readme,
+    component: Instruction,
     header: {
-      title: 'README.txt - Notepad',
-      icon: notepad,
+      title: '오디오 가이드 안내문',
+      icon: pdf,
       invisible: false,
     },
     defaultSize: {
-      width: 700,
-      height: 500,
+      width: 0,
+      height: 0,
     },
     defaultOffset: {
-      x: 300,
-      y: 30,
+      x: 400,
+      y: 10,
     },
     resizable: true,
     minimized: false,
@@ -115,41 +117,62 @@ export const defaultAppState = [
     id: genId(),
     zIndex: genIndex(),
   },
-  {
-    component: MyComputer,
-    header: {
-      title: 'My Computer',
-      icon: computer,
-    },
-    defaultSize: {
-      width: 660,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 250,
-      y: 40,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    id: genId(),
-    zIndex: genIndex(),
-  },
+  // {
+  //   component: Readme,
+  //   header: {
+  //     title: 'README.txt - Notepad',
+  //     icon: notepad,
+  //     invisible: false,
+  //   },
+  //   defaultSize: {
+  //     width: 700,
+  //     height: 500,
+  //   },
+  //   defaultOffset: {
+  //     x: 300,
+  //     y: 30,
+  //   },
+  //   resizable: true,
+  //   minimized: false,
+  //   maximized: window.innerWidth < 800,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
+  // {
+  //   component: MyComputer,
+  //   header: {
+  //     title: 'My Computer',
+  //     icon: computer,
+  //   },
+  //   defaultSize: {
+  //     width: 660,
+  //     height: 500,
+  //   },
+  //   defaultOffset: {
+  //     x: 250,
+  //     y: 40,
+  //   },
+  //   resizable: true,
+  //   minimized: false,
+  //   maximized: window.innerWidth < 800,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
 ];
 
 export const defaultIconState = [
   {
     id: 0,
-    icon: ie,
-    title: 'Internet Explorer',
-    component: InternetExplorer,
+    icon: winamp,
+    title: 'Winamp',
+    component: Winamp,
     isFocus: false,
   },
   {
     id: 1,
-    icon: mine,
-    title: 'Minesweeper',
-    component: Minesweeper,
+    icon: notepadLarge,
+    title: 'README.txt',
+    component: Readme,
     isFocus: false,
   },
   {
@@ -161,37 +184,44 @@ export const defaultIconState = [
   },
   {
     id: 3,
-    icon: winamp,
-    title: 'Winamp',
-    component: Winamp,
+    icon: mine,
+    title: 'Minesweeper',
+    component: Minesweeper,
     isFocus: false,
   },
   {
     id: 4,
+    icon: ie,
+    title: 'Internet Explorer',
+    component: InternetExplorer,
+    isFocus: false,
+  },
+  {
+    id: 5,
+    icon: recycle,
+    title: 'Recycle Bin',
+    component: Recycle,
+    isFocus: false,
+  },
+  {
+    id: 6,
     icon: paintLarge,
     title: 'Paint',
     component: Paint,
     isFocus: false,
   },
   {
-    id: 5,
+    id: 7,
     icon: notepadLarge,
     title: 'Notepad',
     component: Notepad,
     isFocus: false,
   },
   {
-    id: 6,
-    icon: notepadLarge,
-    title: 'README.txt',
-    component: Readme,
-    isFocus: false,
-  },
-  {
-    id: 7,
-    icon: recycle,
-    title: 'Recycle Bin',
-    component: Recycle,
+    id: 8,
+    icon: pdf,
+    title: '오디오 가이드 안내문',
+    component: Instruction,
     isFocus: false,
   },
 ];
@@ -271,6 +301,27 @@ export const appSettings = {
     defaultOffset: {
       x: window.innerWidth / 2 - 190,
       y: window.innerHeight / 2 - 60,
+    },
+    resizable: false,
+    minimized: false,
+    maximized: false,
+    multiInstance: true,
+  },
+  Instruction: {
+    header: {
+      icon: pdf,
+      title: '오디오 가이드 안내문',
+      buttons: ['close'],
+      noFooterWindow: true,
+    },
+    component: Instruction,
+    defaultSize: {
+      width: 0,
+      height: 0,
+    },
+    defaultOffset: {
+      x: 400,
+      y: 10,
     },
     resizable: false,
     minimized: false,
@@ -405,4 +456,5 @@ export {
   Winamp,
   Post,
   Noti,
+  Instruction
 };
