@@ -9,6 +9,7 @@ import notepadLarge from '@winxp/src/assets/windowsIcons/327(32x32).png';
 import winamp from '@winxp/src/assets/windowsIcons/winamp.png';
 import paintLarge from '@winxp/src/assets/windowsIcons/680(32x32).png';
 import paint from '@winxp/src/assets/windowsIcons/680(16x16).png';
+import folder from '@winxp/src/assets/windowsIcons/318(48x48).png';
 import recycle from '@winxp/src/assets/windowsIcons/recycle-full.png';
 import pdf from '@winxp/src/assets/windowsIcons/pdf.png';
 // import chatbot from '@winxp/src/assets/windowsIcons/unicorn-face_1f984.png';
@@ -234,8 +235,8 @@ export const appSettings = {
     },
     component: InternetExplorer,
     defaultSize: {
-      width: 700,
-      height: 500,
+      width: 900,
+      height: 600,
     },
     defaultOffset: {
       x: 140,
@@ -431,8 +432,8 @@ export const appSettings = {
     },
     component: Recycle,
     defaultSize: {
-      width: 660,
-      height: 500,
+      width: 900,
+      height: 600,
     },
     defaultOffset: {
       x: 260,
@@ -456,5 +457,5 @@ export {
   Winamp,
   Post,
   Noti,
-  Instruction
+  Instruction,
 };

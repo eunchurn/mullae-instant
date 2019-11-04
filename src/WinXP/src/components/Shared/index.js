@@ -29,30 +29,13 @@ import instagram from '@images/instagram.png';
 import { WindowDropDowns } from '@winxp/src/components';
 import udscr from '@images/udscr.png';
 import dropDownData from './dropDownData';
-import recycle1 from '@winxp/src/assets/recycle/trash1.JPG';
-import recycle2 from '@winxp/src/assets/recycle/trash2.JPG';
-import recycle3 from '@winxp/src/assets/recycle/trash3.JPG';
-import recycle4 from '@winxp/src/assets/recycle/trash4.JPG';
-import recycle5 from '@winxp/src/assets/recycle/trash5.JPG';
-import recycle6 from '@winxp/src/assets/recycle/trash6.JPG';
-import recycle7 from '@winxp/src/assets/recycle/trash7.JPG';
-import recycle8 from '@winxp/src/assets/recycle/trash8.JPG';
-import recycle9 from '@winxp/src/assets/recycle/trash9.JPG';
-import recycle10 from '@winxp/src/assets/recycle/trash10.JPG';
-import recycle11 from '@winxp/src/assets/recycle/trash11.JPG';
-import recycle12 from '@winxp/src/assets/recycle/trash12.JPG';
-import recycle13 from '@winxp/src/assets/recycle/trash13.JPG';
-import recycle14 from '@winxp/src/assets/recycle/trash14.JPG';
-import recycle15 from '@winxp/src/assets/recycle/trash15.JPG';
-import recycle16 from '@winxp/src/assets/recycle/trash16.JPG';
-import recycle17 from '@winxp/src/assets/recycle/trash17.JPG';
-import recycle18 from '@winxp/src/assets/recycle/trash18.JPG';
-import recycle19 from '@winxp/src/assets/recycle/trash19.JPG';
-import recycle20 from '@winxp/src/assets/recycle/trash20.JPG';
-import Icon from './Trash';
+import jpeg from '@winxp/src/assets/windowsIcons/jpeg.png';
+import pdf from '@winxp/src/assets/windowsIcons/pdf.png';
+import hwp from '@winxp/src/assets/windowsIcons/hwp.png';
+import Icon from './Icon';
 
 
-function Recycle({ onClose }) {
+function Shared({ onClose }) {
   function onClickOptionItem(item) {
     switch (item) {
       case 'Close':
@@ -154,7 +137,7 @@ function Recycle({ onClose }) {
                     alt="view"
                   />
                   <div className="com__content__left__card__text link">
-                    Empty the Recycle Bin
+                    View system information
                   </div>
                 </div>
                 <div className="com__content__left__card__row">
@@ -164,7 +147,7 @@ function Recycle({ onClose }) {
                     alt="remove"
                   />
                   <div className="com__content__left__card__text link">
-                    Restore this item
+                    Add or remove programs
                   </div>
                 </div>
               </div>
@@ -274,28 +257,16 @@ function Recycle({ onClose }) {
               {/* <div className="com__content__right__card__header">
                 Files Stored on This Computer
               </div> */}
-              <div className="com__content__right__card__content">
-                <Icon icon={recycle1} title="사진1" />
-                <Icon icon={recycle2} title="사진2" />
-                <Icon icon={recycle3} title="사진3" />
-                <Icon icon={recycle4} title="사진4" />
-                <Icon icon={recycle5} title="사진5" />
-                <Icon icon={recycle6} title="사진6" />
-                <Icon icon={recycle7} title="사진7" />
-                <Icon icon={recycle8} title="사진8" />
-                <Icon icon={recycle9} title="사진9" />
-                <Icon icon={recycle10} title="사진10" />
-                <Icon icon={recycle11} title="사진11" />
-                <Icon icon={recycle12} title="사진12" />
-                <Icon icon={recycle13} title="사진13" />
-                <Icon icon={recycle14} title="사진14" />
-                <Icon icon={recycle15} title="사진15" />
-                <Icon icon={recycle16} title="사진16" />
-                <Icon icon={recycle17} title="사진17" />
-                <Icon icon={recycle18} title="사진18" />
-                <Icon icon={recycle19} title="사진19" />
-                <Icon icon={recycle20} title="사진20" />
 
+              <div className="com__content__right__card__content">
+                <Icon icon={pdf} title="솔르윗SolLeWitt" />
+                <Icon icon={pdf} title="아나이스닌AnaisNin" />
+                <Icon icon={pdf} title="이본레이너YvonneRainer" />
+                <Icon icon={pdf} title="캐롤리슈니만CaroleeSchneemann" />
+                <Icon icon={pdf} title="소피칼SophieCalle" />
+                <Icon icon={hwp} title="개념미술_번역" />
+                <Icon icon={hwp} title="매니페스토_정리" />
+                <Icon icon={hwp} title="Portrait_historie" />
               </div>
             </div>
           </div>
@@ -681,4 +652,4 @@ const Div = styled.div`
   }
 `;
 
-export default Recycle;
+export default Shared;

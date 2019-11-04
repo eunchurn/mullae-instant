@@ -71,24 +71,24 @@ function FooterMenu({ className, onClick }) {
             style={
               hovering === 'All Programs'
                 ? {
-                  backgroundColor: '#2f71cd',
-                  color: '#FFF',
-                }
+                    backgroundColor: '#2f71cd',
+                    color: '#FFF',
+                  }
                 : {}
             }
-            text={(
+            text={
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 All Programs
                 <img
-    src={allProgramsIcon}
-    alt=""
-    style={{
+                  src={allProgramsIcon}
+                  alt=""
+                  style={{
                     marginLeft: '5px',
                     height: '18px',
                   }}
-  />
-                                                                      </div>
-            )}
+                />
+              </div>
+            }
             icon={empty}
           >
             {hovering === 'All Programs' && (
@@ -102,9 +102,9 @@ function FooterMenu({ className, onClick }) {
             style={
               hovering === 'My Recent Documents'
                 ? {
-                  backgroundColor: '#2f71cd',
-                  color: '#FFF',
-                }
+                    backgroundColor: '#2f71cd',
+                    color: '#FFF',
+                  }
                 : {}
             }
             text="My Recent Documents"
@@ -145,9 +145,9 @@ function FooterMenu({ className, onClick }) {
             style={
               hovering === 'Connect To'
                 ? {
-                  backgroundColor: '#2f71cd',
-                  color: '#FFF',
-                }
+                    backgroundColor: '#2f71cd',
+                    color: '#FFF',
+                  }
                 : {}
             }
             text="Connect To"

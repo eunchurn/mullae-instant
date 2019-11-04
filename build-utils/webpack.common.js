@@ -24,7 +24,7 @@ const config = {
         },
       },
       {
-        test: /\.(jpg|jpeg|png|gif|woff|woff2|eot|ttf|mp4)(\?[a-z0-9=.]+)?$/,
+        test: /\.(jpg|JPG|jpeg|png|gif|woff|woff2|eot|ttf|mp4)(\?[a-z0-9=.]+)?$/,
         loader: 'url-loader',
         options: {
           limit: 8192,
