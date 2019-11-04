@@ -1,18 +1,8 @@
-// import guide from "/Users/eunchurn/audio_guide.wav";
+// from Webamp demo
 
-// console.log(guide);
 const album = 'underscore playlist';
 
 export const initialTracks = [
-  {
-    url: '/assets/audio_guide.mp3',
-    duration: 598.35,
-    metaData: {
-      title: 'audio guide',
-      artist: 'mullaeinstant',
-      album,
-    },
-  },
   {
     url:
       'https://raw.githubusercontent.com/we-underscore/mullaeinstant/master/assets/135578__kingsamas__night-atmo-churchbells.mp3',
@@ -46,7 +36,7 @@ export const initialTracks = [
   {
     url:
       'https://raw.githubusercontent.com/we-underscore/mullaeinstant/master/assets/231537__vkproduktion__forest-birds-loop-02.mp3',
-    duration: 30.0,
+    duration: 30.00,
     metaData: {
       title: 'forest birds',
       artist: 'vkproduktion',
