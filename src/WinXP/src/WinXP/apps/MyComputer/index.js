@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import ga from 'react-ga';
 
@@ -29,15 +29,24 @@ import instagram from '@images/instagram.png';
 import { WindowDropDowns } from '@winxp/src/components';
 import udscr from '@images/udscr.png';
 import dropDownData from './dropDownData';
+import Icon from './Icon';
 
-function MyComputer({ onClose }) {
-  function onClickOptionItem(item) {
+const MyComputer = ({ onClose }) => {
+  const [state, setState] = useState({ sharedDoc: false, userDoc: false });
+  const onClickOptionItem = item => {
     switch (item) {
       case 'Close':
         onClose();
         break;
       default:
     }
+  };
+  const onDoubleClickSD = () => {
+    setState({sharedDoc: true, userDoc: false});
+  };
+
+  const onDoubleClickUD = () => {
+    setState({sharedDoc: false, userDoc: true});
   }
   return (
     <Div>
@@ -277,30 +286,16 @@ function MyComputer({ onClose }) {
                 Files Stored on This Computer
               </div>
               <div className="com__content__right__card__content">
-                <div className="com__content__right__card__item">
-                  <img
-                    src={folder}
-                    alt="folder"
-                    className="com__content__right__card__img"
-                  />
-                  <div className="com__content__right__card__img-container">
-                    <div className="com__content__right__card__text">
-                      Shared Documents
-                    </div>
-                  </div>
-                </div>
-                <div className="com__content__right__card__item">
-                  <img
-                    src={folder}
-                    alt="folder"
-                    className="com__content__right__card__img"
-                  />
-                  <div className="com__content__right__card__img-container">
-                    <div className="com__content__right__card__text">
-                      User's Documents
-                    </div>
-                  </div>
-                </div>
+                <Icon
+                  title="Shared Documents"
+                  icon={folder}
+                  onDoubleClick={onDoubleClickSD}
+                />
+                <Icon
+                  title="User's Documents"
+                  icon={folder}
+                  onDoubleClick={onDoubleClickUD}
+                />
               </div>
             </div>
             <div className="com__content__right__card">
@@ -377,11 +372,12 @@ function MyComputer({ onClose }) {
               </div>
             </div>
           </div>
+        
         </div>
       </div>
     </Div>
   );
-}
+};
 
 const Div = styled.div`
   height: 100%;
@@ -756,6 +752,59 @@ const Div = styled.div`
       transform: scale(1.2);
       transition-timing-function: cubic-bezier(0.23, 1.93, 0.59, -0.15);
     }
+  }
+`;
+
+const IconsContainer = styled.div`
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+`;
+
+const StyledIcon = styled(Icon)`
+  width: 70px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__text__container {
+    width: 100%;
+    font-size: 10px;
+    color: white;
+    text-shadow: 0 1px 1px black;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      display: block;
+      flex-grow: 1;
+    }
+    &:after {
+      content: '';
+      display: block;
+      flex-grow: 1;
+    }
+  }
+  &__text {
+    padding: 0 3px 2px;
+    background-color: ${({ isFocus, displayFocus }) =>
+      isFocus && displayFocus ? '#0b61ff' : 'transparent'};
+    text-align: center;
+    flex-shrink: 1;
+  }
+  &__img__container {
+    width: 30px;
+    height: 30px;
+    filter: ${({ isFocus, displayFocus }) =>
+      isFocus && displayFocus ? 'drop-shadow(0 0 blue)' : ''};
+  }
+  &__img {
+    width: 30px;
+    height: 30px;
+    opacity: ${({ isFocus, displayFocus }) =>
+      isFocus && displayFocus ? 0.5 : 1};
   }
 `;
 
