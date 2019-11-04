@@ -112,7 +112,7 @@ export const defaultAppState = [
       x: 400,
       y: 10,
     },
-    resizable: true,
+    resizable: false,
     minimized: false,
     maximized: window.innerWidth < 800,
     id: genId(),
@@ -327,7 +327,7 @@ export const appSettings = {
     resizable: false,
     minimized: false,
     maximized: false,
-    multiInstance: true,
+    multiInstance: false,
   },
   'My Computer': {
     header: {
