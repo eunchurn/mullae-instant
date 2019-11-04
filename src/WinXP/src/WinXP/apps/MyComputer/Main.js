@@ -37,7 +37,7 @@ const Main = () => {
     setState({ route: 'users' });
   };
 
-  const goMain = e => {
+  const goMain = () => {
     setState({ route: 'main' });
   };
   return (
