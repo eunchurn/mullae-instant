@@ -103,7 +103,7 @@ const ButtonDisabled = ({ img, text }) => (
   </div>
 );
 const StyledContainer = styled(Container)`
-  font-family: Tahoma, 'Noto Sans', sans-serif;
+  font-family: Tahoma, 'Noto Sans KR', sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -128,7 +128,7 @@ const StyledContainer = styled(Container)`
   }
   .header__text {
     font-size: 17px;
-    font-family: 'Noto Sans';
+    font-family: 'Noto Sans KR';
     color: #fff;
     flex: 1;
   }

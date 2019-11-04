@@ -357,8 +357,8 @@ const animation = {
 };
 
 const Container = styled.div`
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-  font-family: Tahoma, 'Noto Sans', sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+  font-family: Tahoma, 'Noto Sans KR', sans-serif;
   height: 100vh;
   overflow: hidden;
   position: relative;

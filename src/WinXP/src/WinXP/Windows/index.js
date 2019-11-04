@@ -209,7 +209,7 @@ const StyledWindow = styled(Window)`
     line-height: 25px;
     font-weight: 700;
     font-size: 12px;
-    font-family: 'Noto Sans';
+    font-family: 'Noto Sans KR';
     text-shadow: 1px 1px #000;
     color: white;
     position: absolute;
