@@ -19,7 +19,7 @@ const Container = styled.div`
 const Instruction = ({ onClose }) => {
   function onClickOptionItem(item) {
     switch (item) {
-      case 'Exit':
+      case 'Close':
         onClose();
         break;
       default:

@@ -28,7 +28,7 @@ const config = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          name: 'assets/[contenthash].[ext]'
+          name: 'assets/[contenthash].[ext]',
         },
       },
       {

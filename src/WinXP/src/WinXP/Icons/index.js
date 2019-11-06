@@ -28,7 +28,7 @@ function Icons({
       })
       .map(icon => icon.id);
     setSelectedIcons(selectedIds);
-  });
+  },[]);
   return (
     <IconsContainer>
       {icons.map(icon => (

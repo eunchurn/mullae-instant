@@ -7,8 +7,7 @@ import { WindowDropDowns } from '@winxp/src/components';
 import dropDownData from './dropDownData';
 import Main from './Main';
 
-const MyComputer = props => {
-  const { onClose } = props;
+const MyComputer = ({onClose}) => {
   const onClickOptionItem = item => {
     switch (item) {
       case 'Close':

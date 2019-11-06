@@ -23,7 +23,7 @@ import ErrorBox from './ErrorBox';
 import Minesweeper from './Minesweeper';
 import InternetExplorer from './InternetExplorer';
 import Post from './Postit';
-import Noti from '../../components/Noti';
+// import Noti from '../../components/Noti';
 import Instruction from './Instruction';
 
 const gen = () => {
@@ -76,27 +76,27 @@ export const defaultAppState = [
   //   id: genId(),
   //   zIndex: genIndex(),
   // },
-  {
-    component: Winamp,
-    header: {
-      title: 'Winamp',
-      icon: winamp,
-      invisible: true,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 700,
-      y: 100,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
+  // {
+  //   component: Winamp,
+  //   header: {
+  //     title: 'Winamp',
+  //     icon: winamp,
+  //     invisible: true,
+  //   },
+  //   defaultSize: {
+  //     width: 0,
+  //     height: 0,
+  //   },
+  //   defaultOffset: {
+  //     x: 0,
+  //     y: 0,
+  //   },
+  //   resizable: false,
+  //   minimized: false,
+  //   maximized: false,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
   {
     component: Instruction,
     header: {
@@ -287,27 +287,27 @@ export const appSettings = {
     maximized: false,
     multiInstance: true,
   },
-  Notification: {
-    header: {
-      icon: error,
-      title: 'Warning',
-      buttons: ['close'],
-      noFooterWindow: true,
-    },
-    component: Noti,
-    defaultSize: {
-      width: 380,
-      height: 0,
-    },
-    defaultOffset: {
-      x: window.innerWidth / 2 - 190,
-      y: window.innerHeight / 2 - 60,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    multiInstance: true,
-  },
+  // Notification: {
+  //   header: {
+  //     icon: error,
+  //     title: 'Warning',
+  //     buttons: ['close'],
+  //     noFooterWindow: true,
+  //   },
+  //   component: Noti,
+  //   defaultSize: {
+  //     width: 380,
+  //     height: 0,
+  //   },
+  //   defaultOffset: {
+  //     x: window.innerWidth / 2 - 190,
+  //     y: window.innerHeight / 2 - 60,
+  //   },
+  //   resizable: false,
+  //   minimized: false,
+  //   maximized: false,
+  //   multiInstance: true,
+  // },
   Instruction: {
     header: {
       icon: pdf,
@@ -456,6 +456,6 @@ export {
   Recycle,
   Winamp,
   Post,
-  Noti,
+  // Noti,
   Instruction,
 };

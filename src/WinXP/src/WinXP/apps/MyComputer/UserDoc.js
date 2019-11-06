@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import jpeg from '@winxp/src/assets/windowsIcons/jpeg.png';
 import pdf from '@winxp/src/assets/windowsIcons/pdf.png';

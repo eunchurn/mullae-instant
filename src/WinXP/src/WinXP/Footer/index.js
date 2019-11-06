@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Balloon from '@winxp/src/components/Balloon';
-import Noti from '@winxp/src/components/Noti';
+// import Noti from '@winxp/src/components/Noti';
 
 import startButton from '@winxp/src/assets/windowsIcons/start.png';
 import sound from '@winxp/src/assets/windowsIcons/690(16x16).png';
