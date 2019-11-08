@@ -28,6 +28,7 @@ const config = {
         loader: 'url-loader',
         options: {
           limit: 8192,
+          quality: 80,
           name: 'assets/[contenthash].[ext]',
         },
       },

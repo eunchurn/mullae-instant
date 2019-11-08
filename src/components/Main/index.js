@@ -22,18 +22,13 @@ const Main = () => {
       )}
       {!clickDown && (
         <Div100vh>
-          {!clickDown && (
-            <>
-              <Intro showScene={click} />
-            </>
-          )}
+          {!clickDown && <Intro showScene={click} />}
           {!click && <Warning />}
         </Div100vh>
       )}
     </>
   );
 };
-
 
 const GlobalStyle = createGlobalStyle`
 * {

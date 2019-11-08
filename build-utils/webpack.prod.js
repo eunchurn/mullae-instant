@@ -1,13 +1,9 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CnameWebpackPlugin = require('cname-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-// const commonPaths = require('./common-paths');
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CnameWebpackPlugin from 'cname-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
 const config = {
   mode: 'production',
-  // entry: {
-  //   app: ['babel-polyfill', `${commonPaths.appEntry}/index.js`],
-  // },
   output: {
     filename: 'static/[name].[hash].js',
   },
@@ -32,7 +28,7 @@ const config = {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                plugins: [require('autoprefixer')],
+                // plugins: [require('autoprefixer')],
               },
             },
           ],
@@ -55,14 +51,17 @@ const config = {
         sourceMap: true,
         terserOptions: {
           compress: {
-            drop_console: true
+            drop_console: true,
           },
           keep_classnames: undefined,
           keep_fnames: false,
           warnings: false,
-        }
-      })
-    ]
-  }
+        },
+      }),
+    ],
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };
 module.exports = config;
