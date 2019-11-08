@@ -1,8 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const alias = require('./webpack.module.alias');
-const commonPaths = require('./common-paths');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
+import alias from './webpack.module.alias';
+import commonPaths from './common-paths';
 
 const config = {
   entry: {
@@ -63,16 +63,13 @@ const config = {
       template: 'public/index.html',
       favicon: 'public/favicon.ico',
     }),
-    new CopyWebpackPlugin([{ from: 'public/assets', to: 'assets' }]),
+    new CopyWebpackPlugin([
+      { from: 'public/assets', to: 'assets' }
+    ]),
     new ManifestPlugin(),
   ],
   resolve: {
     alias,
   },
-  // resolve: {
-  //   alias: {
-  //     'react-dom': '@hot-loader/react-dom'
-  //   }
-  // }
 };
 module.exports = config;
