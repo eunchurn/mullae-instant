@@ -1,6 +1,6 @@
 # Mullaeinstant Web Project
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/eunchurn/mullae-instant.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/eunchurn/mullae-instant.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/eunchurn/mullae-instant.svg?branch=master)](https://travis-ci.org/eunchurn/mullae-instant)
 
 ## Description
 
