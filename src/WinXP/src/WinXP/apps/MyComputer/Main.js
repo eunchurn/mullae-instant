@@ -1,44 +1,46 @@
-import React, { useState } from 'react';
-import ga from 'react-ga';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useState } from "react";
+import ga from "react-ga";
 
-import go from '@winxp/src/assets/windowsIcons/290.png';
-import search from '@winxp/src/assets/windowsIcons/299(32x32).png';
-import computer from '@winxp/src/assets/windowsIcons/676(16x16).png';
-import back from '@winxp/src/assets/windowsIcons/back.png';
-import forward from '@winxp/src/assets/windowsIcons/forward.png';
-import up from '@winxp/src/assets/windowsIcons/up.png';
-import viewInfo from '@winxp/src/assets/windowsIcons/view-info.ico';
-import remove from '@winxp/src/assets/windowsIcons/302(16x16).png';
-import control from '@winxp/src/assets/windowsIcons/300(16x16).png';
-import network from '@winxp/src/assets/windowsIcons/693(16x16).png';
-import document from '@winxp/src/assets/windowsIcons/308(16x16).png';
-import folderSmall from '@winxp/src/assets/windowsIcons/318(16x16).png';
-import menu from '@winxp/src/assets/windowsIcons/358(32x32).png';
-import folder from '@winxp/src/assets/windowsIcons/318(48x48).png';
-import folderOpen from '@winxp/src/assets/windowsIcons/337(32x32).png';
-import disk from '@winxp/src/assets/windowsIcons/334(48x48).png';
-import cd from '@winxp/src/assets/windowsIcons/111(48x48).png';
-import dropdown from '@winxp/src/assets/windowsIcons/dropdown.png';
-import pullup from '@winxp/src/assets/windowsIcons/pullup.png';
-import instagram from '@images/instagram.png';
-import udscr from '@images/udscr.png';
+import go from "@winxp/src/assets/windowsIcons/290.png";
+import search from "@winxp/src/assets/windowsIcons/299(32x32).png";
+import computer from "@winxp/src/assets/windowsIcons/676(16x16).png";
+import back from "@winxp/src/assets/windowsIcons/back.png";
+import forward from "@winxp/src/assets/windowsIcons/forward.png";
+import up from "@winxp/src/assets/windowsIcons/up.png";
+import viewInfo from "@winxp/src/assets/windowsIcons/view-info.ico";
+import remove from "@winxp/src/assets/windowsIcons/302(16x16).png";
+import control from "@winxp/src/assets/windowsIcons/300(16x16).png";
+import network from "@winxp/src/assets/windowsIcons/693(16x16).png";
+import document from "@winxp/src/assets/windowsIcons/308(16x16).png";
+import folderSmall from "@winxp/src/assets/windowsIcons/318(16x16).png";
+import menu from "@winxp/src/assets/windowsIcons/358(32x32).png";
+import folder from "@winxp/src/assets/windowsIcons/318(48x48).png";
+import folderOpen from "@winxp/src/assets/windowsIcons/337(32x32).png";
+import disk from "@winxp/src/assets/windowsIcons/334(48x48).png";
+import cd from "@winxp/src/assets/windowsIcons/111(48x48).png";
+import dropdown from "@winxp/src/assets/windowsIcons/dropdown.png";
+import pullup from "@winxp/src/assets/windowsIcons/pullup.png";
+import instagram from "@images/instagram.png";
+import udscr from "@images/udscr.png";
 
-import SharedDoc from './SharedDoc';
-import UserDoc from './UserDoc';
-import Icon from './Icon';
+import SharedDoc from "./SharedDoc";
+import UserDoc from "./UserDoc";
+import Icon from "./Icon";
 
 const Main = () => {
-  const [state, setState] = useState({ route: 'main' });
+  const [state, setState] = useState({ route: "main" });
   const onDoubleClickSD = () => {
-    setState({ route: 'shared' });
+    setState({ route: "shared" });
   };
 
   const onDoubleClickUD = () => {
-    setState({ route: 'users' });
+    setState({ route: "users" });
   };
 
   const goMain = () => {
-    setState({ route: 'main' });
+    setState({ route: "main" });
   };
   return (
     <>
@@ -46,7 +48,7 @@ const Main = () => {
         <div
           onClick={goMain}
           className={`com__function_bar__button${
-            state.route === 'main' ? '--disable' : ''
+            state.route === "main" ? "--disable" : ""
           }`}
         >
           <img className="com__function_bar__icon" src={back} alt="" />
@@ -91,16 +93,16 @@ const Main = () => {
         <div className="com__address_bar__title">Address</div>
         <div className="com__address_bar__content">
           <img
-            src={state.route === 'main' ? computer : folder}
+            src={state.route === "main" ? computer : folder}
             alt="ie"
             className="com__address_bar__content__img"
           />
           <div className="com__address_bar__content__text">
-            {state.route === 'main'
-              ? 'My Computer'
-              : state.route === 'shared'
-              ? 'Shared Documents'
-              : "User's Documents"}
+            {state.route === "main"
+              ? "My Computer"
+              : state.route === "shared"
+                ? "Shared Documents"
+                : "User's Documents"}
           </div>
           <img
             src={dropdown}
@@ -274,7 +276,7 @@ const Main = () => {
               </div>
             </div>
           </div>
-          {state.route === 'main' ? (
+          {state.route === "main" ? (
             <div className="com__content__right">
               <div className="com__content__right__card">
                 <div className="com__content__right__card__header">
@@ -369,7 +371,7 @@ const Main = () => {
                 </div>
               </div>
             </div>
-          ) : state.route === 'shared' ? (
+          ) : state.route === "shared" ? (
             <SharedDoc />
           ) : (
             <UserDoc />

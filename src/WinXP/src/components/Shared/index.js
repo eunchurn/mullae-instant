@@ -1,44 +1,36 @@
-import React from 'react';
-import styled from 'styled-components';
-import ga from 'react-ga';
+import React from "react";
+import styled from "styled-components";
+import ga from "react-ga";
 
-import go from '@winxp/src/assets/windowsIcons/290.png';
-import search from '@winxp/src/assets/windowsIcons/299(32x32).png';
-import computer from '@winxp/src/assets/windowsIcons/676(16x16).png';
-import back from '@winxp/src/assets/windowsIcons/back.png';
-import forward from '@winxp/src/assets/windowsIcons/forward.png';
-import up from '@winxp/src/assets/windowsIcons/up.png';
-import viewInfo from '@winxp/src/assets/windowsIcons/view-info.ico';
-import remove from '@winxp/src/assets/windowsIcons/302(16x16).png';
-import control from '@winxp/src/assets/windowsIcons/300(16x16).png';
-import network from '@winxp/src/assets/windowsIcons/693(16x16).png';
-import document from '@winxp/src/assets/windowsIcons/308(16x16).png';
-import folderSmall from '@winxp/src/assets/windowsIcons/318(16x16).png';
-import menu from '@winxp/src/assets/windowsIcons/358(32x32).png';
-import folder from '@winxp/src/assets/windowsIcons/318(48x48).png';
-import folderOpen from '@winxp/src/assets/windowsIcons/337(32x32).png';
-import disk from '@winxp/src/assets/windowsIcons/334(48x48).png';
-import cd from '@winxp/src/assets/windowsIcons/111(48x48).png';
-import dropdown from '@winxp/src/assets/windowsIcons/dropdown.png';
-import pullup from '@winxp/src/assets/windowsIcons/pullup.png';
-import logo from '@winxp/src/assets/github-logo.png';
-import mine from '@winxp/src/assets/minesweeper/mine-icon.png';
-import windows from '@winxp/src/assets/windowsIcons/windows.png';
-import recycle from '@winxp/src/assets/windowsIcons/recycle.png';
-import instagram from '@images/instagram.png';
-import { WindowDropDowns } from '@winxp/src/components';
-import udscr from '@images/udscr.png';
-import dropDownData from './dropDownData';
-import jpeg from '@winxp/src/assets/windowsIcons/jpeg.png';
-import pdf from '@winxp/src/assets/windowsIcons/pdf.png';
-import hwp from '@winxp/src/assets/windowsIcons/hwp.png';
-import Icon from './Icon';
-
+import go from "@winxp/src/assets/windowsIcons/290.png";
+import search from "@winxp/src/assets/windowsIcons/299(32x32).png";
+import back from "@winxp/src/assets/windowsIcons/back.png";
+import forward from "@winxp/src/assets/windowsIcons/forward.png";
+import up from "@winxp/src/assets/windowsIcons/up.png";
+import viewInfo from "@winxp/src/assets/windowsIcons/view-info.ico";
+import remove from "@winxp/src/assets/windowsIcons/302(16x16).png";
+import control from "@winxp/src/assets/windowsIcons/300(16x16).png";
+import network from "@winxp/src/assets/windowsIcons/693(16x16).png";
+import document from "@winxp/src/assets/windowsIcons/308(16x16).png";
+import folderSmall from "@winxp/src/assets/windowsIcons/318(16x16).png";
+import menu from "@winxp/src/assets/windowsIcons/358(32x32).png";
+import folderOpen from "@winxp/src/assets/windowsIcons/337(32x32).png";
+import dropdown from "@winxp/src/assets/windowsIcons/dropdown.png";
+import pullup from "@winxp/src/assets/windowsIcons/pullup.png";
+import windows from "@winxp/src/assets/windowsIcons/windows.png";
+import recycle from "@winxp/src/assets/windowsIcons/recycle.png";
+import instagram from "@images/instagram.png";
+import { WindowDropDowns } from "@winxp/src/components";
+import udscr from "@images/udscr.png";
+import pdf from "@winxp/src/assets/windowsIcons/pdf.png";
+import hwp from "@winxp/src/assets/windowsIcons/hwp.png";
+import Icon from "./Icon";
+import dropDownData from "./dropDownData";
 
 function Shared({ onClose }) {
   function onClickOptionItem(item) {
     switch (item) {
-      case 'Close':
+      case "Close":
         onClose();
         break;
       default:
@@ -218,7 +210,7 @@ function Shared({ onClose }) {
                 />
               </div>
               <div className="com__content__left__card__content">
-              <div className="com__content__left__card__row">
+                <div className="com__content__left__card__row">
                   <img
                     className="com__content__left__card__img"
                     src={udscr}
@@ -248,7 +240,6 @@ function Shared({ onClose }) {
                     @mullaeinstant
                   </ga.OutboundLink>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -377,7 +368,7 @@ const Div = styled.div`
     align-items: center;
     margin: 0 4px;
     &:before {
-      content: '';
+      content: "";
       display: block;
       border-width: 3px 3px 0;
       border-color: #000 transparent;
@@ -390,7 +381,7 @@ const Div = styled.div`
     align-items: center;
     margin: 0 1px 0 -1px;
     &:before {
-      content: '';
+      content: "";
       display: block;
       border-width: 3px 3px 0;
       border-color: #000 transparent;
@@ -586,7 +577,7 @@ const Div = styled.div`
     padding: 2px 0 3px 12px;
     position: relative;
     &:after {
-      content: '';
+      content: "";
       display: block;
       background: linear-gradient(to right, #70bfff 0, #fff 100%);
       position: absolute;

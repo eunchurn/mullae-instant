@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import { AppContext } from '@components/Context';
-import WarningSvg from '@images/warning.svg';
-import XSvg from '@images/x.svg';
+import React, { useContext } from "react";
+import styled from "styled-components";
+import { AppContext } from "@components/Context";
+import WarningSvg from "@images/warning.svg";
+import XSvg from "@images/x.svg";
 
 const WarningContainer = styled.div`
   position: absolute;
@@ -135,7 +135,9 @@ const WarningButtonText = styled.span`
 
 /** Windows Warning Window */
 const WarningWindow = () => {
-  const {clickWarning: [state, setState]} = useContext(AppContext);
+  const {
+    clickWarning: [state, setState],
+  } = useContext(AppContext);
   const handleClick = () => setState(!state);
   return (
     <WarningContainer>
@@ -162,8 +164,8 @@ const WarningWindow = () => {
               before the new settings will take effect.
             </p>
             <p>
-              Click OK to access{' '}
-              <a href="https://instagram.com/mullaeinstant">@mullaeinstant</a>{' '}
+              Click OK to access{" "}
+              <a href="https://instagram.com/mullaeinstant">@mullaeinstant</a>{" "}
               now.
             </p>
           </WarningMessage>

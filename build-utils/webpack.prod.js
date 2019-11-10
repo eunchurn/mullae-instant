@@ -1,22 +1,22 @@
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import CnameWebpackPlugin from 'cname-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
+import ExtractTextPlugin from "extract-text-webpack-plugin";
+import CnameWebpackPlugin from "cname-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 
 const config = {
-  mode: 'production',
+  mode: "production",
   output: {
-    filename: 'static/[name].[hash].js',
+    filename: "static/[name].[hash].js",
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: "style-loader",
           use: [
             {
-              loader: 'css-loader',
+              loader: "css-loader",
               options: {
                 modules: true,
                 importLoaders: 1,
@@ -25,9 +25,9 @@ const config = {
               },
             },
             {
-              loader: 'postcss-loader',
+              loader: "postcss-loader",
               options: {
-                ident: 'postcss',
+                ident: "postcss",
                 // plugins: [require('autoprefixer')],
               },
             },
@@ -38,11 +38,11 @@ const config = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'styles/styles.[hash].css',
+      filename: "styles/styles.[hash].css",
       allChunks: true,
     }),
     new CnameWebpackPlugin({
-      domain: 'mullaeinstant.com',
+      domain: "mullaeinstant.com",
     }),
   ],
   optimization: {
@@ -60,7 +60,7 @@ const config = {
       }),
     ],
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
     },
   },
 };

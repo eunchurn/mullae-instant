@@ -1,10 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-
-import jpeg from '@winxp/src/assets/windowsIcons/jpeg.png';
-import pdf from '@winxp/src/assets/windowsIcons/pdf.png';
-import hwp from '@winxp/src/assets/windowsIcons/hwp.png';
-import Icon from './Icon';
+import React from "react";
+import pdf from "@winxp/src/assets/windowsIcons/pdf.png";
+import hwp from "@winxp/src/assets/windowsIcons/hwp.png";
+import Icon from "./Icon";
 
 const SharedDoc = () => {
   return (

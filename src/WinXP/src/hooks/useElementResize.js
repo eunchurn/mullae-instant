@@ -1,3 +1,6 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-use-before-define */
 import { useEffect, useState } from 'react';
 
 function useElementResize(ref, options) {
@@ -42,7 +45,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onDragging);
       window.removeEventListener('mouseup', onDragEnd);
     }
-    function onDragStart(e) {
+    function onDragStart() {
       window.addEventListener('mousemove', onDragging);
       window.addEventListener('mouseup', onDragEnd);
     }
@@ -58,7 +61,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onDraggingTop);
       window.removeEventListener('mouseup', onDragEndTop);
     }
-    function onDragStartTop(e) {
+    function onDragStartTop() {
       window.addEventListener('mousemove', onDraggingTop);
       window.addEventListener('mouseup', onDragEndTop);
     }
@@ -74,7 +77,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onDraggingLeft);
       window.removeEventListener('mouseup', onDragEndLeft);
     }
-    function onDragStartLeft(e) {
+    function onDragStartLeft() {
       window.addEventListener('mousemove', onDraggingLeft);
       window.addEventListener('mouseup', onDragEndLeft);
     }
@@ -90,7 +93,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingRight);
       window.removeEventListener('mouseup', onResizeEndRight);
     }
-    function onResizeStartRight(e) {
+    function onResizeStartRight() {
       window.addEventListener('mousemove', onResizingRight);
       window.addEventListener('mouseup', onResizeEndRight);
     }
@@ -106,7 +109,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingBottom);
       window.removeEventListener('mouseup', onResizeEndBottom);
     }
-    function onResizeStartBottom(e) {
+    function onResizeStartBottom() {
       window.addEventListener('mousemove', onResizingBottom);
       window.addEventListener('mouseup', onResizeEndBottom);
     }
@@ -122,7 +125,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingLeft);
       window.removeEventListener('mouseup', onResizeEndLeft);
     }
-    function onResizeStartLeft(e) {
+    function onResizeStartLeft() {
       window.addEventListener('mousemove', onResizingLeft);
       window.addEventListener('mouseup', onResizeEndLeft);
     }
@@ -138,7 +141,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingTop);
       window.removeEventListener('mouseup', onResizeEndTop);
     }
-    function onResizeStartTop(e) {
+    function onResizeStartTop() {
       window.addEventListener('mousemove', onResizingTop);
       window.addEventListener('mouseup', onResizeEndTop);
     }
@@ -155,7 +158,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingTopLeft);
       window.removeEventListener('mouseup', onResizeEndTopLeft);
     }
-    function onResizeStartTopLeft(e) {
+    function onResizeStartTopLeft() {
       window.addEventListener('mousemove', onResizingTopLeft);
       window.addEventListener('mouseup', onResizeEndTopLeft);
     }
@@ -172,7 +175,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingTopRight);
       window.removeEventListener('mouseup', onResizeEndTopRight);
     }
-    function onResizeStartTopRight(e) {
+    function onResizeStartTopRight() {
       window.addEventListener('mousemove', onResizingTopRight);
       window.addEventListener('mouseup', onResizeEndTopRight);
     }
@@ -189,7 +192,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingBottomLeft);
       window.removeEventListener('mouseup', onResizeEndBottomLeft);
     }
-    function onResizeStartBottomLeft(e) {
+    function onResizeStartBottomLeft() {
       window.addEventListener('mousemove', onResizingBottomLeft);
       window.addEventListener('mouseup', onResizeEndBottomLeft);
     }
@@ -206,7 +209,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mousemove', onResizingBottomRight);
       window.removeEventListener('mouseup', onResizeEndBottomRight);
     }
-    function onResizeStartBottomRight(e) {
+    function onResizeStartBottomRight() {
       window.addEventListener('mousemove', onResizingBottomRight);
       window.addEventListener('mouseup', onResizeEndBottomRight);
     }
@@ -294,6 +297,7 @@ function useElementResize(ref, options) {
       window.removeEventListener('mouseup', onResizeEndBottomRight);
       cover.remove();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [boundary.top, boundary.right, boundary.bottom, boundary.left, cursorPos]);
   return { offset, size };
 }
@@ -321,12 +325,12 @@ function useCursor(ref, threshold, resizable) {
       document.body.appendChild(cover);
       window.addEventListener('mouseup', onMouseUp);
     }
-    function onMouseUp(e) {
+    function onMouseUp() {
       lock = false;
       cover.remove();
       window.removeEventListener('mouseup', onMouseUp);
     }
-    function onHoverEnd(e) {
+    function onHoverEnd() {
       if (lock) return;
       _setPosition('');
     }
@@ -368,6 +372,7 @@ function useCursor(ref, threshold, resizable) {
       target.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return position;
 }

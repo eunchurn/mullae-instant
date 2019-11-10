@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import errorSoundSrc from '@winxp/src/assets/sounds/error.wav';
-import error from '@winxp/src/assets/windowsIcons/897(32x32).png';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/no-array-index-key */
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import errorSoundSrc from "@winxp/src/assets/sounds/error.wav";
+import error from "@winxp/src/assets/windowsIcons/897(32x32).png";
 
 function lineBreak(str) {
-  return str.split('\n').map((s, i) => (
+  return str.split("\n").map((s, i) => (
     <p key={i} className="error__message">
       {s}
     </p>

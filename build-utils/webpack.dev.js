@@ -1,9 +1,9 @@
-import webpack from 'webpack';
+import webpack from "webpack";
 
 const config = {
-  mode: 'development',
+  mode: "development",
   output: {
-    filename: '[name].[hash].js',
+    filename: "[name].[hash].js",
   },
   devtool: false,
   module: {
@@ -12,10 +12,10 @@ const config = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: "style-loader",
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               modules: true,
               camelCase: true,

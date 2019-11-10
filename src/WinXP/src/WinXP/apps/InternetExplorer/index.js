@@ -1,54 +1,56 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import ie from '@winxp/src/assets/windowsIcons/ie-paper.png';
-import printer from '@winxp/src/assets/windowsIcons/17(32x32).png';
-import go from '@winxp/src/assets/windowsIcons/290.png';
-import links from '@winxp/src/assets/windowsIcons/links.png';
-import search from '@winxp/src/assets/windowsIcons/299(32x32).png';
-import favorite from '@winxp/src/assets/windowsIcons/744(32x32).png';
-import back from '@winxp/src/assets/windowsIcons/back.png';
-import earth from '@winxp/src/assets/windowsIcons/earth.png';
-import edit from '@winxp/src/assets/windowsIcons/edit.png';
-import forward from '@winxp/src/assets/windowsIcons/forward.png';
-import history from '@winxp/src/assets/windowsIcons/history.png';
-import home from '@winxp/src/assets/windowsIcons/home.png';
-import mail from '@winxp/src/assets/windowsIcons/mail.png';
-import msn from '@winxp/src/assets/windowsIcons/msn.png';
-import refresh from '@winxp/src/assets/windowsIcons/refresh.png';
-import stop from '@winxp/src/assets/windowsIcons/stop.png';
-import windows from '@winxp/src/assets/windowsIcons/windows.png';
-import dropdown from '@winxp/src/assets/windowsIcons/dropdown.png';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useState } from "react";
+import styled from "styled-components";
+import ie from "@winxp/src/assets/windowsIcons/ie-paper.png";
+import printer from "@winxp/src/assets/windowsIcons/17(32x32).png";
+import go from "@winxp/src/assets/windowsIcons/290.png";
+import links from "@winxp/src/assets/windowsIcons/links.png";
+import search from "@winxp/src/assets/windowsIcons/299(32x32).png";
+import favorite from "@winxp/src/assets/windowsIcons/744(32x32).png";
+import back from "@winxp/src/assets/windowsIcons/back.png";
+import earth from "@winxp/src/assets/windowsIcons/earth.png";
+import edit from "@winxp/src/assets/windowsIcons/edit.png";
+import forward from "@winxp/src/assets/windowsIcons/forward.png";
+import history from "@winxp/src/assets/windowsIcons/history.png";
+import home from "@winxp/src/assets/windowsIcons/home.png";
+import mail from "@winxp/src/assets/windowsIcons/mail.png";
+import msn from "@winxp/src/assets/windowsIcons/msn.png";
+import refresh from "@winxp/src/assets/windowsIcons/refresh.png";
+import stop from "@winxp/src/assets/windowsIcons/stop.png";
+import windows from "@winxp/src/assets/windowsIcons/windows.png";
+import dropdown from "@winxp/src/assets/windowsIcons/dropdown.png";
 
 // import { WindowDropDowns, Google } from '@winxp/src/components';
-import { WindowDropDowns, Wiki } from '@winxp/src/components';
-import dropDownData from './dropDownData';
+import { WindowDropDowns, Wiki } from "@winxp/src/components";
+import dropDownData from "./dropDownData";
 
 function InternetExplorer({ onClose }) {
   const [state, setState] = useState({
-    route: 'main',
-    query: '',
+    route: "main",
+    query: "",
   });
   function onSearch(str) {
     if (str.length) {
       setState({
-        route: 'search',
+        route: "search",
         query: str,
       });
     }
   }
   function goMain() {
     setState({
-      route: 'main',
-      query: '',
+      route: "main",
+      query: "",
     });
   }
   function onClickOptionItem(item) {
     switch (item) {
-      case 'Close':
+      case "Close":
         onClose();
         break;
-      case 'Home Page':
-      case 'Back':
+      case "Home Page":
+      case "Back":
         goMain();
         break;
       default:
@@ -70,7 +72,7 @@ function InternetExplorer({ onClose }) {
         <div
           onClick={goMain}
           className={`ie__function_bar__button${
-            state.route === 'main' ? '--disable' : ''
+            state.route === "main" ? "--disable" : ""
           }`}
         >
           <img className="ie__function_bar__icon" src={back} alt="" />
@@ -139,9 +141,9 @@ function InternetExplorer({ onClose }) {
           <img src={ie} alt="ie" className="ie__address_bar__content__img" />
           <div className="ie__address_bar__content__text">
             {`https://dic.mullaeinstant.com${
-              state.route === 'search'
+              state.route === "search"
                 ? `/search?q=${encodeURIComponent(state.query)}`
-                : ''
+                : ""
             }`}
           </div>
           <img
@@ -293,7 +295,7 @@ const Div = styled.div`
     align-items: center;
     margin: 0 4px;
     &:before {
-      content: '';
+      content: "";
       display: block;
       border-width: 3px 3px 0;
       border-color: #000 transparent;
@@ -306,7 +308,7 @@ const Div = styled.div`
     align-items: center;
     margin: 0 1px 0 -1px;
     &:before {
-      content: '';
+      content: "";
       display: block;
       border-width: 3px 3px 0;
       border-color: #000 transparent;

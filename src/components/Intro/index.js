@@ -7,26 +7,21 @@
  *
  * modified by Eunchurn Park
  */
-import * as THREE from 'three/src/Three';
-import React, { useRef, useEffect, useMemo } from 'react';
+import * as THREE from "three/src/Three";
+import React, { useRef, useEffect, useMemo } from "react";
 // A THREE.js React renderer, see: https://github.com/drcmda/react-three-fiber
-import {
-  extend,
-  Canvas,
-  useRender,
-  useThree,
-} from 'react-three-fiber';
+import { extend, Canvas, useRender, useThree } from "react-three-fiber";
 // A React animation lib, see: https://github.com/react-spring/react-spring
-import { apply, useSpring, a } from 'react-spring/three';
-import { useTransition, animated } from 'react-spring';
-import styled from 'styled-components';
-import Loader from '@components/Loader';
+import { apply, useSpring, a } from "react-spring/three";
+import { useTransition, animated } from "react-spring";
+import styled from "styled-components";
+import Loader from "@components/Loader";
 
 // Import and register postprocessing classes as three-native-elements for both react-three-fiber & react-spring
 // They'll be available as native elements <effectComposer /> from then on ...
-import { GlitchPass } from './postprocessing/GlitchPass';
-import { EffectComposer } from './postprocessing/EffectComposer';
-import { RenderPass } from './postprocessing/RenderPass';
+import { GlitchPass } from "./postprocessing/GlitchPass";
+import { EffectComposer } from "./postprocessing/EffectComposer";
+import { RenderPass } from "./postprocessing/RenderPass";
 
 apply({ EffectComposer, RenderPass, GlitchPass });
 extend({ EffectComposer, RenderPass, GlitchPass });
@@ -34,7 +29,7 @@ extend({ EffectComposer, RenderPass, GlitchPass });
 const useEffectAsync = (effect, inputs) => {
   useEffect(() => {
     effect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputs]);
 };
 
@@ -51,7 +46,7 @@ const Text = ({
   children,
   position,
   opacity,
-  color = 'white',
+  color = "white",
   fontSize = 180,
 }) => {
   const {
@@ -60,13 +55,13 @@ const Text = ({
   } = useThree();
   const scale = viewportWidth > viewportHeight ? viewportWidth : viewportHeight;
   const mCanvas = useMemo(() => {
-    const canvas = document.createElement('canvas');
+    const canvas = document.createElement("canvas");
     canvas.width = 2048;
     canvas.height = 2048;
-    const context = canvas.getContext('2d');
+    const context = canvas.getContext("2d");
     context.font = `bold ${fontSize}px -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif`;
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
+    context.textAlign = "center";
+    context.textBaseline = "middle";
     context.fillStyle = color;
     context.fillText(children, 1024, 1024 - 410 / 2);
     return canvas;
@@ -100,7 +95,7 @@ const Stars = ({ position }) => {
   const [geo, mat, coords] = useMemo(() => {
     const Mgeo = new THREE.SphereBufferGeometry(1, 10, 10);
     const Mmat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('peachpuff'),
+      color: new THREE.Color("peachpuff"),
       transparent: true,
     });
     const Mcoords = new Array(1000)
@@ -164,14 +159,14 @@ const Intro = props => {
   const ref = useRef(null);
   const transition = useTransition(showScene, null, {
     from: {
-      position: 'absolute',
-      width: '100%',
-      height: '100vh',
-      transform: 'matrix(0, 0, 0, 0, 0, 0)',
+      position: "absolute",
+      width: "100%",
+      height: "100vh",
+      transform: "matrix(0, 0, 0, 0, 0, 0)",
       opacity: 0,
     },
     enter: {
-      transform: 'matrix(1, 0, 0, 1, 0, 0)',
+      transform: "matrix(1, 0, 0, 1, 0, 0)",
       opacity: 1,
     },
     leave: { opacity: 0 },

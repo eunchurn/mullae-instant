@@ -1,61 +1,54 @@
-import React from 'react';
-import styled from 'styled-components';
-import ga from 'react-ga';
+import React from "react";
+import styled from "styled-components";
+import ga from "react-ga";
 
-import go from '@winxp/src/assets/windowsIcons/290.png';
-import search from '@winxp/src/assets/windowsIcons/299(32x32).png';
-import computer from '@winxp/src/assets/windowsIcons/676(16x16).png';
-import back from '@winxp/src/assets/windowsIcons/back.png';
-import forward from '@winxp/src/assets/windowsIcons/forward.png';
-import up from '@winxp/src/assets/windowsIcons/up.png';
-import viewInfo from '@winxp/src/assets/windowsIcons/view-info.ico';
-import remove from '@winxp/src/assets/windowsIcons/302(16x16).png';
-import control from '@winxp/src/assets/windowsIcons/300(16x16).png';
-import network from '@winxp/src/assets/windowsIcons/693(16x16).png';
-import document from '@winxp/src/assets/windowsIcons/308(16x16).png';
-import folderSmall from '@winxp/src/assets/windowsIcons/318(16x16).png';
-import menu from '@winxp/src/assets/windowsIcons/358(32x32).png';
-import folder from '@winxp/src/assets/windowsIcons/318(48x48).png';
-import folderOpen from '@winxp/src/assets/windowsIcons/337(32x32).png';
-import disk from '@winxp/src/assets/windowsIcons/334(48x48).png';
-import cd from '@winxp/src/assets/windowsIcons/111(48x48).png';
-import dropdown from '@winxp/src/assets/windowsIcons/dropdown.png';
-import pullup from '@winxp/src/assets/windowsIcons/pullup.png';
-import logo from '@winxp/src/assets/github-logo.png';
-import mine from '@winxp/src/assets/minesweeper/mine-icon.png';
-import windows from '@winxp/src/assets/windowsIcons/windows.png';
-import recycle from '@winxp/src/assets/windowsIcons/recycle.png';
-import instagram from '@images/instagram.png';
-import { WindowDropDowns } from '@winxp/src/components';
-import udscr from '@images/udscr.png';
-import recycle1 from '@winxp/src/assets/recycle/trash1.JPG';
-import recycle2 from '@winxp/src/assets/recycle/trash2.JPG';
-import recycle3 from '@winxp/src/assets/recycle/trash3.JPG';
-import recycle4 from '@winxp/src/assets/recycle/trash4.JPG';
-import recycle5 from '@winxp/src/assets/recycle/trash5.JPG';
-import recycle6 from '@winxp/src/assets/recycle/trash6.JPG';
-import recycle7 from '@winxp/src/assets/recycle/trash7.JPG';
-import recycle8 from '@winxp/src/assets/recycle/trash8.JPG';
-import recycle9 from '@winxp/src/assets/recycle/trash9.JPG';
-import recycle10 from '@winxp/src/assets/recycle/trash10.JPG';
-import recycle11 from '@winxp/src/assets/recycle/trash11.JPG';
-import recycle12 from '@winxp/src/assets/recycle/trash12.JPG';
-import recycle13 from '@winxp/src/assets/recycle/trash13.JPG';
-import recycle14 from '@winxp/src/assets/recycle/trash14.JPG';
-import recycle15 from '@winxp/src/assets/recycle/trash15.JPG';
-import recycle16 from '@winxp/src/assets/recycle/trash16.JPG';
-import recycle17 from '@winxp/src/assets/recycle/trash17.JPG';
-import recycle18 from '@winxp/src/assets/recycle/trash18.JPG';
-import recycle19 from '@winxp/src/assets/recycle/trash19.JPG';
-import recycle20 from '@winxp/src/assets/recycle/trash20.JPG';
-import Icon from './Trash';
-import dropDownData from './dropDownData';
-
+import go from "@winxp/src/assets/windowsIcons/290.png";
+import search from "@winxp/src/assets/windowsIcons/299(32x32).png";
+import back from "@winxp/src/assets/windowsIcons/back.png";
+import forward from "@winxp/src/assets/windowsIcons/forward.png";
+import up from "@winxp/src/assets/windowsIcons/up.png";
+import viewInfo from "@winxp/src/assets/windowsIcons/view-info.ico";
+import remove from "@winxp/src/assets/windowsIcons/302(16x16).png";
+import control from "@winxp/src/assets/windowsIcons/300(16x16).png";
+import network from "@winxp/src/assets/windowsIcons/693(16x16).png";
+import document from "@winxp/src/assets/windowsIcons/308(16x16).png";
+import folderSmall from "@winxp/src/assets/windowsIcons/318(16x16).png";
+import menu from "@winxp/src/assets/windowsIcons/358(32x32).png";
+import folderOpen from "@winxp/src/assets/windowsIcons/337(32x32).png";
+import dropdown from "@winxp/src/assets/windowsIcons/dropdown.png";
+import pullup from "@winxp/src/assets/windowsIcons/pullup.png";
+import windows from "@winxp/src/assets/windowsIcons/windows.png";
+import recycle from "@winxp/src/assets/windowsIcons/recycle.png";
+import instagram from "@images/instagram.png";
+import { WindowDropDowns } from "@winxp/src/components";
+import udscr from "@images/udscr.png";
+import recycle1 from "@winxp/src/assets/recycle/trash1.JPG";
+import recycle2 from "@winxp/src/assets/recycle/trash2.JPG";
+import recycle3 from "@winxp/src/assets/recycle/trash3.JPG";
+import recycle4 from "@winxp/src/assets/recycle/trash4.JPG";
+import recycle5 from "@winxp/src/assets/recycle/trash5.JPG";
+import recycle6 from "@winxp/src/assets/recycle/trash6.JPG";
+import recycle7 from "@winxp/src/assets/recycle/trash7.JPG";
+import recycle8 from "@winxp/src/assets/recycle/trash8.JPG";
+import recycle9 from "@winxp/src/assets/recycle/trash9.JPG";
+import recycle10 from "@winxp/src/assets/recycle/trash10.JPG";
+import recycle11 from "@winxp/src/assets/recycle/trash11.JPG";
+import recycle12 from "@winxp/src/assets/recycle/trash12.JPG";
+import recycle13 from "@winxp/src/assets/recycle/trash13.JPG";
+import recycle14 from "@winxp/src/assets/recycle/trash14.JPG";
+import recycle15 from "@winxp/src/assets/recycle/trash15.JPG";
+import recycle16 from "@winxp/src/assets/recycle/trash16.JPG";
+import recycle17 from "@winxp/src/assets/recycle/trash17.JPG";
+import recycle18 from "@winxp/src/assets/recycle/trash18.JPG";
+import recycle19 from "@winxp/src/assets/recycle/trash19.JPG";
+import recycle20 from "@winxp/src/assets/recycle/trash20.JPG";
+import Icon from "./Trash";
+import dropDownData from "./dropDownData";
 
 function Recycle({ onClose }) {
   function onClickOptionItem(item) {
     switch (item) {
-      case 'Close':
+      case "Close":
         onClose();
         break;
       default:
@@ -235,7 +228,7 @@ function Recycle({ onClose }) {
                 />
               </div>
               <div className="com__content__left__card__content">
-              <div className="com__content__left__card__row">
+                <div className="com__content__left__card__row">
                   <img
                     className="com__content__left__card__img"
                     src={udscr}
@@ -265,7 +258,6 @@ function Recycle({ onClose }) {
                     @mullaeinstant
                   </ga.OutboundLink>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -295,7 +287,6 @@ function Recycle({ onClose }) {
                 <Icon icon={recycle18} title="사진18" />
                 <Icon icon={recycle19} title="사진19" />
                 <Icon icon={recycle20} title="사진20" />
-
               </div>
             </div>
           </div>
@@ -406,7 +397,7 @@ const Div = styled.div`
     align-items: center;
     margin: 0 4px;
     &:before {
-      content: '';
+      content: "";
       display: block;
       border-width: 3px 3px 0;
       border-color: #000 transparent;
@@ -419,7 +410,7 @@ const Div = styled.div`
     align-items: center;
     margin: 0 1px 0 -1px;
     &:before {
-      content: '';
+      content: "";
       display: block;
       border-width: 3px 3px 0;
       border-color: #000 transparent;
@@ -615,7 +606,7 @@ const Div = styled.div`
     padding: 2px 0 3px 12px;
     position: relative;
     &:after {
-      content: '';
+      content: "";
       display: block;
       background: linear-gradient(to right, #70bfff 0, #fff 100%);
       position: absolute;

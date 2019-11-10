@@ -1,6 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import WindowDropDown from './WindowDropDown';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-underscore-dangle */
+import React, { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
+import { WindowDropDown } from "./WindowDropDown";
 
 export function WindowDropDowns({
   items,
@@ -9,21 +11,21 @@ export function WindowDropDowns({
   height = 20,
 }) {
   const dropDown = useRef(null);
-  const [openOption, setOpenOption] = useState('');
+  const [openOption, setOpenOption] = useState("");
   function hoverOption(option) {
     if (openOption) setOpenOption(option);
   }
   function _onClickItem(name) {
-    setOpenOption('');
+    setOpenOption("");
     onClickItem(name);
   }
   function onMouseUp(e) {
-    if (!dropDown.current.contains(e.target)) setOpenOption('');
+    if (!dropDown.current.contains(e.target)) setOpenOption("");
   }
   useEffect(() => {
-    window.addEventListener('mouseup', onMouseUp);
+    window.addEventListener("mouseup", onMouseUp);
     return () => {
-      window.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener("mouseup", onMouseUp);
     };
   }, []);
   return (
@@ -37,7 +39,7 @@ export function WindowDropDowns({
             }}
             onMouseEnter={() => hoverOption(name)}
             className={`drop-down__label ${
-              openOption === name ? 'drop-down__label--active' : ''
+              openOption === name ? "drop-down__label--active" : ""
             }`}
           >
             {name}
@@ -46,7 +48,7 @@ export function WindowDropDowns({
             <WindowDropDown
               onClick={_onClickItem}
               items={items[name]}
-              position={{ top: `${height}px`, left: '0' }}
+              position={{ top: `${height}px`, left: "0" }}
             />
           )}
         </div>

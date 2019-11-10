@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-
-import smile from '@images/udscr.png';
-import avatar from './artist.png';
-import find from './find.png';
+import React, { useState } from "react";
+import styled from "styled-components";
+import avatar from "./artist.png";
+import find from "./find.png";
 
 function Search({ className, goMain, onSearch, query }) {
   const [value, setValue] = useState(query);
-  const [tag, setTag] = useState('All');
+  const [tag, setTag] = useState("All");
   function onChange(e) {
     setValue(e.target.value);
   }
@@ -15,14 +13,17 @@ function Search({ className, goMain, onSearch, query }) {
     onSearch(value);
   }
   function onKeyDown(e) {
-    if (e.key !== 'Enter') return;
+    if (e.key !== "Enter") return;
     onSearch(value);
   }
   function renderTags() {
-    return 'All,Maps,Images,News,Videos,More'.split(',').map(tagName => (
+    return "All,Maps,Images,News,Videos,More".split(",").map(tagName => (
       <div
         onClick={() => setTag(tagName)}
-        className={`tag ${tagName === tag ? 'active' : ''}`}
+        onKeyPress={() => setTag(tagName)}
+        role="button"
+        tabIndex="0"
+        className={`tag ${tagName === tag ? "active" : ""}`}
         key={tagName}
       >
         {tagName}
@@ -36,6 +37,8 @@ function Search({ className, goMain, onSearch, query }) {
           <div className="bar-items left">
             <img
               onClick={goMain}
+              onKeyPress={goMain}
+              role="presentation"
               className="logo"
               src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
               alt="Google"
@@ -55,7 +58,12 @@ function Search({ className, goMain, onSearch, query }) {
                   alt="microphone"
                 />
               </div>
-              <div className="icon" onClick={onClick}>
+              <div
+                className="icon"
+                onClick={onClick}
+                onKeyPress={onClick}
+                role="presentation"
+              >
                 <img src={find} alt="find" />
               </div>
             </div>
@@ -64,7 +72,7 @@ function Search({ className, goMain, onSearch, query }) {
             <header>
               <div className="text">Gmail</div>
               <div className="text">Images</div>
-              <img src={avatar} alt='avatar' />
+              <img src={avatar} alt="avatar" />
             </header>
           </div>
         </div>

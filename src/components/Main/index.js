@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import Warning from '@components/Warning';
-import { AppContext } from '@components/Context';
-import styled, { createGlobalStyle } from 'styled-components';
-import Intro from '@components/Intro';
-import Div100vh from 'react-div-100vh';
-import WinXPComponent from '@winxp/src';
+import React, { useContext } from "react";
+import Warning from "@components/Warning";
+import { AppContext } from "@components/Context";
+import styled, { createGlobalStyle } from "styled-components";
+import Intro from "@components/Intro";
+import Div100vh from "react-div-100vh";
+import WinXPComponent from "@winxp/src";
 
 const Main = () => {
   const {

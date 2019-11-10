@@ -28,6 +28,7 @@ function Icons({
       })
       .map(icon => icon.id);
     setSelectedIcons(selectedIds);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
   return (
     <IconsContainer>
@@ -69,6 +70,7 @@ function Icon({
     const posX = left + window.scrollX;
     const posY = top + window.scrollY;
     measure({ id, x: posX, y: posY, w: width, h: height });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div
@@ -122,7 +124,7 @@ const StyledIcon = styled(Icon)`
   &__text {
     padding: 0 3px 2px;
     background-color: ${({ isFocus, displayFocus }) =>
-      isFocus && displayFocus ? '#0b61ff' : 'transparent'};
+    isFocus && displayFocus ? '#0b61ff' : 'transparent'};
     text-align: center;
     flex-shrink: 1;
   }
@@ -130,13 +132,13 @@ const StyledIcon = styled(Icon)`
     width: 30px;
     height: 30px;
     filter: ${({ isFocus, displayFocus }) =>
-      isFocus && displayFocus ? 'drop-shadow(0 0 blue)' : ''};
+    isFocus && displayFocus ? 'drop-shadow(0 0 blue)' : ''};
   }
   &__img {
     width: 30px;
     height: 30px;
     opacity: ${({ isFocus, displayFocus }) =>
-      isFocus && displayFocus ? 0.5 : 1};
+    isFocus && displayFocus ? 0.5 : 1};
   }
 `;
 

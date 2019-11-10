@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 // import avatar from '@images/udscr.png';
-import avatar from './artist.png';
+import avatar from "./artist.png";
 
 const Main = ({ onSearch, className }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const onChange = e => {
     setValue(e.target.value);
   };
@@ -12,7 +12,7 @@ const Main = ({ onSearch, className }) => {
     onSearch(value);
   };
   const onKeyDown = e => {
-    if (e.key !== 'Enter') return;
+    if (e.key !== "Enter") return;
     onSearch(value);
   };
   return (

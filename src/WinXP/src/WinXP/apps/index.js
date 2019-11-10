@@ -1,30 +1,29 @@
-import iePaper from '@winxp/src/assets/windowsIcons/ie-paper.png';
-import ie from '@winxp/src/assets/windowsIcons/ie.png';
-import mine from '@winxp/src/assets/minesweeper/mine-icon.png';
-import error from '@winxp/src/assets/windowsIcons/897(16x16).png';
-import computer from '@winxp/src/assets/windowsIcons/676(16x16).png';
-import computerLarge from '@winxp/src/assets/windowsIcons/676(32x32).png';
-import notepad from '@winxp/src/assets/windowsIcons/327(16x16).png';
-import notepadLarge from '@winxp/src/assets/windowsIcons/327(32x32).png';
-import winamp from '@winxp/src/assets/windowsIcons/winamp.png';
-import paintLarge from '@winxp/src/assets/windowsIcons/680(32x32).png';
-import paint from '@winxp/src/assets/windowsIcons/680(16x16).png';
-import folder from '@winxp/src/assets/windowsIcons/318(48x48).png';
-import recycle from '@winxp/src/assets/windowsIcons/recycle-full.png';
-import pdf from '@winxp/src/assets/windowsIcons/pdf.png';
+import iePaper from "@winxp/src/assets/windowsIcons/ie-paper.png";
+import ie from "@winxp/src/assets/windowsIcons/ie.png";
+import mine from "@winxp/src/assets/minesweeper/mine-icon.png";
+import error from "@winxp/src/assets/windowsIcons/897(16x16).png";
+import computer from "@winxp/src/assets/windowsIcons/676(16x16).png";
+import computerLarge from "@winxp/src/assets/windowsIcons/676(32x32).png";
+import notepad from "@winxp/src/assets/windowsIcons/327(16x16).png";
+import notepadLarge from "@winxp/src/assets/windowsIcons/327(32x32).png";
+import winamp from "@winxp/src/assets/windowsIcons/winamp.png";
+import paintLarge from "@winxp/src/assets/windowsIcons/680(32x32).png";
+import paint from "@winxp/src/assets/windowsIcons/680(16x16).png";
+import recycle from "@winxp/src/assets/windowsIcons/recycle-full.png";
+import pdf from "@winxp/src/assets/windowsIcons/pdf.png";
 // import chatbot from '@winxp/src/assets/windowsIcons/unicorn-face_1f984.png';
-import Paint from './Paint';
-import Winamp from './Winamp';
-import Readme from './Readme';
-import Notepad from './Notepad';
-import MyComputer from './MyComputer';
-import Recycle from './Recycle';
-import ErrorBox from './ErrorBox';
-import Minesweeper from './Minesweeper';
-import InternetExplorer from './InternetExplorer';
-import Post from './Postit';
+import Paint from "./Paint";
+import Winamp from "./Winamp";
+import Readme from "./Readme";
+import Notepad from "./Notepad";
+import MyComputer from "./MyComputer";
+import Recycle from "./Recycle";
+import ErrorBox from "./ErrorBox";
+import Minesweeper from "./Minesweeper";
+import InternetExplorer from "./InternetExplorer";
+import Post from "./Postit";
 // import Noti from '../../components/Noti';
-import Instruction from './Instruction';
+import Instruction from "./Instruction";
 
 const gen = () => {
   let id = -1;
@@ -100,7 +99,7 @@ export const defaultAppState = [
   {
     component: Instruction,
     header: {
-      title: 'Audio Guide Manual',
+      title: "Audio Guide Manual",
       icon: pdf,
       invisible: false,
     },
@@ -165,73 +164,73 @@ export const defaultIconState = [
   {
     id: 0,
     icon: winamp,
-    title: 'Winamp',
+    title: "Winamp",
     component: Winamp,
     isFocus: false,
   },
   {
     id: 1,
     icon: notepadLarge,
-    title: 'README.txt',
+    title: "README.txt",
     component: Readme,
     isFocus: false,
   },
   {
     id: 2,
     icon: computerLarge,
-    title: 'My Computer',
+    title: "My Computer",
     component: MyComputer,
     isFocus: false,
   },
   {
     id: 3,
     icon: mine,
-    title: 'Minesweeper',
+    title: "Minesweeper",
     component: Minesweeper,
     isFocus: false,
   },
   {
     id: 4,
     icon: ie,
-    title: 'Internet Explorer',
+    title: "Internet Explorer",
     component: InternetExplorer,
     isFocus: false,
   },
   {
     id: 5,
     icon: recycle,
-    title: 'Recycle Bin',
+    title: "Recycle Bin",
     component: Recycle,
     isFocus: false,
   },
   {
     id: 6,
     icon: paintLarge,
-    title: 'Paint',
+    title: "Paint",
     component: Paint,
     isFocus: false,
   },
   {
     id: 7,
     icon: notepadLarge,
-    title: 'Notepad',
+    title: "Notepad",
     component: Notepad,
     isFocus: false,
   },
   {
     id: 8,
     icon: pdf,
-    title: 'Audio Guide Manual',
+    title: "Audio Guide Manual",
     component: Instruction,
     isFocus: false,
   },
 ];
 
 export const appSettings = {
-  'Internet Explorer': {
+  "Internet Explorer": {
     header: {
       icon: iePaper,
-      title: 'InternetExplorer',
+      title: "InternetExplorer",
     },
     component: InternetExplorer,
     defaultSize: {
@@ -250,7 +249,7 @@ export const appSettings = {
   Minesweeper: {
     header: {
       icon: mine,
-      title: 'Minesweeper',
+      title: "Minesweeper",
     },
     component: Minesweeper,
     defaultSize: {
@@ -269,8 +268,8 @@ export const appSettings = {
   Error: {
     header: {
       icon: error,
-      title: 'Warning',
-      buttons: ['close'],
+      title: "Warning",
+      buttons: ["close"],
       noFooterWindow: true,
     },
     component: ErrorBox,
@@ -311,8 +310,8 @@ export const appSettings = {
   Instruction: {
     header: {
       icon: pdf,
-      title: 'Audio Guide Manual',
-      buttons: ['close'],
+      title: "Audio Guide Manual",
+      buttons: ["close"],
       noFooterWindow: true,
     },
     component: Instruction,
@@ -329,10 +328,10 @@ export const appSettings = {
     maximized: false,
     multiInstance: false,
   },
-  'My Computer': {
+  "My Computer": {
     header: {
       icon: computer,
-      title: 'My Computer',
+      title: "My Computer",
     },
     component: MyComputer,
     defaultSize: {
@@ -351,7 +350,7 @@ export const appSettings = {
   Notepad: {
     header: {
       icon: notepad,
-      title: 'Untitled - Notepad',
+      title: "Untitled - Notepad",
     },
     component: Notepad,
     defaultSize: {
@@ -370,7 +369,7 @@ export const appSettings = {
   Readme: {
     header: {
       icon: notepad,
-      title: 'README.txt - Notepad',
+      title: "README.txt - Notepad",
     },
     component: Readme,
     defaultSize: {
@@ -389,7 +388,7 @@ export const appSettings = {
   Winamp: {
     header: {
       icon: winamp,
-      title: 'Winamp',
+      title: "Winamp",
       invisible: true,
     },
     component: Winamp,
@@ -409,7 +408,7 @@ export const appSettings = {
   Paint: {
     header: {
       icon: paint,
-      title: 'Untitled - Paint',
+      title: "Untitled - Paint",
     },
     component: Paint,
     defaultSize: {
@@ -425,10 +424,10 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
-  'Recycle Bin': {
+  "Recycle Bin": {
     header: {
       icon: recycle,
-      title: 'Recycle Bin',
+      title: "Recycle Bin",
     },
     component: Recycle,
     defaultSize: {

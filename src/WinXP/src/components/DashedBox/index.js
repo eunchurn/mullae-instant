@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function DashedBox({ mouse, startPos }) {
   function getRect() {
@@ -17,7 +17,7 @@ function DashedBox({ mouse, startPos }) {
           transform: `translate(${x}px,${y}px)`,
           width: w,
           height: h,
-          position: 'absolute',
+          position: "absolute",
           border: `1px dotted gray`,
         }}
       />

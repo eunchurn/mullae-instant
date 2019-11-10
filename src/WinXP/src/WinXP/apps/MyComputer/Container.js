@@ -13,7 +13,7 @@ const Container = styled.div`
     padding: 2px 0 3px 12px;
     position: relative;
     &:after {
-      content: '';
+      content: "";
       display: block;
       background: linear-gradient(to right, #70bfff 0, #fff 100%);
       position: absolute;
@@ -42,13 +42,13 @@ const Container = styled.div`
     height: 45px;
     margin-right: 5px;
     filter: ${({ isFocus, displayFocus }) =>
-      isFocus && displayFocus ? 'drop-shadow(0 0 blue)' : ''};
+    isFocus && displayFocus ? "drop-shadow(0 0 blue)" : ""};
   }
   .com__content__right__card__text {
     white-space: nowrap;
     height: 100%;
     background-color: ${({ isFocus, displayFocus }) =>
-      isFocus && displayFocus ? '#0b61ff' : 'transparent'};
+    isFocus && displayFocus ? "#0b61ff" : "transparent"};
   }
   .com__content__right__card--me {
     .com__content__right__card__header:after,

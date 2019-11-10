@@ -1,24 +1,24 @@
 import React from "react";
-import Postit from '../../../components/Postit/index';
+import Postit from "../../../components/Postit/index";
 
 // add child div to capture mouse event when not focused
 
-function Post({ onClose, isFocus }) {
+function Post({ isFocus }) {
   return (
     <div
       style={{
-        width: '100%',
-        height: '100%',
-        position: 'relative',
+        width: "100%",
+        height: "100%",
+        position: "relative",
       }}
     >
       <Postit />
       {!isFocus && (
         <div
           style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
+            width: "100%",
+            height: "100%",
+            position: "absolute",
             left: 0,
             top: 0,
           }}

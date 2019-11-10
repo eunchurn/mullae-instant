@@ -1,8 +1,12 @@
-import React, { useReducer, useEffect, useState } from 'react';
-import sampleSize from 'lodash.samplesize';
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-use-before-define */
+import React, { useReducer, useEffect, useState } from "react";
+import sampleSize from "lodash.samplesize";
 
-import { Config } from './config';
-import MinesweeperView from './MinesweeperView';
+import { Config } from "./config";
+import MinesweeperView from "./MinesweeperView";
 
 // state: {
 //   difficulty: 'Beginner' || 'Intermediate' || 'Expert',
@@ -17,52 +21,52 @@ import MinesweeperView from './MinesweeperView';
 //   }
 // }
 
-function getInitState(difficulty = 'Beginner') {
+function getInitState(difficulty = "Beginner") {
   return {
     difficulty,
-    status: 'new',
+    status: "new",
     ...genGameConfig(Config[difficulty]),
   };
 }
 
 function reducer(state, action = {}) {
   switch (action.type) {
-    case 'CLEAR_MAP':
+    case "CLEAR_MAP":
       const difficulty = action.payload || state.difficulty;
       return getInitState(difficulty);
-    case 'START_GAME':
+    case "START_GAME":
       const exclude = action.payload;
       return {
         ...state,
         ...insertMines({ ...Config[state.difficulty], exclude }, state.ceils),
-        status: 'started',
+        status: "started",
       };
-    case 'OPEN_CEIL': {
+    case "OPEN_CEIL": {
       const indexes = autoCeils(state, action.payload);
       const ceils = [...state.ceils];
       indexes.forEach(i => {
         const ceil = ceils[i];
-        ceils[i] = { ...ceil, state: 'open' };
+        ceils[i] = { ...ceil, state: "open" };
       });
       return {
         ...state,
         ceils,
       };
     }
-    case 'CHANGE_CEIL_STATE': {
+    case "CHANGE_CEIL_STATE": {
       const index = action.payload;
       const ceils = [...state.ceils];
       const ceil = state.ceils[index];
       let newState;
       switch (ceil.state) {
-        case 'cover':
-          newState = 'flag';
+        case "cover":
+          newState = "flag";
           break;
-        case 'flag':
-          newState = 'unknown';
+        case "flag":
+          newState = "unknown";
           break;
-        case 'unknown':
-          newState = 'cover';
+        case "unknown":
+          newState = "cover";
           break;
         default:
           throw new Error(`Unknown ceil state ${ceil.state}`);
@@ -73,56 +77,55 @@ function reducer(state, action = {}) {
         ceils,
       };
     }
-    case 'GAME_OVER': {
+    case "GAME_OVER": {
       const ceils = state.ceils.map(ceil => {
-        if (ceil.minesAround < 0 && ceil.state !== 'flag') {
+        if (ceil.minesAround < 0 && ceil.state !== "flag") {
           return {
             ...ceil,
-            state: 'mine',
-          };
-        } else if (ceil.state === 'flag' && ceil.minesAround >= 0) {
-          return {
-            ...ceil,
-            state: 'misflagged',
-          };
-        } else {
-          return {
-            ...ceil,
-            opening: false,
+            state: "mine",
           };
         }
+        if (ceil.state === "flag" && ceil.minesAround >= 0) {
+          return {
+            ...ceil,
+            state: "misflagged",
+          };
+        }
+        return {
+          ...ceil,
+          opening: false,
+        };
       });
-      ceils[action.payload].state = 'die';
+      ceils[action.payload].state = "die";
       return {
         ...state,
-        status: 'died',
+        status: "died",
         ceils,
       };
     }
-    case 'WON': {
+    case "WON": {
       const ceils = state.ceils.map(ceil => {
         if (ceil.minesAround >= 0) {
           return {
             ...ceil,
-            state: 'open',
-          };
-        } else {
-          return {
-            ...ceil,
-            state: 'flag',
+            state: "open",
           };
         }
+        return {
+          ...ceil,
+          state: "flag",
+        };
       });
       return {
         ...state,
-        status: 'won',
+        status: "won",
         ceils,
       };
     }
-    case 'OPENING_CEIL': {
+    case "OPENING_CEIL": {
       const ceil = state.ceils[action.payload];
-      const ceils = state.ceils.map(ceil => ({
-        ...ceil,
+      const ceils = state.ceils.map(sceil => ({
+        ...sceil,
         opening: false,
       }));
       ceils[action.payload] = { ...ceil, opening: true };
@@ -131,7 +134,7 @@ function reducer(state, action = {}) {
         ceils,
       };
     }
-    case 'OPENING_CEILS': {
+    case "OPENING_CEILS": {
       const indexes = getNearIndexes(action.payload, state.rows, state.columns);
       const ceils = state.ceils.map(ceil => ({
         ...ceil,
@@ -160,23 +163,23 @@ function MineSweeper({ defaultDifficulty, onClose }) {
   const seconds = useTimer(state.status);
   function changeCeilState(index) {
     const ceil = state.ceils[index];
-    if (ceil.state === 'open' || ['won', 'died'].includes(state.status)) return;
-    dispatch({ type: 'CHANGE_CEIL_STATE', payload: index });
+    if (ceil.state === "open" || ["won", "died"].includes(state.status)) return;
+    dispatch({ type: "CHANGE_CEIL_STATE", payload: index });
   }
   function openCeil(index) {
     switch (state.status) {
-      case 'new':
-        dispatch({ type: 'START_GAME', payload: index });
-        dispatch({ type: 'OPEN_CEIL', payload: index });
+      case "new":
+        dispatch({ type: "START_GAME", payload: index });
+        dispatch({ type: "OPEN_CEIL", payload: index });
         break;
-      case 'started':
+      case "started":
         const ceil = state.ceils[index];
-        if (['flag', 'open'].includes(ceil.state)) {
+        if (["flag", "open"].includes(ceil.state)) {
           break;
         } else if (ceil.minesAround < 0) {
-          dispatch({ type: 'GAME_OVER', payload: index });
+          dispatch({ type: "GAME_OVER", payload: index });
         } else {
-          dispatch({ type: 'OPEN_CEIL', payload: index });
+          dispatch({ type: "OPEN_CEIL", payload: index });
         }
         break;
       default:
@@ -186,48 +189,48 @@ function MineSweeper({ defaultDifficulty, onClose }) {
   function openCeils(index) {
     const ceil = state.ceils[index];
     if (
-      ceil.state !== 'open' ||
+      ceil.state !== "open" ||
       ceil.minesAround <= 0 ||
-      state.status !== 'started'
+      state.status !== "started"
     )
       return;
     const indexes = getNearIndexes(index, state.rows, state.columns);
     const nearCeils = indexes.map(i => state.ceils[i]);
     if (
-      nearCeils.filter(ceil => ceil.state === 'flag').length !==
+      nearCeils.filter(sceil => sceil.state === "flag").length !==
       ceil.minesAround
     )
       return;
     const mineIndex = indexes.find(
-      i => state.ceils[i].minesAround < 0 && state.ceils[i].state !== 'flag',
+      i => state.ceils[i].minesAround < 0 && state.ceils[i].state !== "flag",
     );
     if (mineIndex) {
-      dispatch({ type: 'GAME_OVER', payload: mineIndex });
+      dispatch({ type: "GAME_OVER", payload: mineIndex });
     } else {
-      indexes.forEach(i => dispatch({ type: 'OPEN_CEIL', payload: i }));
+      indexes.forEach(i => dispatch({ type: "OPEN_CEIL", payload: i }));
     }
   }
   useEffect(() => {
-    if (state.status === 'started' && checkRemains() === 0) {
-      dispatch({ type: 'WON' });
+    if (state.status === "started" && checkRemains() === 0) {
+      dispatch({ type: "WON" });
     }
   });
   function onReset(difficulty) {
-    dispatch({ type: 'CLEAR_MAP', payload: difficulty });
+    dispatch({ type: "CLEAR_MAP", payload: difficulty });
   }
   function checkRemains() {
     const safeCeils = state.ceils
-      .filter(ceil => ceil.state !== 'open')
+      .filter(ceil => ceil.state !== "open")
       .filter(ceil => ceil.minesAround >= 0);
     return safeCeils.length;
   }
   function openingCeil(index) {
-    if (['died', 'won'].includes(state.status)) return;
-    dispatch({ type: 'OPENING_CEIL', payload: index });
+    if (["died", "won"].includes(state.status)) return;
+    dispatch({ type: "OPENING_CEIL", payload: index });
   }
   function openingCeils(index) {
-    if (['died', 'won'].includes(state.status)) return;
-    dispatch({ type: 'OPENING_CEILS', payload: index });
+    if (["died", "won"].includes(state.status)) return;
+    dispatch({ type: "OPENING_CEILS", payload: index });
   }
   return (
     <MinesweeperView
@@ -248,8 +251,8 @@ function genGameConfig(config) {
   const { rows, columns, mines } = config;
   const ceils = Array(rows * columns)
     .fill()
-    .map(_ => ({
-      state: 'cover',
+    .map(() => ({
+      state: "cover",
       minesAround: 0,
       opening: false,
     }));
@@ -265,7 +268,7 @@ function insertMines(config, originCeils) {
   const { rows, columns, mines, exclude } = config;
   const ceils = originCeils.map(ceil => ({ ...ceil }));
   if (rows * columns !== ceils.length)
-    throw new Error('rows and columns not equal to ceils');
+    throw new Error("rows and columns not equal to ceils");
   const indexArray = [...Array(rows * columns).keys()];
   sampleSize(indexArray.filter(i => i !== exclude), mines).forEach(chosen => {
     ceils[chosen].minesAround = -10;
@@ -290,7 +293,7 @@ function autoCeils(state, index) {
   return walkCeils(index);
   function walkCeils(index) {
     const ceil = ceils[index];
-    if (ceil.walked || ceil.minesAround < 0 || ceil.state === 'flag') return [];
+    if (ceil.walked || ceil.minesAround < 0 || ceil.state === "flag") return [];
     ceil.walked = true;
     if (ceil.minesAround > 0) return [index];
     return [
@@ -335,10 +338,10 @@ function useTimer(status) {
   useEffect(() => {
     let timer;
     switch (status) {
-      case 'started':
+      case "started":
         timer = setInterval(addSecond, 1000);
         break;
-      case 'new':
+      case "new":
         setSeconds(0);
         break;
       default:

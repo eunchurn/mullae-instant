@@ -1,12 +1,12 @@
-import webpack from 'webpack';
-import config from '../webpack.config.babel';
+import webpack from "webpack";
+import config from "../webpack.config.babel";
 
-const configProd = config({ env: 'prod' });
+const configProd = config({ env: "prod" });
 
 const prod = () => {
   return new Promise(resolve =>
     webpack(configProd, (err, stats) => {
-      if (err) console.log('Webpack', err);
+      if (err) console.log("Webpack", err);
       console.log(stats.toString());
       resolve();
     }),

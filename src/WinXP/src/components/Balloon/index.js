@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import risk from '@winxp/src/assets/windowsIcons/229(16x16).png';
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import risk from "@winxp/src/assets/windowsIcons/229(16x16).png";
 
 function Balloon({ startAfter = 3000, duration = 15000 }) {
   const [show, setShow] = useState(true);
@@ -22,7 +22,11 @@ function Balloon({ startAfter = 3000, duration = 15000 }) {
     start && (
       <Div show={show}>
         <div className="balloon__container">
-          <button onClick={() => setShow(false)} className="balloon__close" />
+          <button
+            type="button"
+            onClick={() => setShow(false)}
+            className="balloon__close"
+          />
           <div className="balloon__header">
             <img className="balloon__header__img" src={risk} alt="risk" />
             <span className="balloon__header__text">
@@ -30,7 +34,10 @@ function Balloon({ startAfter = 3000, duration = 15000 }) {
             </span>
           </div>
           <p className="balloon__text__first">
-            Your computer may be attacked by underscore 👯‍♀️
+            Your computer may be attacked by underscore{" "}
+            <span role="img" aria-label="dancer">
+              👯‍♀️
+            </span>
           </p>
           <p className="balloon__text__second">
             Click this balloon to fix this problem.
@@ -81,7 +88,7 @@ const Div = styled.div`
     font-size: 11px;
     white-space: nowrap;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       display: block;
       bottom: -19px;
@@ -93,7 +100,7 @@ const Div = styled.div`
       border-color: transparent black transparent transparent;
     }
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       display: block;
       bottom: -17px;
@@ -125,7 +132,7 @@ const Div = styled.div`
     border-radius: 3px;
     background-color: transparent;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 5px;
       top: 2px;
@@ -135,7 +142,7 @@ const Div = styled.div`
       background-color: rgba(170, 170, 170);
     }
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       left: 5px;
       top: 2px;

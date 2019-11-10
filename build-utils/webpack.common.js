@@ -1,8 +1,8 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ManifestPlugin from 'webpack-manifest-plugin';
-import alias from './webpack.module.alias';
-import commonPaths from './common-paths';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import ManifestPlugin from "webpack-manifest-plugin";
+import alias from "./webpack.module.alias";
+import commonPaths from "./common-paths";
 
 const config = {
   entry: {
@@ -10,31 +10,31 @@ const config = {
   },
   output: {
     path: commonPaths.outputPath,
-    publicPath: '/',
+    publicPath: "/",
   },
   module: {
     rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        loader: require.resolve('babel-loader'),
+        loader: require.resolve("babel-loader"),
         options: {
           cacheDirectory: true,
-          plugins: ['react-hot-loader/babel'],
+          plugins: ["react-hot-loader/babel"],
         },
       },
       {
         test: /\.(wav|ico|mp3|jpg|JPG|jpeg|png|gif|woff|woff2|eot|ttf|mp4)(\?[a-z0-9=.]+)?$/,
-        loader: 'url-loader',
+        loader: "url-loader",
         options: {
           limit: 8192,
           quality: 80,
-          name: 'assets/[contenthash].[ext]',
+          name: "assets/[contenthash].[ext]",
         },
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: ["@svgr/webpack"],
       },
       // {
       //   test: /\.(wav|ico|mp3|woff|woff2|eot)$/,
@@ -42,7 +42,7 @@ const config = {
       // },
       {
         test: /\.(txt|md)$/i,
-        use: 'raw-loader',
+        use: "raw-loader",
       },
     ],
   },
@@ -50,9 +50,9 @@ const config = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          chunks: 'initial',
-          test: 'vendor',
-          name: 'vendor',
+          chunks: "initial",
+          test: "vendor",
+          name: "vendor",
           enforce: true,
         },
       },
@@ -60,12 +60,10 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      favicon: 'public/favicon.ico',
+      template: "public/index.html",
+      favicon: "public/favicon.ico",
     }),
-    new CopyWebpackPlugin([
-      { from: 'public/assets', to: 'assets' }
-    ]),
+    new CopyWebpackPlugin([{ from: "public/assets", to: "assets" }]),
     new ManifestPlugin(),
   ],
   resolve: {

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const IntroContainer = styled.div`
   position: absolute;
@@ -26,7 +26,7 @@ export const ScrollContainer = styled.div`
   font-weight: 800;
   line-height: 0.9em;
   div {
-    height: '525vh';
+    height: "525vh";
   }
 `;
 export const WarningContainer = styled.div`
@@ -35,4 +35,3 @@ export const WarningContainer = styled.div`
   align-items: center;
   height: 100vh;
 `;
-

@@ -1,18 +1,18 @@
-import React, { useEffect, useReducer, useContext } from 'react';
-import styled from 'styled-components';
-import { AppContext } from '@components/Context';
-import Apple from './apple.svg';
+import React, { useEffect, useReducer, useContext } from "react";
+import styled from "styled-components";
+import { AppContext } from "@components/Context";
+import Apple from "./apple.svg";
 
 export function getText(value) {
   switch (true) {
     case value < 3: {
-      return 'About an hour remaining';
+      return "About an hour remaining";
     }
     case value <= 5.2: {
-      return 'Installation is in progress. Calculating time remaining...';
+      return "Installation is in progress. Calculating time remaining...";
     }
     case value <= 6: {
-      return 'About an hour remaining';
+      return "About an hour remaining";
     }
     default: {
       const remainMin = Math.ceil(((100 - value) * 2.5 * 2.4) / 60);
@@ -23,18 +23,18 @@ export function getText(value) {
 
 export const initialState = {
   value: 0,
-  hint: 'About an hour remaining',
+  hint: "About an hour remaining",
 };
 export const progressReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'NEXT': {
+    case "NEXT": {
       const nextValue = state.value + 1;
       return {
         value: nextValue,
         hint: getText(nextValue),
       };
     }
-    case 'CLEAR': {
+    case "CLEAR": {
       return initialState;
     }
     default: {
@@ -46,7 +46,7 @@ export const progressReducer = (state = initialState, action = {}) => {
 const Loader = ({ className, initState }) => {
   const [progress, dispatch] = useReducer(progressReducer, initState);
   function next() {
-    dispatch({ type: 'NEXT' });
+    dispatch({ type: "NEXT" });
   }
   const {
     clickDown: [, setClockDown],

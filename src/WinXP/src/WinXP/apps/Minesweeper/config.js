@@ -18,3 +18,5 @@ export const Config = {
     mines: 99,
   },
 };
+
+export default Config;

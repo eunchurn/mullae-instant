@@ -1,407 +1,407 @@
-import empty from '@winxp/src/assets/empty.png';
+import empty from "@winxp/src/assets/empty.png";
 
-import backup from '@winxp/src/assets/windowsIcons/23(16x16).png';
-import keyboard from '@winxp/src/assets/windowsIcons/58(16x16).png';
-import cmd from '@winxp/src/assets/windowsIcons/56(16x16).png';
-import calculator from '@winxp/src/assets/windowsIcons/74(16x16).png';
-import utility from '@winxp/src/assets/windowsIcons/119(16x16).png';
-import volume from '@winxp/src/assets/windowsIcons/120(16x16).png';
-import characterMap from '@winxp/src/assets/windowsIcons/127(16x16).png';
-import cleanDisk from '@winxp/src/assets/windowsIcons/128(16x16).png';
-import wordPad from '@winxp/src/assets/windowsIcons/153(16x16).png';
-import winExplorer from '@winxp/src/assets/windowsIcons/156(16x16).png';
-import MSN from '@winxp/src/assets/windowsIcons/159(16x16).png';
-import sync from '@winxp/src/assets/windowsIcons/182(16x16).png';
-import security from '@winxp/src/assets/windowsIcons/214(16x16).png';
-import access from '@winxp/src/assets/windowsIcons/227(16x16).png';
-import wireless from '@winxp/src/assets/windowsIcons/234(16x16).png';
-import accessibility from '@winxp/src/assets/windowsIcons/238(16x16).png';
-import connection from '@winxp/src/assets/windowsIcons/309(16x16).png';
-import update from '@winxp/src/assets/windowsIcons/322(16x16).png';
-import notepad from '@winxp/src/assets/windowsIcons/327(16x16).png';
-import networkAssistance from '@winxp/src/assets/windowsIcons/357(16x16).png';
-import menu from '@winxp/src/assets/windowsIcons/358(16x16).png';
-import transfer from '@winxp/src/assets/windowsIcons/367(16x16).png';
-import defragmenter from '@winxp/src/assets/windowsIcons/374(16x16).png';
-import catalog from '@winxp/src/assets/windowsIcons/392(16x16).png';
-import networkConnection from '@winxp/src/assets/windowsIcons/404(16x16).png';
-import info from '@winxp/src/assets/windowsIcons/505(16x16).png';
-import address from '@winxp/src/assets/windowsIcons/554(16x16).png';
-import connectionWizard from '@winxp/src/assets/windowsIcons/663(16x16).png';
-import networkSetup from '@winxp/src/assets/windowsIcons/664(16x16).png';
-import hyperCmd from '@winxp/src/assets/windowsIcons/669(16x16).png';
-import painter from '@winxp/src/assets/windowsIcons/680(16x16).png';
-import sound from '@winxp/src/assets/windowsIcons/690(16x16).png';
-import recent from '@winxp/src/assets/windowsIcons/716(16x16).png';
-import compatibility from '@winxp/src/assets/windowsIcons/747(16x16).png';
-import magnifier from '@winxp/src/assets/windowsIcons/817(16x16).png';
-import mediaPlayer from '@winxp/src/assets/windowsIcons/846(16x16).png';
-import tour from '@winxp/src/assets/windowsIcons/853(32x32).png';
-import outlook from '@winxp/src/assets/windowsIcons/887(16x16).png';
-import spade from '@winxp/src/assets/windowsIcons/888(16x16).png';
-import reversi from '@winxp/src/assets/windowsIcons/889(16x16).png';
-import onlineHeart from '@winxp/src/assets/windowsIcons/890(16x16).png';
-import checker from '@winxp/src/assets/windowsIcons/891(16x16).png';
-import backgammon from '@winxp/src/assets/windowsIcons/892(16x16).png';
-import movieMaker from '@winxp/src/assets/windowsIcons/894(16x16).png';
-import ie from '@winxp/src/assets/windowsIcons/896(16x16).png';
-import messenger from '@winxp/src/assets/windowsIcons/msn.png';
+import backup from "@winxp/src/assets/windowsIcons/23(16x16).png";
+import keyboard from "@winxp/src/assets/windowsIcons/58(16x16).png";
+import cmd from "@winxp/src/assets/windowsIcons/56(16x16).png";
+import calculator from "@winxp/src/assets/windowsIcons/74(16x16).png";
+import utility from "@winxp/src/assets/windowsIcons/119(16x16).png";
+import volume from "@winxp/src/assets/windowsIcons/120(16x16).png";
+import characterMap from "@winxp/src/assets/windowsIcons/127(16x16).png";
+import cleanDisk from "@winxp/src/assets/windowsIcons/128(16x16).png";
+import wordPad from "@winxp/src/assets/windowsIcons/153(16x16).png";
+import winExplorer from "@winxp/src/assets/windowsIcons/156(16x16).png";
+import MSN from "@winxp/src/assets/windowsIcons/159(16x16).png";
+import sync from "@winxp/src/assets/windowsIcons/182(16x16).png";
+import security from "@winxp/src/assets/windowsIcons/214(16x16).png";
+import access from "@winxp/src/assets/windowsIcons/227(16x16).png";
+import wireless from "@winxp/src/assets/windowsIcons/234(16x16).png";
+import accessibility from "@winxp/src/assets/windowsIcons/238(16x16).png";
+import connection from "@winxp/src/assets/windowsIcons/309(16x16).png";
+import update from "@winxp/src/assets/windowsIcons/322(16x16).png";
+import notepad from "@winxp/src/assets/windowsIcons/327(16x16).png";
+import networkAssistance from "@winxp/src/assets/windowsIcons/357(16x16).png";
+import menu from "@winxp/src/assets/windowsIcons/358(16x16).png";
+import transfer from "@winxp/src/assets/windowsIcons/367(16x16).png";
+import defragmenter from "@winxp/src/assets/windowsIcons/374(16x16).png";
+import catalog from "@winxp/src/assets/windowsIcons/392(16x16).png";
+import networkConnection from "@winxp/src/assets/windowsIcons/404(16x16).png";
+import info from "@winxp/src/assets/windowsIcons/505(16x16).png";
+import address from "@winxp/src/assets/windowsIcons/554(16x16).png";
+import connectionWizard from "@winxp/src/assets/windowsIcons/663(16x16).png";
+import networkSetup from "@winxp/src/assets/windowsIcons/664(16x16).png";
+import hyperCmd from "@winxp/src/assets/windowsIcons/669(16x16).png";
+import painter from "@winxp/src/assets/windowsIcons/680(16x16).png";
+import sound from "@winxp/src/assets/windowsIcons/690(16x16).png";
+import recent from "@winxp/src/assets/windowsIcons/716(16x16).png";
+import compatibility from "@winxp/src/assets/windowsIcons/747(16x16).png";
+import magnifier from "@winxp/src/assets/windowsIcons/817(16x16).png";
+import mediaPlayer from "@winxp/src/assets/windowsIcons/846(16x16).png";
+import tour from "@winxp/src/assets/windowsIcons/853(32x32).png";
+import outlook from "@winxp/src/assets/windowsIcons/887(16x16).png";
+import spade from "@winxp/src/assets/windowsIcons/888(16x16).png";
+import reversi from "@winxp/src/assets/windowsIcons/889(16x16).png";
+import onlineHeart from "@winxp/src/assets/windowsIcons/890(16x16).png";
+import checker from "@winxp/src/assets/windowsIcons/891(16x16).png";
+import backgammon from "@winxp/src/assets/windowsIcons/892(16x16).png";
+import movieMaker from "@winxp/src/assets/windowsIcons/894(16x16).png";
+import ie from "@winxp/src/assets/windowsIcons/896(16x16).png";
+import messenger from "@winxp/src/assets/windowsIcons/msn.png";
 
-import spider from '@winxp/src/assets/windowsIcons/spider.png';
-import freecell from '@winxp/src/assets/windowsIcons/freecell.png';
-import heart from '@winxp/src/assets/windowsIcons/heart.png';
-import rdp from '@winxp/src/assets/windowsIcons/rdp.png';
-import solitaire from '@winxp/src/assets/windowsIcons/solitaire.png';
-import narrator from '@winxp/src/assets/windowsIcons/narrator.ico';
-import pinball from '@winxp/src/assets/windowsIcons/pinball.png';
-import restore from '@winxp/src/assets/windowsIcons/restore.ico';
-import mine from '@winxp/src/assets/minesweeper/mine-icon.png';
+import spider from "@winxp/src/assets/windowsIcons/spider.png";
+import freecell from "@winxp/src/assets/windowsIcons/freecell.png";
+import heart from "@winxp/src/assets/windowsIcons/heart.png";
+import rdp from "@winxp/src/assets/windowsIcons/rdp.png";
+import solitaire from "@winxp/src/assets/windowsIcons/solitaire.png";
+import narrator from "@winxp/src/assets/windowsIcons/narrator.ico";
+import pinball from "@winxp/src/assets/windowsIcons/pinball.png";
+import restore from "@winxp/src/assets/windowsIcons/restore.ico";
+import mine from "@winxp/src/assets/minesweeper/mine-icon.png";
 
 export const MyRecentDocuments = [
   {
-    type: 'item',
+    type: "item",
     icon: empty,
-    text: '(Empty)',
+    text: "(Empty)",
   },
 ];
 export const ConnectTo = [
   {
-    type: 'item',
+    type: "item",
     icon: MSN,
-    text: 'MSN',
+    text: "MSN",
   },
   {
-    type: 'item',
+    type: "item",
     icon: connection,
-    text: 'Show all connections',
+    text: "Show all connections",
   },
 ];
 export const AllPrograms = [
   {
-    type: 'item',
+    type: "item",
     icon: access,
-    text: 'Set Program Access and Defaults',
+    text: "Set Program Access and Defaults",
   },
   {
-    type: 'item',
+    type: "item",
     icon: catalog,
-    text: 'Windows Catalog',
+    text: "Windows Catalog",
   },
   {
-    type: 'item',
+    type: "item",
     icon: update,
-    text: 'Windows Update',
+    text: "Windows Update",
   },
   {
-    type: 'separator',
+    type: "separator",
   },
   {
-    type: 'menu',
+    type: "menu",
     icon: menu,
-    text: 'Accessories',
+    text: "Accessories",
     items: [
       {
-        type: 'menu',
+        type: "menu",
         icon: menu,
-        text: 'Accessibility',
-        bottom: 'initial',
+        text: "Accessibility",
+        bottom: "initial",
         items: [
           {
-            type: 'item',
+            type: "item",
             icon: accessibility,
-            text: 'Accessibility Wizard',
+            text: "Accessibility Wizard",
           },
           {
-            type: 'item',
+            type: "item",
             icon: magnifier,
-            text: 'Magnifier',
+            text: "Magnifier",
           },
           {
-            type: 'item',
+            type: "item",
             icon: narrator,
-            text: 'Narrator',
+            text: "Narrator",
           },
           {
-            type: 'item',
+            type: "item",
             icon: keyboard,
-            text: 'On-Screen Keyboard',
+            text: "On-Screen Keyboard",
           },
           {
-            type: 'item',
+            type: "item",
             icon: utility,
-            text: 'Utility Manager',
+            text: "Utility Manager",
           },
         ],
       },
       {
-        type: 'menu',
+        type: "menu",
         icon: menu,
-        text: 'Communications',
-        bottom: 'initial',
+        text: "Communications",
+        bottom: "initial",
         items: [
           {
-            type: 'item',
+            type: "item",
             icon: hyperCmd,
-            text: 'HyperTerminal',
+            text: "HyperTerminal",
           },
           {
-            type: 'item',
+            type: "item",
             icon: networkConnection,
-            text: 'Network Connections',
+            text: "Network Connections",
           },
           {
-            type: 'item',
+            type: "item",
             icon: networkSetup,
-            text: 'Network Setup Wizard',
+            text: "Network Setup Wizard",
           },
           {
-            type: 'item',
+            type: "item",
             icon: connectionWizard,
-            text: 'New Connection Wizard',
+            text: "New Connection Wizard",
           },
           {
-            type: 'item',
+            type: "item",
             icon: wireless,
-            text: 'Wireless Network Setup Wizard',
+            text: "Wireless Network Setup Wizard",
           },
         ],
       },
       {
-        type: 'menu',
+        type: "menu",
         icon: menu,
-        text: 'Entertainment',
-        bottom: 'initial',
+        text: "Entertainment",
+        bottom: "initial",
         items: [
           {
-            type: 'item',
+            type: "item",
             icon: sound,
-            text: 'Sound Recorder',
+            text: "Sound Recorder",
           },
           {
-            type: 'item',
+            type: "item",
             icon: volume,
-            text: 'Volume Control',
+            text: "Volume Control",
           },
           {
-            type: 'item',
+            type: "item",
             icon: mediaPlayer,
-            text: 'Windows Media Player',
+            text: "Windows Media Player",
           },
         ],
       },
       {
-        type: 'menu',
+        type: "menu",
         icon: menu,
-        text: 'System Tools',
-        bottom: 'initial',
+        text: "System Tools",
+        bottom: "initial",
         items: [
           {
-            type: 'item',
+            type: "item",
             icon: backup,
-            text: 'Backup',
+            text: "Backup",
           },
           {
-            type: 'item',
+            type: "item",
             icon: characterMap,
-            text: 'Character Map',
+            text: "Character Map",
           },
           {
-            type: 'item',
+            type: "item",
             icon: cleanDisk,
-            text: 'Disk Cleanup',
+            text: "Disk Cleanup",
           },
           {
-            type: 'item',
+            type: "item",
             icon: defragmenter,
-            text: 'Disk Defragmenter',
+            text: "Disk Defragmenter",
           },
           {
-            type: 'item',
+            type: "item",
             icon: transfer,
-            text: 'Files and Settings Transfer Wizard',
+            text: "Files and Settings Transfer Wizard",
           },
           {
-            type: 'item',
+            type: "item",
             icon: recent,
-            text: 'Scheduled Tasks',
+            text: "Scheduled Tasks",
           },
           {
-            type: 'item',
+            type: "item",
             icon: security,
-            text: 'Security Center',
+            text: "Security Center",
           },
           {
-            type: 'item',
+            type: "item",
             icon: info,
-            text: 'System Information',
+            text: "System Information",
           },
           {
-            type: 'item',
+            type: "item",
             icon: restore,
-            text: 'System Restore',
+            text: "System Restore",
           },
         ],
       },
       {
-        type: 'item',
+        type: "item",
         icon: address,
-        text: 'Address Book',
+        text: "Address Book",
       },
       {
-        type: 'item',
+        type: "item",
         icon: cmd,
-        text: 'Command Prompt',
+        text: "Command Prompt",
       },
       {
-        type: 'item',
+        type: "item",
         icon: notepad,
-        text: 'Notepad',
+        text: "Notepad",
       },
       {
-        type: 'item',
+        type: "item",
         icon: painter,
-        text: 'Paint',
+        text: "Paint",
       },
       {
-        type: 'item',
+        type: "item",
         icon: calculator,
-        text: 'Calculator',
+        text: "Calculator",
       },
       {
-        type: 'item',
+        type: "item",
         icon: compatibility,
-        text: 'Program Compatibility Wizard',
+        text: "Program Compatibility Wizard",
       },
       {
-        type: 'item',
+        type: "item",
         icon: rdp,
-        text: 'Remote Desktop Connection',
+        text: "Remote Desktop Connection",
       },
       {
-        type: 'item',
+        type: "item",
         icon: sync,
-        text: 'Synchronize',
+        text: "Synchronize",
       },
       {
-        type: 'item',
+        type: "item",
         icon: tour,
-        text: 'Tour Windows XP',
+        text: "Tour Windows XP",
       },
       {
-        type: 'item',
+        type: "item",
         icon: winExplorer,
-        text: 'Windows Explorer',
+        text: "Windows Explorer",
       },
       {
-        type: 'item',
+        type: "item",
         icon: wordPad,
-        text: 'WordPad',
+        text: "WordPad",
       },
     ],
   },
   {
-    type: 'menu',
+    type: "menu",
     icon: menu,
-    text: 'Games',
+    text: "Games",
     items: [
       {
-        type: 'item',
+        type: "item",
         icon: freecell,
-        text: 'FreeCell',
+        text: "FreeCell",
       },
       {
-        type: 'item',
+        type: "item",
         icon: heart,
-        text: 'Hearts',
+        text: "Hearts",
       },
       {
-        type: 'item',
+        type: "item",
         icon: backgammon,
-        text: 'Internet Backgammon',
+        text: "Internet Backgammon",
       },
       {
-        type: 'item',
+        type: "item",
         icon: checker,
-        text: 'Internet Checkers',
+        text: "Internet Checkers",
       },
       {
-        type: 'item',
+        type: "item",
         icon: onlineHeart,
-        text: 'Internet Hearts',
+        text: "Internet Hearts",
       },
       {
-        type: 'item',
+        type: "item",
         icon: reversi,
-        text: 'Internet Reversi',
+        text: "Internet Reversi",
       },
       {
-        type: 'item',
+        type: "item",
         icon: spade,
-        text: 'Internet Spades',
+        text: "Internet Spades",
       },
       {
-        type: 'item',
+        type: "item",
         icon: mine,
-        text: 'Minesweeper',
+        text: "Minesweeper",
       },
       {
-        type: 'item',
+        type: "item",
         icon: pinball,
-        text: 'Pinball',
+        text: "Pinball",
       },
       {
-        type: 'item',
+        type: "item",
         icon: solitaire,
-        text: 'Solitaire',
+        text: "Solitaire",
       },
       {
-        type: 'item',
+        type: "item",
         icon: spider,
-        text: 'Spider Solitaire',
+        text: "Spider Solitaire",
       },
     ],
   },
   {
-    type: 'menu',
+    type: "menu",
     icon: menu,
-    text: 'Startup',
+    text: "Startup",
     items: [
       {
-        type: 'item',
+        type: "item",
         icon: empty,
-        text: '(Empty)',
+        text: "(Empty)",
       },
     ],
   },
   {
-    type: 'item',
+    type: "item",
     icon: ie,
-    text: 'Internet Explorer',
+    text: "Internet Explorer",
   },
   {
-    type: 'item',
+    type: "item",
     icon: outlook,
-    text: 'Outlook Express',
+    text: "Outlook Express",
   },
   {
-    type: 'item',
+    type: "item",
     icon: networkAssistance,
-    text: 'Remote Assistance',
+    text: "Remote Assistance",
   },
   {
-    type: 'item',
+    type: "item",
     icon: mediaPlayer,
-    text: 'Windows Media Player',
+    text: "Windows Media Player",
   },
   {
-    type: 'item',
+    type: "item",
     icon: messenger,
-    text: 'Windows Messenger',
+    text: "Windows Messenger",
   },
   {
-    type: 'item',
+    type: "item",
     icon: movieMaker,
-    text: 'Windows Movie Maker',
+    text: "Windows Movie Maker",
   },
 ];
 

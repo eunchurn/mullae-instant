@@ -1,28 +1,28 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import Balloon from '@winxp/src/components/Balloon';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import Balloon from "@winxp/src/components/Balloon";
 // import Noti from '@winxp/src/components/Noti';
 
-import startButton from '@winxp/src/assets/windowsIcons/start.png';
-import sound from '@winxp/src/assets/windowsIcons/690(16x16).png';
-import usb from '@winxp/src/assets/windowsIcons/394(16x16).png';
-import risk from '@winxp/src/assets/windowsIcons/229(16x16).png';
-import FooterMenu from './FooterMenu';
+import startButton from "@winxp/src/assets/windowsIcons/start.png";
+import sound from "@winxp/src/assets/windowsIcons/690(16x16).png";
+import usb from "@winxp/src/assets/windowsIcons/394(16x16).png";
+import risk from "@winxp/src/assets/windowsIcons/229(16x16).png";
+import FooterMenu from "./FooterMenu";
 
 const getTime = () => {
   const date = new Date();
   let hour = date.getHours();
-  let hourPostFix = 'AM';
+  let hourPostFix = "AM";
   let min = date.getMinutes();
   if (hour >= 12) {
     hour -= 12;
-    hourPostFix = 'PM';
+    hourPostFix = "PM";
   }
   if (hour === 0) {
     hour = 12;
   }
   if (min < 10) {
-    min = `0${  min}`;
+    min = `0${min}`;
   }
   return `${hour}:${min} ${hourPostFix}`;
 };
@@ -41,7 +41,7 @@ function Footer({
     setMenuOn(on => !on);
   }
   function _onMouseDown(e) {
-    if (e.target.closest('.footer__window')) return;
+    if (e.target.closest(".footer__window")) return;
     onMouseDown();
   }
   function _onClickMenuItem(name) {
@@ -61,8 +61,8 @@ function Footer({
     function onMouseDown(e) {
       if (!target.contains(e.target) && menuOn) setMenuOn(false);
     }
-    window.addEventListener('mousedown', onMouseDown);
-    return () => window.removeEventListener('mousedown', onMouseDown);
+    window.addEventListener("mousedown", onMouseDown);
+    return () => window.removeEventListener("mousedown", onMouseDown);
   }, [menuOn]);
 
   return (
@@ -99,7 +99,7 @@ function Footer({
           <Noti />
         </div> */}
         <img className="footer__icon" src={risk} alt="" />
-        <div style={{ position: 'relative', width: 0, height: 0 }}>
+        <div style={{ position: "relative", width: 0, height: 0 }}>
           <Balloon />
         </div>
         <div className="footer__time">{time}</div>
@@ -115,7 +115,7 @@ function FooterWindow({ id, icon, title, onMouseDown, isFocus }) {
   return (
     <div
       onMouseDown={_onMouseDown}
-      className={`footer__window ${isFocus ? 'focus' : 'cover'}`}
+      className={`footer__window ${isFocus ? "focus" : "cover"}`}
     >
       <img className="footer__icon" src={icon} alt={title} />
       <div className="footer__text">{title}</div>
@@ -234,7 +234,7 @@ const Container = styled.footer`
   }
   .footer__window.cover:before {
     display: block;
-    content: '';
+    content: "";
     position: absolute;
     left: -2px;
     top: -2px;

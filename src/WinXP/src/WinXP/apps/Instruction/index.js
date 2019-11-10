@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import ReactMarkdown from 'react-markdown';
-import { WindowDropDowns } from '@winxp/src/components';
-import instruction from './instruction.md';
-import dropDownData from './dropDownData';
+import React from "react";
+import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
+import { WindowDropDowns } from "@winxp/src/components";
+import instruction from "./instruction.md";
+import dropDownData from "./dropDownData";
 
 const Container = styled.div`
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-  font-family: 'Noto Sans KR', sans-serif;
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+  font-family: "Noto Sans KR", sans-serif;
   background-color: #ffffff;
   padding-top: 20px;
   padding-left: 20px;
@@ -19,7 +19,7 @@ const Container = styled.div`
 const Instruction = ({ onClose }) => {
   function onClickOptionItem(item) {
     switch (item) {
-      case 'Close':
+      case "Close":
         onClose();
         break;
       default:

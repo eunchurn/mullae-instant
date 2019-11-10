@@ -1,6 +1,6 @@
 # #mullae\_instant
 
-```
+```underscore
                    |ZZzzz
                    |
                    |
@@ -25,7 +25,7 @@ underscore presumes the real space of ‘Mullae Art Village’ as a discursive p
 
 ## FEATURES
 
-- Time: July ~ Nov. 2019. 
+- Time: July ~ Nov. 2019.
 - Venue: www.mullaeinstant.com / www.instagram.com/mullaeinstant
 
 ## CREDIT
@@ -37,7 +37,7 @@ underscore presumes the real space of ‘Mullae Art Village’ as a discursive p
 - Translation by Hakyung Sim
 - Sponsored by SFAC (Seoul Foundation for Arts and Culture), Seoul Art Space Mullae, GS SHOP
 
-*This project has been selected as part of the 2019 MEET program* 
+*_This project has been selected as part of the 2019 MEET program_
 
 ## COPYRIGHT / END USER LICENSE
 
@@ -54,5 +54,23 @@ underscore presumes the real space of ‘Mullae Art Village’ as a discursive p
 
 ## CHANGE LOG
 
-- v1.1.0 / 2019-08-15
-- v1.1.1 / 2019-09-28 
+- v1.1.0
+  - 2019-08-15: Semi-final version
+  - 2019-08-16: Recycle add
+  - 2019-08-17: Polyfill injection
+- v1.1.1
+  - 2019-09-29: Minesweeper `openBehavior.behavior` `useEffect` dependencies added.
+  - 2019-09-29: Video background on Desktop.
+  - 2019-09-30: #mullaeinstant wiki lauched.
+  - 2019-10-03: Markdown format wiki.
+  - 2019-10-21: Music / #mullaeinstant wiki update.
+  - 2019-11-03: Notification added and Optimizing components.
+  - 2019-11-04: `cross-env` build / Instruction component added.
+  - 2019-11-04: My Computer, shared docuemtns, user's documents components added.
+  - 2019-11-04: `eslint` update.
+  - 2019-11-05: Freezing phenomenon fixing progress.
+  - 2019-11-06: Freezing problem fixed. Editing `useEffect` of Winamp compoent
+  - 2019-11-08: Minimizing recycle images.
+  - 2019-11-08: FB Open graph, Twitter card added and fix `manifest.json`.
+- v1.2.0
+  - 2019-11.10: `eslint` fixing full components / `prettier.rc` applied only doubleQuotes / ES6 code.

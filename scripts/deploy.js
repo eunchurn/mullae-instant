@@ -10,9 +10,7 @@ const Status = shell.exec("git status");
 const checkRemote = shell.exec("git remote -v | grep client");
 if (!checkRemote.includes("client")) {
   shell.echo(
-    `No remote deployment repository, adding.. client to ${
-      process.env.DEPLOYMENT_REPOSITORY
-    }`
+    `No remote deployment repository, adding.. client to ${process.env.DEPLOYMENT_REPOSITORY}`,
   );
   shell.exec(`git remote add client ${process.env.DEPLOYMENT_REPOSITORY}`);
 }
@@ -22,7 +20,7 @@ if (Status.stdout.includes("nothing to commit, working tree clean")) {
   shell.exec("git add .");
   shell.exec('git commit -m "Edit .gitignore to deploy"');
   shell.exec(
-    "git push deploy `git subtree split --prefix dist gh-pages`:gh-pages --force"
+    "git push deploy `git subtree split --prefix dist gh-pages`:gh-pages --force",
   );
   shell.exec("git reset HEAD~");
   shell.exec("git checkout .gitignore");

@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Draggable from 'react-draggable';
-import Div100vh from 'react-div-100vh';
-import { WarningContainer } from '@components/styles';
-import miIntro from '@images/miIntro.png';
-import MyComputer from '@images/myComputer.svg';
-import NetworkNeighborhood from '@images/networkNeighborhood.svg';
-import RecycleBin from '@images/recycleBin.svg';
-import Folder from '@images/folderIntro.svg';
-import BottomBack from '@images/footer.svg';
-import StartWarning from '@images/startWarning.svg';
-// import Win95 from '@win95';
-import WarningWindow from './window';
+import React from "react";
+import styled from "styled-components";
+import Draggable from "react-draggable";
+import Div100vh from "react-div-100vh";
+import { WarningContainer } from "@components/styles";
+import MyComputer from "@images/myComputer.svg";
+import NetworkNeighborhood from "@images/networkNeighborhood.svg";
+import RecycleBin from "@images/recycleBin.svg";
+import Folder from "@images/folderIntro.svg";
+import BottomBack from "@images/footer.svg";
+import StartWarning from "@images/startWarning.svg";
+import WarningWindow from "./window";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -26,8 +24,8 @@ const GridWrap = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 38px;
   grid-template-areas:
-    'leftup rightup'
-    'footer footer';
+    "leftup rightup"
+    "footer footer";
 `;
 
 const LeftUp = styled.div`
@@ -58,7 +56,7 @@ const Bottom = styled(BottomBack)`
   position: fixed;
   z-index: 4;
 `;
-const iconSize = '80';
+const iconSize = "80";
 
 const Warning = () => {
   const Default = (
