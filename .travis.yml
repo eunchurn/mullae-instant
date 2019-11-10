@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - v8
+script:
+  - yarn lint
+cache:
+  - yarn
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
