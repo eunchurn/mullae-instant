@@ -54,13 +54,13 @@ The following open source projects have helped to bring together applications th
 
 ### Three.js glitch background effect
 
-- Original code: example code of https://github.com/drcmda/react-three-fiber
+- Original code: example code of <https://github.com/drcmda/react-three-fiber>
 - Copyright (c) 2019 Paul Henschel and other contributors. Released under the MIT license.
 - modified by Eunchurn Park
 
 ### Screen loading and WinXP desktop
 
-- Original code: https://github.com/ShizukuIchi/winXP and https://github.com/ShizukuIchi/fake-screen
+- Original code: <https://github.com/ShizukuIchi/winXP> and <https://github.com/ShizukuIchi/fake-screen>
 - Copyright (c) 2019 Shizuku Yang and other contributors. Released under the MIT license.
 - The Windows XP name, artwork, trademark are surely property of Microsoft. This project is provided for educational purposes only. It is not affiliated with and has not been approved by Microsoft.
 - modified by Eunchurn Park
