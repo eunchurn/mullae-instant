@@ -35,129 +35,129 @@ const gen = () => {
 const genId = gen();
 const genIndex = gen();
 export const defaultAppState = [
-  // {
-  //   component: InternetExplorer,
-  //   header: {
-  //     title: 'Internet Explorer',
-  //     icon: iePaper,
-  //   },
-  //   defaultSize: {
-  //     width: 900,
-  //     height: 500,
-  //   },
-  //   defaultOffset: {
-  //     x: 130,
-  //     y: 20,
-  //   },
-  //   resizable: true,
-  //   minimized: false,
-  //   maximized: window.innerWidth < 800,
-  //   id: genId(),
-  //   zIndex: genIndex(),
-  // },
-  // {
-  //   component: Minesweeper,
-  //   header: {
-  //     title: 'Minesweeper',
-  //     icon: mine,
-  //   },
-  //   defaultSize: {
-  //     width: 0,
-  //     height: 0,
-  //   },
-  //   defaultOffset: {
-  //     x: 180,
-  //     y: 170,
-  //   },
-  //   resizable: false,
-  //   minimized: false,
-  //   maximized: false,
-  //   id: genId(),
-  //   zIndex: genIndex(),
-  // },
-  // {
-  //   component: Winamp,
-  //   header: {
-  //     title: 'Winamp',
-  //     icon: winamp,
-  //     invisible: true,
-  //   },
-  //   defaultSize: {
-  //     width: 0,
-  //     height: 0,
-  //   },
-  //   defaultOffset: {
-  //     x: 0,
-  //     y: 0,
-  //   },
-  //   resizable: false,
-  //   minimized: false,
-  //   maximized: false,
-  //   id: genId(),
-  //   zIndex: genIndex(),
-  // },
   {
-    component: Instruction,
+    component: InternetExplorer,
     header: {
-      title: "Audio Guide Manual",
-      icon: pdf,
-      invisible: false,
+      title: 'Internet Explorer',
+      icon: iePaper,
     },
     defaultSize: {
-      width: 700,
-      height: 850,
+      width: 900,
+      height: 500,
     },
     defaultOffset: {
-      x: 400,
-      y: 10,
+      x: 130,
+      y: 20,
     },
-    resizable: false,
+    resizable: true,
     minimized: false,
     maximized: window.innerWidth < 800,
     id: genId(),
     zIndex: genIndex(),
   },
+  {
+    component: Minesweeper,
+    header: {
+      title: 'Minesweeper',
+      icon: mine,
+    },
+    defaultSize: {
+      width: 0,
+      height: 0,
+    },
+    defaultOffset: {
+      x: 180,
+      y: 170,
+    },
+    resizable: false,
+    minimized: false,
+    maximized: false,
+    id: genId(),
+    zIndex: genIndex(),
+  },
+  {
+    component: Winamp,
+    header: {
+      title: 'Winamp',
+      icon: winamp,
+      invisible: true,
+    },
+    defaultSize: {
+      width: 0,
+      height: 0,
+    },
+    defaultOffset: {
+      x: 0,
+      y: 0,
+    },
+    resizable: false,
+    minimized: false,
+    maximized: false,
+    id: genId(),
+    zIndex: genIndex(),
+  },
   // {
-  //   component: Readme,
+  //   component: Instruction,
   //   header: {
-  //     title: 'README.txt - Notepad',
-  //     icon: notepad,
+  //     title: "Audio Guide Manual",
+  //     icon: pdf,
   //     invisible: false,
   //   },
   //   defaultSize: {
   //     width: 700,
-  //     height: 500,
+  //     height: 850,
   //   },
   //   defaultOffset: {
-  //     x: 300,
-  //     y: 30,
+  //     x: 400,
+  //     y: 10,
   //   },
-  //   resizable: true,
+  //   resizable: false,
   //   minimized: false,
   //   maximized: window.innerWidth < 800,
   //   id: genId(),
   //   zIndex: genIndex(),
   // },
-  // {
-  //   component: MyComputer,
-  //   header: {
-  //     title: 'My Computer',
-  //     icon: computer,
-  //   },
-  //   defaultSize: {
-  //     width: 660,
-  //     height: 500,
-  //   },
-  //   defaultOffset: {
-  //     x: 250,
-  //     y: 40,
-  //   },
-  //   resizable: true,
-  //   minimized: false,
-  //   maximized: window.innerWidth < 800,
-  //   id: genId(),
-  //   zIndex: genIndex(),
-  // },
+  {
+    component: Readme,
+    header: {
+      title: 'README.txt - Notepad',
+      icon: notepad,
+      invisible: false,
+    },
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 300,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    id: genId(),
+    zIndex: genIndex(),
+  },
+  {
+    component: MyComputer,
+    header: {
+      title: 'My Computer',
+      icon: computer,
+    },
+    defaultSize: {
+      width: 660,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 250,
+      y: 40,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    id: genId(),
+    zIndex: genIndex(),
+  },
 ];
 
 export const defaultIconState = [

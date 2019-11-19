@@ -4,15 +4,15 @@
 const album = "underscore playlist";
 
 export const initialTracks = [
-  {
-    url: "/assets/audio_guide_v2.mp3",
-    duration: 567.35,
-    metaData: {
-      title: "audio guide",
-      artist: "mullaeinstant",
-      album,
-    },
-  },
+  // {
+  //   url: "/assets/audio_guide_v2.mp3",
+  //   duration: 567.35,
+  //   metaData: {
+  //     title: "audio guide",
+  //     artist: "mullaeinstant",
+  //     album,
+  //   },
+  // },
   {
     url:
       "https://raw.githubusercontent.com/we-underscore/mullaeinstant/master/assets/135578__kingsamas__night-atmo-churchbells.mp3",
