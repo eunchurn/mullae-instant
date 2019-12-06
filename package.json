@@ -60,7 +60,7 @@
     "react-desktop": "^0.3.9",
     "react-div-100vh": "^0.3.4",
     "react-dom": "^16.9.0",
-    "react-draggable": "4.1.0",
+    "react-draggable": "4.2.0",
     "react-ga": "^2.6.0",
     "react-imported-component": "^6.2.0",
     "react-markdown": "^4.2.2",
