@@ -76,7 +76,7 @@
     "redux": "^4.0.4",
     "regenerator-runtime": "^0.13.3",
     "smoothscroll-polyfill": "^0.4.4",
-    "styled-components": "^4.3.2",
+    "styled-components": "^5.0.1",
     "three": "0.112.0",
     "webamp": "^1.4.1-beta01"
   },
