@@ -63,7 +63,7 @@
     "react-draggable": "4.2.0",
     "react-ga": "^2.6.0",
     "react-imported-component": "^6.2.0",
-    "react-markdown": "^4.2.2",
+    "react-markdown": "^5.0.0",
     "react-pdf": "^4.1.0",
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
